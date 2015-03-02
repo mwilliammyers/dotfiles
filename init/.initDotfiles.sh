@@ -10,7 +10,6 @@ linkDotFiles() {
 
   printf "\nCreating symbolic links for: dotfiles...\n"
   ln -sfv  2> /dev/null "${dotfiles}"/.* ~
-  ln -sfv "${zsh_src}"/*.zsh "${zsh_dst}"
   IFS=$SAVEIFS
 }
 

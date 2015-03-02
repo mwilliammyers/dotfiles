@@ -1,4 +1,5 @@
-set -e 
+#!/usr/bin/env bash
+#set -e 
 
 cd ${0%/*}
 cd .. && source dotfiles.conf
@@ -16,7 +17,8 @@ makeZshrc(){
     #TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
     if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
         #TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
-        echo plugins=\(git git-extras brew sudo tmux colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent debian\) >> ${zshrc} 
+        #echo export TERM="xterm-256color" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
         echo plugins=\(git git-extras brew sudo tmux colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd aws osx bttery brew-cask xcode osx-aliases\) >> ${zshrc} 
@@ -104,7 +106,7 @@ if [ -d "$ZSH" ]; then
 fi
 
 #TODO: check for zsh and install it using the appropriate method for current OS...
-brew install zsh
+# brew install zsh
 
 echo "\033[0;34mCloning Oh My Zsh...\033[0m"
 hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
@@ -127,6 +129,9 @@ fi
 
 makeZshrc
 linkZsh
+
+#TODO: check if brew is installed first
+brew install fasd
 
 env zsh 
 . ~/.zshrc 

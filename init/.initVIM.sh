@@ -9,6 +9,7 @@ if cd "${vim_dst}" &> /dev/null
 then
     git pull
 else
+    mkdir -p "${dotfiles_dst}"
     cd "${dotfiles_dst}"
     git clone https://github.com/spf13/spf13-vim.git
     mv spf13-vim/ vim/

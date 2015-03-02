@@ -8,19 +8,19 @@ source dotfiles.conf;
 # fi
 
 ## SYM LINK DOTFILES ###########################################################
-${init}/initDotfiles;
+"${init}"/.initDotfiles.sh;
 
-cd "${config_dir}"
-
+#cd "${config_dir}"
 ## PROMPT TO INSTALL VIM PLUGINS ###############################################
-shouldInitZSH=0
+shouldInitZsh=0
 if [[ "$*" =~ ^[-]*[fF]{1}(orce)*$ ]]; then
-  shouldInitZSH=1;
+  shouldInitZsh=1;
 else
   printf "\n";
-  read -t 	20 -p "Install the ZSH shell settings and install ZSH plugins? (y/n) " -n 1
+  read -t 20 -p "Install the ZSH shell settings and install ZSH plugins? (y/n) " -n 1
   if [[ $REPLY =~ ^[Yy]$ ]]; then
-    shouldInitZSH=1;
+    shouldInitZsh=1;
+  fi 
 fi
 
 ## PROMPT TO INSTALL VIM PLUGINS ###############################################
@@ -29,7 +29,7 @@ if [[ "$*" =~ ^[-]*[fF]{1}(orce)*$ ]]; then
   shouldInitVIM=1;
 else
   printf "\n";
-  read -t 	20 -p "Update VIM settings and install VIM plugins? (y/n) " -n 1
+  read -t 20 -p "Update VIM settings and install VIM plugins? (y/n) " -n 1
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     shouldInitVIM=1;
   fi
@@ -39,7 +39,7 @@ fi
 shouldInitBrew=0
 if [[ "$*" =~ ^[-]?[fF]{1}(orce)*$ ]]; then
   shouldInitBrew=1;
-
+else
   printf "\n";
   read -t 20 -p "Install Homebrew, Git and other useful homebrew dependencies? (y/n) " -n 1
   if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -65,12 +65,11 @@ if [[ "$*" =~ ^[-]*[fF]{1}(orce)*$ ]]; then
   shouldInitTerm=1;
 else
   printf "\n";
-  read -t 20 -p "Update VIM settings and install VIM plugins? (y/n) " -n 1
+  read -t 20 -p "Update terminal settings/themes? (y/n) " -n 1
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     shouldInitTerm=1;
   fi
 fi
-
 
 shouldRunOSX=0;
 shouldInitAlcatraz=0;
@@ -109,16 +108,13 @@ function setupLinux() {
 
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
   setupLinux;
-if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-  setupMac;
-else
-  printf "\nERROR: Unsupported OS type. Must be Linux or OS X." | \
-  grep --color=auto -Ee 'ERROR:'
+elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
+  setupMac "$@";
 fi
 
 ## RUN THE APPROPRIATE INSTALLERS ##############################################
-if [[ ${shouldInitZSH} == 1 ]]; then
-  "${init}"/.initZSH.sh;
+if [[ ${shouldInitZsh} == 1 ]]; then
+  "${init}"/.initZsh.sh;
 fi
 
 if [[ ${shouldInitVIM} == 1 ]]; then
@@ -145,7 +141,7 @@ if [[ ${shouldRunOSX} == 1 ]]; then
   "${init}"/.osx.sh;
 fi
 
-printf "\nReloading shell..."
-exec $SHELL -l
+#printf "\nReloading shell..."
+#exec $SHELL -l
 
 exit 0;
