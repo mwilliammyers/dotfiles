@@ -1,0 +1,14 @@
+# .extra
+# .ssh
+# ssh
+# .ssh/*
+# ssh/*
+bundle/
+/**/*/*.cache
+/**/*/*.cache/
+.cache
+*.cache*
+.vim/.netrwhist
+.vim/bundle/
+.vim/.vim
+init/spf13-vim.sh

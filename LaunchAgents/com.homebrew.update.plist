@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.homebrew.update</string>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>Program</key>
+	<string>/Users/wm/Library/LaunchAgents/updateHomebrew.sh</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/wm/Library/Logs/homebrew-updates.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/wm/Library/Logs/homebrew-updates.log</string>
+	<key>StartInterval</key>
+	<integer>27272</integer>
+</dict>
+</plist>

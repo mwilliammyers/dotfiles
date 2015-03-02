@@ -1,0 +1,26 @@
+syntax enable
+set background=dark
+color solarized
+let g:solarized_termcolors=16
+g:solarized_visibility =  "low"
+
+let mapleader = ","
+
+"Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+
+"set relativenumber
+":au FocusLost * :set number
+":au FocusGained * :set relativenumber
+
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
