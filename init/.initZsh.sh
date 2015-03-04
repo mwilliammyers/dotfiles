@@ -10,7 +10,7 @@ fi
 
 makeZshrc(){
     echo "\033[0;34mMaking ${zshrc} file...\033[0m"
-    rm -rf "${zshrc}"
+    mv "${zshrc}" ~/.zshrc.orig
     touch "${zshrc}"
     echo export ZSH=${ZSH} >> ${zshrc}
     
