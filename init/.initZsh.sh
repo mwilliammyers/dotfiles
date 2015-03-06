@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-#set -e 
+set -e 
 
 cd ${0%/*}
 cd .. && source dotfiles.conf
@@ -17,11 +16,11 @@ makeZshrc(){
     #TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
     if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
         #TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
-        echo plugins=\(git git-extras brew sudo tmux colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent debian\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux colored-man extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent debian\) >> ${zshrc} 
         #echo export TERM="xterm-256color" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-        echo plugins=\(git git-extras brew sudo tmux colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd aws osx bttery brew-cask xcode osx-aliases\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd aws osx bttery brew-cask xcode osx-aliases\) >> ${zshrc} 
         #echo source $(which zsh coreutils)/libexec/gnubin >> 
     fi
 
@@ -79,6 +78,8 @@ export HISTCONTROL='ignoreboth';
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
+#export TERM="xterm-255color"
+
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
 
@@ -87,6 +88,16 @@ export MANPAGER='less -X';
 
 # Always enable colored \`grep\` output.
 export GREP_OPTIONS='--color=auto';
+
+# Always start tmux session at login
+if tmux has-session
+then
+    tmux attach-session 
+else 
+    tmux
+fi
+#TODO: idk why i need to do this to make colors appear in dirs...
+src 
 EOF
 }
 

@@ -3,9 +3,7 @@
 cd ${0%/*}
 cd .. && source dotfiles.conf;
 
-ln -sfv 2> /dev/null "${vim_src}"/.* ~
-
-if cd "${vim_dst}" &> /dev/null
+if cd "${vim_spf13}" &> /dev/null
 then
     git pull
 else
@@ -19,11 +17,20 @@ fi
 #if [ ! -n "$SPF-13" ]; then
 #  SPF-13=~/.oh-my-zsh
 #fi
-cd "${vim_dst}"
+cd "${vim_spf13}"
 # FIXME: sed will not work if .bak is not supplied...
 sed -i.bak 's:spf13-vim-3:dotfiles/vim:g' bootstrap.sh
 ./bootstrap.sh
 
+TODO:setup custom consolidated VIM dir see .vimrc.before line 59ish
+ln -sfv 2> /dev/null "${vim_src}"/.* ${vim_dst}
+
+#install other handy VIM plugins
 brew install ctags
 
-exit 0;
+#echo -e "Installing YouCompleteMe..."
+#cd ${vim_dst}/YouCompleteMe
+#./install.sh --clang-completer #--omnisharp-completer
+
+#TODO: install eclim? 
+exit 0; 

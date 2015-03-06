@@ -25,6 +25,7 @@ fi
 brew install zsh
 
 brew install ruby
+gem install tmuxinator
 
 brew install git
 brew install git-extras
