@@ -15,7 +15,7 @@ config resizePercentOf screenSize
 # The "hyper" key is a shortcut for CTRL + ALT + CMD
 
 alias hyper ctrl;alt
-
+#alias
 
 # MONITOR ALIASES
 # -------------------------------------------------------------------
@@ -30,7 +30,7 @@ alias monitor-work 1
 alias editor 'Atom'
 bind z:alt;shift focus ${editor}
 
-alias terminal 'Terminal'
+alias terminal 'iTerm'
 bind x:alt;shift focus ${terminal}
 
 alias browser 'Safari'
@@ -49,10 +49,10 @@ config windowHintsIgnoreHiddenWindows false
 bind esc:ctrl grid padding:5 0:6,2 1:16,10
 
 # Better application switcher
-# bind tab:cmd switch
+bind tab:cmd switch
 
 # Reload Slate configuration file
-# bind s:${hyper} relaunch
+bind s:${hyper} relaunch
 
 
 # GENERAL POSITION ALIASES AND BINDINGS
@@ -208,8 +208,8 @@ bind [:alt;shift       focus left
 bind =:alt;shift       focus behind
 
 # Throw
-bind ]:${hyper} throw right
-bind [:${hyper}  throw left
+bind right:ctrl;shift;cmd  throw right
+bind left:ctrl;shift;cmd  throw left
 
 # Resize
 bind right:alt;cmd       resize +10% +0
@@ -224,7 +224,7 @@ bind up:${hyper}    nudge +0   -10%
 bind down:${hyper}  nudge +0   +10%
 
 # Push
-# bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
-# bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
-# bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
-# bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+ #bind right:ctrl;cmd;shift  push right bar-resize:screenSizeX/3
+ #bind left:ctrl;cmd;shift   push left  bar-resize:screenSizeX/3
+ #bind up:ctrl;cmd;shift     push up    bar-resize:screenSizeY/2
+ #bind down:ctrl;cmd;shift   push down  bar-resize:screenSizeY/2

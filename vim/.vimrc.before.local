@@ -1,44 +1,31 @@
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
 "let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
 
-"syntax enable
-"set background=dark
-"color solarized
-let g:solarized_termcolors=16
-"g:solarized_visibility =  "low"
-
-let mapleader = ","
-
 "Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
+
+"make eclim play nicely with YCM
+let g:EclimCompletionMethod = 'omnifunc'
 
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
-
-"set relativenumber
-":au FocusLost * :set number
-":au FocusGained * :set relativenumber
-
-"autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
-let g:EclimCompletionMethod = 'omnifunc'
 
 " spf13 options {
 
     " Prevent automatically changing to open file directory
-       let g:spf13_no_autochdir = 1
+       "let g:spf13_no_autochdir = 1
 
     " Disable views
     "   let g:spf13_no_views = 1
 
     " Leader keys
-    "   let g:spf13_leader='\'
+       let g:spf13_leader=','
     "   let g:spf13_localleader='_'
 
     " Disable easier moving in tabs and windows
@@ -66,14 +53,14 @@ let g:EclimCompletionMethod = 'omnifunc'
 
     " vim files directory
     "   let g:spf13_consolidated_directory = <full path to desired directory>
-       let g:spf13_consolidated_directory = $HOME . '.vim/'
+       let g:spf13_consolidated_directory = '/Users/wm/.vim/'
 
     " This makes the completion popup strictly passive.
     " Keypresses acts normally. <ESC> takes you of insert mode, words don't
     " automatically complete, pressing <CR> inserts a newline, etc. Iff the
     " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
     " expands it and jumps between fields.
-       let g:spf13_noninvasive_completion = 1
+       "let g:spf13_noninvasive_completion = 1
 
     " Don't turn conceallevel or concealcursor
     "   let g:spf13_no_conceal = 1

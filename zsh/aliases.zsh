@@ -38,3 +38,8 @@ alias htop='sudo htop'
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
+# Start the eclim deamon
+alias eclimd='$ECLIPSE_HOME/eclimd &'
+
+# Stop the eclim deamon
+alias seclimd='$ECLIPSE_HOME/eclim -command shutdown'

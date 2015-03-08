@@ -7,24 +7,51 @@ if [ ! -n "$ZSH" ]; then
   ZSH="${zsh_dst}"
 fi
 
+dedupepath(){
+    if [ -n "$PATH" ]
+    then
+        old_PATH=$PATH:
+        PATH=
+        while [ -n "$old_PATH" ]
+        do
+            x=${old_PATH%%:*}
+            case $PATH: in
+                (*:"$x":*)  ;;
+                (*) PATH=$PATH:$x  ;;
+            esac
+            old_PATH=${old_PATH#*:}
+        done
+        PATH=${PATH#:}
+        unset old_PATH x
+    fi
+}
+
 makeZshrc(){
     echo "\033[0;34mMaking ${zshrc} file...\033[0m"
     mv "${zshrc}" ~/.zshrc.orig
     touch "${zshrc}"
-    echo export ZSH=${ZSH} >> ${zshrc}
-    
-    #TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
+    echo "## OS specific settings ############################" >> ${zshrc}
+    # TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
     if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
-        #TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
+        # TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
         echo plugins=\(git git-extras brew sudo tmux colored-man extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent debian\) >> ${zshrc} 
+        echo "export HOMEBREW_CASK_OPTS'--appdir=~/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         #echo export TERM="xterm-256color" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases safe-paste fasd aws osx bttery brew-cask xcode osx-aliases\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases ant fasd aws osx brew-cask xcode osx-aliases\) >> ${zshrc} 
+        echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         #echo source $(which zsh coreutils)/libexec/gnubin >> 
+        # TODO: make this automatic
+        echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
+dedupepath;
+
 cat <<EOF >> "${zshrc}"
+
+## ZSH settings ####################################
+export ZSH=$ZSH 
 ZSH_THEME="wm"
 
 #CASE_SENSITIVE="true"
@@ -50,7 +77,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 source $ZSH/oh-my-zsh.sh
 
-# EXPORTS
+## EXPORTS ############################################
 export PATH="$(brew --prefix)/bin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
@@ -89,15 +116,18 @@ export MANPAGER='less -X';
 # Always enable colored \`grep\` output.
 export GREP_OPTIONS='--color=auto';
 
+# Display correct tmux window titles
+#export DISABLE_AUTO_TITLE=true
+
 # Always start tmux session at login
-if tmux has-session
-then
-    tmux attach-session 
-else 
-    tmux
-fi
+#if tmux has-session
+#then
+    #tmux attach-session 
+#else 
+    #tmux
+#fi
 #TODO: idk why i need to do this to make colors appear in dirs...
-src 
+#src 
 EOF
 }
 
