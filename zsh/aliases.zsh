@@ -16,8 +16,7 @@ alias jb="jobs"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+alias sudo='nocorrect sudo'
 
 # Get week number
 alias week='date +%V'
