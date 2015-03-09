@@ -39,7 +39,7 @@ alias htop='sudo htop'
 alias reload="exec $SHELL -l"
 
 # Start the eclim deamon
-alias eclimd='$ECLIPSE_HOME/eclimd &'
+alias start_eclimd='$ECLIPSE_HOME/eclimd &'
 
 # Stop the eclim deamon
-alias seclimd='$ECLIPSE_HOME/eclim -command shutdown'
+alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'

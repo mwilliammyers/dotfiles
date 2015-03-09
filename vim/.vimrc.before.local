@@ -16,6 +16,8 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 
+nnoremap rmf :call delete(expand('%')) \| bdelete!<CR>
+
 " spf13 options {
 
     " Prevent automatically changing to open file directory
