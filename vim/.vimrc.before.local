@@ -1,4 +1,4 @@
-" vim: set sw=4 ts=3 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
 
@@ -34,9 +34,14 @@ let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming',
 "}
 
 "autocorrect etc.{
-    "make eclim play nicely with YCM
-    let g:EclimCompletionMethod = 'omnifunc'
+    
+    " Disable  omni complete
+    let g:spf13_no_omni_complete = 1
 
+    "make eclim play nicely with YCM
+    "let g:EclimCompletionMethod = 'omnifunc'
+    let g:EclimLogLevel='off'
+    
     " This makes the completion popup strictly passive.
     " Keypresses acts normally. <ESC> takes you of insert mode, words don't
     " automatically complete, pressing <CR> inserts a newline, etc. Iff the
@@ -59,11 +64,9 @@ let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming',
     " emulation with snippets
     "   let g:spf13_no_neosnippet_expand = 1
     
-    " Disable  omni complete
-    "   let g:spf13_no_omni_complete = 1
 "}
 
-" functionality {
+" {
     nnoremap rmf :call delete(expand('%')) \| bdelete!<CR>
     
     " Prevent automatically changing to open file directory
