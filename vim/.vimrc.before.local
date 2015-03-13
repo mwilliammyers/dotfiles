@@ -2,6 +2,9 @@
 
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
 
+" vim files directory
+   let g:spf13_consolidated_directory = '/fslhome/wmyers7/.vim'
+
 " general {
     " Prevent automatically changing to open file directory
        "let g:spf13_no_autochdir = 1
@@ -21,10 +24,6 @@ let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming',
 
     " Disable whitespace stripping
     "   let g:spf13_keep_trailing_whitespace = 1
-
-    " vim files directory
-    "   let g:spf13_consolidated_directory = <full path to desired directory>
-       let g:spf13_consolidated_directory = '/Users/wm/.vim/'
 
     " Don't create default mappings for multicursors
     " See :help multiple-cursors-mappings

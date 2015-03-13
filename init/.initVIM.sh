@@ -18,25 +18,44 @@ ln -sfv 2> /dev/null "${vim_src}"/.* ~
 #install other handy VIM plugins
 brew install ctags
 
-# TODO: handle if YouCompleteMe doesn't exist or is already installed
-echo -e "${color}Installing YouCompleteMe...${NC}"
-cd "${vim_dst}"/bundle/YouCompleteMe
-./install.sh --clang-completer #--omnisharp-completer
+function installYCM() {
+    # TODO: handle if YouCompleteMe doesn't exist or is already installed
+    echo -e "${color}Installing YouCompleteMe...${NC}"
+    cd "${vim_dst}"/bundle/YouCompleteMe
+    ./install.sh --clang-completer #--omnisharp-completer
+}
 
-cd "${init}"
-#TODO: handle if eclim is already installed...
-echo -e "${color}Downloading latest version of Eclim...${NC}"
-curl \
-    --location --get --progress-bar \
-    "http://sourceforge.net/projects/eclim/files/latest/download\?source\=files" \
-    --output eclim-latest.jar
+function installEclim() {
+    cd "${init}"
+    #TODO: handle if eclim is already installed...
+    
+    echo -e "${color}Downloading latest version of Eclim...${NC}"
+    curl \
+        --location --get --progress-bar \
+        "http://sourceforge.net/projects/eclim/files/latest/download\?source\=files" \
+        --output eclim-latest.jar
 
-echo -e "${color}Intalling Eclim...${NC}"
-java \
-  -Dvim.files="$HOME"/.vim \
-  -Declipse.home="$ECLIPSE_HOME" \
-  -jar eclim-latest.jar install
+    echo -e "${color}Intalling Eclim...${NC}"
+    java \
+      -Dvim.files="$HOME"/.vim \
+      -Declipse.home="$ECLIPSE_HOME" \
+      -jar eclim-latest.jar install
 
-rm -rvf "${init}"/eclim-latest.jar
+    rm -rvf "${init}"/eclim-latest.jar
+}
+
+# TODO: option to install powerline fonts...
+
+# TODO: add -q option to silence this and NOT install by default...
+read -t 20 -p "Install eclim? (y/n) " -n 1
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    isntallEclim;
+fi
+
+# TODO: add -q option to silence this and NOT install by default...
+read -t 20 -p "Install the YouCompleteMe completion engine binary? (y/n) " -n 1
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    isntallYCM;
+fi
 
 exit 0;
