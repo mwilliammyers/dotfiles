@@ -22,7 +22,7 @@ tmux_options: -f ~/.tmux.conf
 startup_window: editor
 
 windows:
-  - editor: vim -O src/server/database/Database.java src/server/database/BatchDAO.java
+  - editor: vim -c 'SessionOpen RecordIndexer' 
   - debug:
       layout: main-vertical
       panes:

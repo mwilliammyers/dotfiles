@@ -128,6 +128,8 @@ function brewMac() {
   brew install tag
   brew install awscli
   brew install htop-osx
+  brew install watch
+
   # install server tools 
   # TODO: how to determine if we should install this 
   # automatically?

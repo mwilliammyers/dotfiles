@@ -3,6 +3,9 @@ set -e
 cd ${0%/*}
 cd .. && source dotfiles.conf
 
+color='\033[0;34m'
+NC='\033[0m' # No Color
+
 if [ ! -n "$ZSH" ]; then
   ZSH="${zsh_dst}"
 fi
@@ -27,8 +30,8 @@ dedupepath(){
 }
 
 makeZshrc(){
-    echo "\033[0;34mMaking ${zshrc} file...\033[0m"
-    mv "${zshrc}" ~/.zshrc.orig
+    echo "${color}Making ${zshrc} file...${NC}"
+    [ -e "${zshrc}" ] &&  mv "${zshrc}" ~/.zshrc.orig
     touch "${zshrc}"
     echo "## OS specific settings ############################" >> ${zshrc}
     # TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
@@ -132,7 +135,7 @@ EOF
 }
 
 linkZsh() {
-    echo "\033[0;34mLinking custom zsh  overrides...\033[0m"
+    echo "${color}Linking custom zsh overrides...${NC}"
     rm -rf $ZSH/custom
     mkdir -p $ZSH/custom 
     ln -sv "${zsh_src}"/* $ZSH/custom
@@ -140,7 +143,7 @@ linkZsh() {
 }
 
 if [ -d "$ZSH" ]; then
-  echo "\033[0;33mYou already have Oh My Zsh installed.\033[0m You'll need to remove $ZSH if you want to install"
+  echo "\033[0;33mYou already have Oh My Zsh installed.${NC} You'll need to remove $ZSH if you want to install"
   makeZshrc
   linkZsh
   exit
@@ -149,7 +152,7 @@ fi
 #TODO: check for zsh and install it using the appropriate method for current OS...
 # brew install zsh
 
-echo "\033[0;34mCloning Oh My Zsh...\033[0m"
+echo "${color}Cloning Oh My Zsh...${NC}"
 hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
   echo "git not installed"
   exit

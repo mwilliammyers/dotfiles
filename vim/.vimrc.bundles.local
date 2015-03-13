@@ -1,7 +1,14 @@
 Bundle "myusuf3/numbers.vim"
-Bundle "SearchComplete" 
+Bundle "SearchComplete"
+Bundle "vim-easyclip"
+Bundle "BufOnly.vim"
 
-UnBundle 'vim-cucumber'
+UnBundle 'groenewege/vim-less'
 UnBundle 'tpope/vim-haml'
 UnBundle 'wting/rust.vim'
 UnBundle 'briancollins/vim-jst'
+UnBundle 'quentindecock/vim-cucumber-align-pipes'
+UnBundle 'Puppet-Syntax-Highlighting'
+UnBundle 'tpope/vim-cucumber'
+UnBundle 'kchmck/vim-coffee-script'
+UnBundle 'kchmck/vim-coffee-script'
