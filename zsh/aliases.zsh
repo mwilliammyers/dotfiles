@@ -28,8 +28,6 @@ alias which='which -a'
 
 alias speed='speedtest_cli'
 
-alias brewup='brew update && brew upgrade && brew doctor'
-
 # sudo visudo & add:
 # username ALL=NOPASSWD: /usr/local/bin/htop
 alias htop='sudo htop'

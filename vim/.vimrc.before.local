@@ -1,74 +1,8 @@
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
+" vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
 
-" appearance {
-    let g:solarized_termcolors=16
-    let g:solarized_visibility="low"
-    let g:solarized_contrast="normal"
-
-    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
-    " Indent guides will attempt to set your colors smartly. If you
-    " want to control them yourself, do it here.
-       let g:indent_guides_auto_colors = 0
-       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=234
-       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
-
-    " Enable powerline symbols
-       let g:airline_powerline_fonts = 1
-       
-    " Leave the default font and size in GVim
-    " To set your own font, do it from ~/.vimrc.local
-    "   let g:spf13_no_big_font = 1
-
-    " Don't turn conceallevel or concealcursor
-    "   let g:spf13_no_conceal = 1
-
-    " Clear search highlighting
-       let g:spf13_clear_search_highlight = 1
-
-       let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
-
-    " Disable views
-    "   let g:spf13_no_views = 1
-"}
-
-"autocorrect etc.{
-    
-    " Disable  omni complete
-    let g:spf13_no_omni_complete = 1
-
-    "make eclim play nicely with YCM
-    "let g:EclimCompletionMethod = 'omnifunc'
-    let g:EclimLogLevel='off'
-    
-    " This makes the completion popup strictly passive.
-    " Keypresses acts normally. <ESC> takes you of insert mode, words don't
-    " automatically complete, pressing <CR> inserts a newline, etc. Iff the
-    " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
-    " expands it and jumps between fields.
-       "let g:spf13_noninvasive_completion = 1
-
-    "Syntastic settings
-    "set statusline+=%#warningmsg#
-    "set statusline+=%{SyntasticStatuslineFlag()}
-    "set statusline+=%*
-
-    "let g:syntastic_always_populate_loc_list = 1
-    "let g:syntastic_auto_loc_list = 1
-    "let g:syntastic_check_on_open = 1
-    "let g:syntastic_check_on_wq = 1
-    
-    " Disable neosnippet expansion
-    " This maps over <C-k> and does some Supertab
-    " emulation with snippets
-    "   let g:spf13_no_neosnippet_expand = 1
-    
-"}
-
-" {
-    nnoremap rmf :call delete(expand('%')) \| bdelete!<CR>
-    
+" general {
     " Prevent automatically changing to open file directory
        "let g:spf13_no_autochdir = 1
 
@@ -101,4 +35,81 @@ let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming',
     "   let g:multi_cursor_quit_key='<Esc>'
     " Require a special keypress to enter multiple cursors mode
     "   let g:multi_cursor_start_key='+'
+" }
+
+" appearance {
+    let g:solarized_termcolors=16
+    let g:solarized_visibility="low"
+    let g:solarized_contrast="normal"
+
+    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
+    " Indent guides will attempt to set your colors smartly. If you
+    " want to control them yourself, do it here.
+       let g:indent_guides_auto_colors = 0
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=234
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#404040 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#404040 ctermbg=234
+    
+    " Enable powerline symbols
+       let g:airline_powerline_fonts = 1
+       
+    " Leave the default font and size in GVim
+    " To set your own font, do it from ~/.vimrc.local
+    "   let g:spf13_no_big_font = 1
+
+    " Don't turn conceallevel or concealcursor
+    "   let g:spf13_no_conceal = 1
+
+    " Clear search highlighting
+       let g:spf13_clear_search_highlight = 1
+
+       let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+
+    " Disable views
+    "   let g:spf13_no_views = 1
+"}
+
+" utilities/autocorrect {
+    " Disable  omni complete
+    "let g:spf13_no_omni_complete = 1
+
+    "make eclim play nicely with YCM
+    let g:EclimCompletionMethod = 'omnifunc'
+    "let g:EclimLogLevel = 'off'
+    
+    " This makes the completion popup strictly passive.
+    " Keypresses acts normally. <ESC> takes you of insert mode, words don't
+    " automatically complete, pressing <CR> inserts a newline, etc. Iff the
+    " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
+    " expands it and jumps between fields.
+       "let g:spf13_noninvasive_completion = 1
+
+    "Syntastic settings
+    "set statusline+=%#warningmsg#
+    "set statusline+=%{SyntasticStatuslineFlag()}
+    "set statusline+=%*
+
+    "let g:syntastic_always_populate_loc_list = 1
+    "let g:syntastic_auto_loc_list = 1
+    "let g:syntastic_check_on_open = 1
+    "let g:syntastic_check_on_wq = 1
+    
+    " Disable neosnippet expansion
+    " This maps over <C-k> and does some Supertab
+    " emulation with snippets
+    "   let g:spf13_no_neosnippet_expand = 1
+
+    " Easy-clip settings
+      let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+      let g:EasyClipShareYanks = 1 " share yank history across vim instances
+      let g:EasyClipShareYanksDirectory = ".vim/easyclip"
+      let g:EasyClipAutoFormat = 1
+      let g:EasyClipUseSubstituteDefaults = 1
+"}
+
+" key re-maps {
+   "insert newline without being in insert mode
+    nmap '<CR> :a<CR><CR>.<CR>
+    nnoremap rmf :call delete(expand('%')) \| bdelete!<CR>
 " }
