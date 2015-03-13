@@ -77,8 +77,21 @@ let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming',
     "make eclim play nicely with YCM
     let g:EclimCompletionMethod = 'omnifunc'
     "let g:EclimLogLevel = 'off'
-    
-    " This makes the completion popup strictly passive.
+
+    "expand UltiSnips snippets on return 
+    "(while still keeping spf-13 default:  <c-j> )
+    let g:ulti_expand_or_jump_res = 0
+    function ExpandSnippetOrCarriageReturn()
+        let snippet = UltiSnips#ExpandSnippetOrJump()
+        if g:ulti_expand_or_jump_res > 0
+            return snippet
+        else
+            return "\<CR>"
+        endif
+    endfunction
+    inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+
+    "This makes the completion popup strictly passive.
     " Keypresses acts normally. <ESC> takes you of insert mode, words don't
     " automatically complete, pressing <CR> inserts a newline, etc. Iff the
     " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
