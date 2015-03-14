@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 
 #TODO update this when this gets merged into master also make it multi-line...
 echo -e "${color}Installing spf-vim framework...${NC}"
-#REPO_BRANCH="cleanup-bootstrap" REPO_URI='https://github.com/jrobeson/spf13-vim.git' APP_PATH=${vim_spf13} sh <(curl https://raw.githubusercontent.com/jrobeson/spf13-vim/cleanup-bootstrap/bootstrap.sh -L)
+REPO_BRANCH="cleanup-bootstrap" REPO_URI='https://github.com/jrobeson/spf13-vim.git' APP_PATH=${vim_spf13} sh <(curl https://raw.githubusercontent.com/jrobeson/spf13-vim/cleanup-bootstrap/bootstrap.sh -L)
 
 echo -e "${color}Linking vim dotfiles from ${vim_src} to ${vim_dst}...${NC}"
 ln -sfv 2> /dev/null "${vim_src}"/.* ~
