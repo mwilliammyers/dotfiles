@@ -52,7 +52,6 @@ makeZshrc(){
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
-dedupepath;
 
 cat <<EOF >> "${zshrc}"
 
@@ -84,7 +83,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 source $ZSH/oh-my-zsh.sh
 
 ## EXPORTS ############################################
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
@@ -111,7 +110,7 @@ export HISTCONTROL='ignoreboth';
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
-export TERM="xterm-255color"
+export TERM="xterm-256color"
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
@@ -122,19 +121,9 @@ export MANPAGER='less -X';
 # Always enable colored \`grep\` output.
 export GREP_OPTIONS='--color=auto';
 
-# Display correct tmux window titles
-#export DISABLE_AUTO_TITLE=true
-
-# Always start tmux session at login
-#if tmux has-session
-#then
-    #tmux attach-session 
-#else 
-    #tmux
-#fi
-#TODO: idk why i need to do this to make colors appear in dirs...
-#src 
 EOF
+
+dedupepath;
 }
 
 linkZsh() {

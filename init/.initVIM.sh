@@ -30,7 +30,7 @@ function installEclim() {
     cd "${init}"
     #TODO: handle if eclim is already installed...
     # TODO: set $ECLIPSE_HOME here? 
-    echo -e "${color}Downloading latest version of Eclim...${NC}"
+    echo -e "${color}\nDownloading latest version of Eclim...${NC}"
     curl \
         --location --get --progress-bar \
         "http://sourceforge.net/projects/eclim/files/latest/download\?source\=files" \
