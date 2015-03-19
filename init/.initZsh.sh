@@ -42,12 +42,10 @@ makeZshrc(){
         echo plugins=\(git git-extras brew sudo tmux colored-man extract zsh_reload common-aliases fasd debian\) >> ${zshrc}
     # TODO: test for homebrew... 
         # echo "export HOMEBREW_CASK_OPTS' --appdir=~/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
-        #echo export TERM="xterm-256color" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
         echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases ant fasd aws osx-aliases osx brew-cask xcode\) >> ${zshrc} 
         echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
-        #echo source $(which zsh coreutils)/libexec/gnubin >> 
         # TODO: make this automatic
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
@@ -111,7 +109,7 @@ export HISTCONTROL='ignoreboth';
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
-export TERM="xterm-255color"
+export TERM="xterm-256color"
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
@@ -124,16 +122,6 @@ export GREP_OPTIONS='--color=auto';
 
 # Display correct tmux window titles
 #export DISABLE_AUTO_TITLE=true
-
-# Always start tmux session at login
-#if tmux has-session
-#then
-    #tmux attach-session 
-#else 
-    #tmux
-#fi
-#TODO: idk why i need to do this to make colors appear in dirs...
-#src 
 EOF
 }
 

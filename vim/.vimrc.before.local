@@ -1,7 +1,7 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
-let g:spf_consolidated_directory = $HOME . '/.vim/'
+let g:spf_consolidated_directory = '/Users/wm/.vim/'
 
 " general {
     " Prevent automatically changing to open file directory
@@ -33,6 +33,21 @@ let g:spf_consolidated_directory = $HOME . '/.vim/'
     " Require a special keypress to enter multiple cursors mode
     "   let g:multi_cursor_start_key='+'
 " }
+
+" plugins {
+
+    " ctrlp {
+        let g:ctrlp_use_caching = 1
+        let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+        let g:ctrlp_clear_cache_on_exit = 0
+
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll|o|bak|backup|BACKUP|pdf|jpg|png|jpeg|gif|mpg|mpeg|m4v|mp3|mp4)$',
+            \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'}
+
+    " }
+"}
 
 " appearance {
     let g:solarized_termcolors=16
@@ -73,7 +88,7 @@ let g:spf_consolidated_directory = $HOME . '/.vim/'
 
     "make eclim play nicely with YCM
     let g:EclimCompletionMethod = 'omnifunc'
-    "let g:EclimLogLevel = 'off'
+    let g:EclimLogLevel = 'off'
 
     "expand UltiSnips snippets on return 
     "(while still keeping spf-13 default:  <c-j> )
@@ -120,6 +135,22 @@ let g:spf_consolidated_directory = $HOME . '/.vim/'
 
 " key re-maps {
    "insert newline without being in insert mode
+   let mapleader=g:spf13_leader
+   "insert carraiage return from normal mode
     nmap '<CR> :a<CR><CR>.<CR>
-    nnoremap rmf :call delete(expand('%')) \| bdelete!<CR>
+
+   "delete buffer and delete file 
+    nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
+
+    " Eclim re-maps {
+        map <leader>jf   : JavaFormat<CR>
+        nmap <leader>jfa : %JavaFormat<CR>
+        map <leader>jg   : JavaGet<CR>
+        map <leader>jgs  : JavaGetSet<CR>
+        map <leader>jco  : JavaConstructor<CR>
+        map <leader>jc   : JavaCorrect<CR>
+        map <leader>jdc  : JavaDocComment<CR>
+    " }
+
 " }
+
