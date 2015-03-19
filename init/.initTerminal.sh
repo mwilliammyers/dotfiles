@@ -13,8 +13,8 @@ if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
   ./set_dark.sh
   rm -rf ~/Downloads/gnome-terminal-colors-solarized/
 elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-  ln -sfv "${terminal_src}"/com.* "${terminal_dst}"
   brew cask install iterm2
+  ln -sfv "${terminal_src}"/com.* "${terminal_dst}"
   # Hide the dock icon for iTerm2
   # TODO: find a better way so that the menu bar doesnt dissappear
   # defaults write /Applications/iTerm.app/Contents:w/Info.plist LSUIElement 1

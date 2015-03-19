@@ -12,10 +12,10 @@ cd .. && source dotfiles.conf
 
 # TODO: does cask need root privledges?
 # Ask for the administrator password upfront
-sudo -v
+#sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # check if cask is installed, if not install it
 if hash brew-cask 2>/dev/null; then
@@ -24,8 +24,6 @@ if hash brew-cask 2>/dev/null; then
     brew upgrade brew-cask;
     brew cask doctor;
   else
-    # brew tap phinze/homebrew-cask
-    # brew install brew-cask
     brew install caskroom/cask/brew-cask
 fi
 

@@ -50,7 +50,6 @@ makeZshrc(){
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
-dedupepath;
 
 cat <<EOF >> "${zshrc}"
 
@@ -82,7 +81,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 source $ZSH/oh-my-zsh.sh
 
 ## EXPORTS ############################################
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
@@ -123,6 +122,8 @@ export GREP_OPTIONS='--color=auto';
 # Display correct tmux window titles
 #export DISABLE_AUTO_TITLE=true
 EOF
+
+dedupepath;
 }
 
 linkZsh() {
