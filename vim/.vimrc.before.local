@@ -17,6 +17,8 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
     " Disable wrap relative motion for start/end line motions
     "   let g:spf13_no_wrapRelMotion = 1
 
+    let g:spf13_clear_search_highlight = 1
+
     " Disable fast tab navigation
     "   let g:spf13_no_fastTabs = 1
 
@@ -117,7 +119,7 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
     "let g:syntastic_always_populate_loc_list = 1
     "let g:syntastic_auto_loc_list = 1
     "let g:syntastic_check_on_open = 1
-    "let g:syntastic_check_on_wq = 1
+    let g:syntastic_check_on_wq = 1
     
     " Disable neosnippet expansion
     " This maps over <C-k> and does some Supertab
