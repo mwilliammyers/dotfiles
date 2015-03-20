@@ -1,7 +1,9 @@
-set -e 
+#!/usr/bin/env bash
 
-cd ${0%/*}
-cd .. && source dotfiles.conf
+#set -e 
+cd "${0%/*}"
+cd .. && source dotfiles.conf;
+cd "${init}"
 
 color='\033[0;34m'
 NC='\033[0m' # No Color
@@ -37,20 +39,17 @@ makeZshrc(){
     # TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
     if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
         # TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
-        echo plugins=\(git git-extras brew sudo tmux colored-man extract zsh_reload copyfile copydir common-aliases safe-paste fasd ssh-agent debian\) >> ${zshrc} 
-        echo "export HOMEBREW_CASK_OPTS'--appdir=~/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
-        #echo export TERM="xterm-256color" >> ${zshrc}
+        echo plugins=\(git git-extras brew sudo tmux colored-man extract zsh_reload common-aliases fasd debian\) >> ${zshrc}
+    # TODO: test for homebrew... 
+        # echo "export HOMEBREW_CASK_OPTS' --appdir=~/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-        #FIXME: osx-aliases doesnt work!
-        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases ant fasd aws osx brew-cask xcode\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases ant fasd aws osx-aliases osx brew-cask xcode\) >> ${zshrc} 
         echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
-        #echo source $(which zsh coreutils)/libexec/gnubin >> 
         # TODO: make this automatic
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
-dedupepath;
 
 cat <<EOF >> "${zshrc}"
 
@@ -82,7 +81,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 source $ZSH/oh-my-zsh.sh
 
 ## EXPORTS ############################################
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
@@ -109,7 +108,7 @@ export HISTCONTROL='ignoreboth';
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
-#export TERM="xterm-255color"
+export TERM="xterm-256color"
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
@@ -122,31 +121,22 @@ export GREP_OPTIONS='--color=auto';
 
 # Display correct tmux window titles
 #export DISABLE_AUTO_TITLE=true
-
-# Always start tmux session at login
-#if tmux has-session
-#then
-    #tmux attach-session 
-#else 
-    #tmux
-#fi
-#TODO: idk why i need to do this to make colors appear in dirs...
-#src 
 EOF
+
+dedupepath;
 }
+
 linkZsh() {
     echo "${color}Linking custom zsh overrides...${NC}"
-    rm -rf $ZSH/custom
-    #ln -svv "${zsh_src}"/* $ZSH/custom
     mkdir -p $ZSH/custom/themes
-    #mkdir -p $ZSH/custom/plugins
-    ln -svv "${zsh_src}"/*.zsh $ZSH/custom
+    mkdir -p $ZSH/custom/plugins
+    ln -sfv "${zsh_src}"/*.zsh $ZSH/custom
     #FIXME: remove this when osx-aliases not being sourced by zsh gets fixed...
     if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
         rm -rf $ZSH/custom/osx-aliases.zsh 
     fi
     ln -sfv "${zsh_src}"/themes/* $ZSH/custom/themes
-    #ln -sfv "${zsh_src}"/plugins/* $ZSH/custom/plugins
+    ln -sfv "${zsh_src}"/plugins/* $ZSH/custom/plugins
 }
 
 if [ -d "$ZSH" ]; then
@@ -165,6 +155,7 @@ hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.gi
   exit
 }
 
+# TODO: is this the best way to do this:
 if sudo -v
 then
     echo "$(which zsh)" | sudo tee --append /etc/shells
@@ -184,7 +175,7 @@ linkZsh
 #TODO: check if brew is installed first
 brew install fasd
 
-env zsh 
+#env zsh 
 . ~/.zshrc 
 
 exit 0;

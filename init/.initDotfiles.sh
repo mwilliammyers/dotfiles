@@ -8,6 +8,7 @@ linkDotFiles() {
   SAVEIFS=$IF
   IFS=$(echo -en "\n\b")
 
+  # TODO: test if programs exist before linking eg. eclim
   printf "\nCreating symbolic links for: dotfiles...\n"
   ln -sfv  2> /dev/null "${dotfiles}"/.* ~
   IFS=$SAVEIFS

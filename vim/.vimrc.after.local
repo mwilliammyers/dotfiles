@@ -1,1 +1,1 @@
-    let g:EclimLogLevel = 'off'
+nmap <leader>jfa :%JavaFormat<CR>

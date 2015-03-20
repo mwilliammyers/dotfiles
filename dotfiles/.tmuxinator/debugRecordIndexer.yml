@@ -1,13 +1,13 @@
-# ~/.tmuxinator/RecordIndexer.yml
+# ~/.tmuxinator/debugRecordIndexer.yml
 
-name: RecordIndexer
+name: debugRecordIndexer
 root: /Users/wm/Documents/Developer/RecordIndexer
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: $ECLIPSE_HOME/eclimd &
+#pre: $ECLIPSE_HOME/eclimd &
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -19,12 +19,13 @@ tmux_options: -f ~/.tmux.conf
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: editor
+startup_window: debug
 
 windows:
-  - RecordIndexer[editor]: vim -c 'SessionOpen RecordIndexer'
+  - editor: vim -c 'SessionOpen debugRecordIndexer' 
   - RecordIndexer[debug]:
       layout: main-vertical
       panes:
-        -
-        - 
+        - ant clean
+        - cat logs/server.log.0
+        #- sqlite3 database/indexer_server.sqlite
