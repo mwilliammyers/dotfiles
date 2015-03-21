@@ -1,6 +1,7 @@
 Bundle "myusuf3/numbers.vim"
 Bundle "SearchComplete"
-Bundle "vim-easyclip"
+Bundle "svermeulen/vim-easyclip"
+"Bundle "EasyClip"
 
 UnBundle 'groenewege/vim-less'
 UnBundle 'tpope/vim-haml'
