@@ -175,6 +175,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
         map <leader>jco  : JavaConstructor<CR>
         map <leader>jc   : JavaCorrect<CR>
         map <leader>jdc  : JavaDocComment<CR>
+        map <leader>jim  : JavaImport<CR>
     " }
 
 " }

@@ -10,12 +10,11 @@ cd .. && source dotfiles.conf
     #export "HOMEBREW_CASK_OPTS'--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" 
 #fi
 
-# TODO: does cask need root privledges?
 # Ask for the administrator password upfront
-#sudo -v
+sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # check if cask is installed, if not install it
 if hash brew-cask 2>/dev/null; then
@@ -38,18 +37,19 @@ brew cask install java
 brew cask install eclipse-java
 
 if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-  brew cask install slate
-  # brew cask install totalterminal
-  brew cask install iterm2
-  brew cask install bartender
-  brew cask install transmission
-  brew cask install handbrake
-  brew cask install handbrakecli
-  brew cask install torbrowser
-  # brew cask install vlc
-  # brew cask install the-unarchiver
-  # brew cask install clipmenu
-  # brew cask install macvim
+    brew cask install flash
+    brew cask install slate
+    # brew cask install totalterminal
+    brew cask install iterm2
+    brew cask install bartender
+    brew cask install transmission
+    brew cask install handbrake
+    brew cask install handbrakecli
+    brew cask install torbrowser
+    # brew cask install vlc
+    # brew cask install the-unarchiver
+    # brew cask install clipmenu
+    # brew cask install macvim
   # brew cask install virtualbox
 fi
 
