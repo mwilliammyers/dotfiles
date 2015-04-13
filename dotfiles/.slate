@@ -49,7 +49,7 @@ config windowHintsIgnoreHiddenWindows false
 bind esc:ctrl grid padding:5 0:6,2 1:16,10
 
 # Better application switcher
-bind tab:cmd switch
+#bind tab:cmd switch
 
 # Reload Slate configuration file
 bind s:${hyper} relaunch

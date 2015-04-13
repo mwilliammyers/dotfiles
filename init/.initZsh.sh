@@ -5,9 +5,6 @@ cd "${0%/*}"
 cd .. && source dotfiles.conf;
 cd "${init}"
 
-color='\033[0;34m'
-NC='\033[0m' # No Color
-
 if [ ! -n "$ZSH" ]; then
   ZSH="${zsh_dst}"
 fi
@@ -32,7 +29,7 @@ dedupepath(){
 }
 
 makeZshrc(){
-    echo "${color}Making ${zshrc} file...${NC}"
+    echo "${color}Making ${zshrc} file...${reset}"
     [ -e "${zshrc}" ] &&  mv "${zshrc}" ~/.zshrc.orig
     touch "${zshrc}"
     echo "## OS specific settings ############################" >> ${zshrc}
@@ -110,9 +107,6 @@ export LC_ALL='en_US.UTF-8';
 
 export TERM="xterm-256color"
 
-# Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}";
-
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
@@ -127,7 +121,7 @@ dedupepath;
 }
 
 linkZsh() {
-    echo "${color}Linking custom zsh overrides...${NC}"
+    echo "${color}Linking custom zsh overrides...${reset}"
     mkdir -p $ZSH/custom/themes
     mkdir -p $ZSH/custom/plugins
     ln -sfv "${zsh_src}"/*.zsh $ZSH/custom
@@ -140,7 +134,7 @@ linkZsh() {
 }
 
 if [ -d "$ZSH" ]; then
-  echo "\033[0;33mYou already have Oh My Zsh installed.${NC} You'll need to remove $ZSH if you want to install"
+  echo "${yellow}You already have Oh My Zsh installed.${reset} You'll need to remove $ZSH if you want to install..."
   makeZshrc
   linkZsh
   exit
@@ -149,7 +143,7 @@ fi
 #TODO: check for zsh and install it using the appropriate method for current OS...
 # brew install zsh
 
-echo "${color}Cloning Oh My Zsh...${NC}"
+echo "${color}Cloning Oh My Zsh...${reset}"
 hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
   echo "git not installed"
   exit

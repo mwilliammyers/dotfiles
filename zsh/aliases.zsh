@@ -40,3 +40,5 @@ alias start_eclimd='$ECLIPSE_HOME/eclimd &'
 
 # Stop the eclim deamon
 alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'
+
+alias bcl='rm -rf $(brew --cache)/*'

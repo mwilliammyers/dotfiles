@@ -1,7 +1,7 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
 let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'javascript', 'html', 'misc',]
-let g:spf_consolidated_directory = '/Users/wm/.vim/'
+let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
 " general {
     " Prevent automatically changing to open file directory
@@ -38,58 +38,8 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
 
 " plugins {
 
-    " ctrlp {
-        let g:ctrlp_use_caching = 1
-        let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-        let g:ctrlp_clear_cache_on_exit = 0
-
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll|o|bak|backup|BACKUP|pdf|jpg|png|jpeg|gif|mpg|mpeg|m4v|mp3|mp4)$',
-            \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'}
-    " }
-"}
-
-" appearance {
-    let g:solarized_termcolors=16
-    let g:solarized_visibility="low"
-    let g:solarized_contrast="normal"
-
-    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
-    " Indent guides will attempt to set your colors smartly. If you
-    " want to control them yourself, do it here.
-       let g:indent_guides_auto_colors = 0
-       "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=234
-       "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
-       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#404040 ctermbg=234
-       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#404040 ctermbg=234
-    
-    " Enable powerline symbols
-       let g:airline_powerline_fonts = 1
-       
-    " Leave the default font and size in GVim
-    " To set your own font, do it from ~/.vimrc.local
-    "   let g:spf13_no_big_font = 1
-
-    " Don't turn conceallevel or concealcursor
-    "   let g:spf13_no_conceal = 1
-
-    " Clear search highlighting
-       let g:spf13_clear_search_highlight = 1
-
-       let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
-
-    " Disable views
-    "   let g:spf13_no_views = 1
-"}
-
-" utilities/autocorrect {
     " Disable  omni complete
     "let g:spf13_no_omni_complete = 1
-
-    "make eclim play nicely with YCM
-    let g:EclimCompletionMethod = 'omnifunc'
-    let g:EclimLogLevel = 'off'
 
     "expand UltiSnips snippets on return 
     "(while still keeping spf-13 default:  <c-j> )
@@ -126,12 +76,76 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
     " emulation with snippets
     "   let g:spf13_no_neosnippet_expand = 1
 
-    " Easy-clip settings
-      let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
-      let g:EasyClipShareYanks = 1 " share yank history across vim instances
-      let g:EasyClipShareYanksDirectory = ".vim/easyclip"
-      let g:EasyClipAutoFormat = 1
-      let g:EasyClipUseSubstituteDefaults = 1
+    " Easy-clip settings 
+    
+    let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+    let g:EasyClipShareYanks = 1 " share yank history across vim instances
+    let g:EasyClipShareYanksDirectory = $HOME . '/.vim/'
+    let g:EasyClipAutoFormat = 1
+    let g:EasyClipUseSubstituteDefaults = 1
+
+    let g:EasyClipUsePasteToggleDefaults = 0
+    nmap <c-f> <plug>EasyClipSwapPasteForward
+    nmap <c-d> <plug>EasyClipSwapPasteBackwards
+
+    "see https://github.com/svermeulen/vim-easyclip#clipboard-setting
+    set clipboard=unnamed
+
+    " re-map defaults...
+    "make mark because easy-clip uses m
+    nnoremap mk m 
+    " Delete and yank (m) from the cursor to the end of the line
+    nnoremap M m$
+
+    " ctrl-p
+    let g:ctrlp_use_caching = 1
+    let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+    let g:ctrlp_clear_cache_on_exit = 0
+
+    "submit a pull request to include most of these by default..."
+    "if exists("g:ctrl_user_command")
+        "unlet g:ctrlp_user_command
+    "endif
+    "set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.jpeg,*.png,*.jpg,*.gif,*.mp4,*.m4v,*mp3,*/vendor/*,*/vendor/*,*/\.git/*
+    "let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.git|\.hg|\.svn|\.settings|\.sass-cache|cache|\.bundles|.bundle|\.rsync_cache|vendor/([^\/]+\/)*vendor)$', 'file': '\v\.(exe|so|dll|o|pdf|jpg|png|jpeg|gif|mpeg|m4v|mp3|mp4)$' }
+
+    "make eclim play nicely with YCM
+    let g:EclimCompletionMethod = 'omnifunc'
+    "let g:EclimLogLevel = 0
+    let g:EclimLoggingDisabled = 1
+"}
+
+" appearance {
+    let g:solarized_termcolors=16
+    let g:solarized_visibility="low"
+    let g:solarized_contrast="normal"
+
+    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
+    " Indent guides will attempt to set your colors smartly. If you
+    " want to control them yourself, do it here.
+       let g:indent_guides_auto_colors = 0
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=234
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#404040 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#404040 ctermbg=234
+    
+    " Enable powerline symbols
+       let g:airline_powerline_fonts = 1
+       
+    " Leave the default font and size in GVim
+    " To set your own font, do it from ~/.vimrc.local
+    "   let g:spf13_no_big_font = 1
+
+    " Don't turn conceallevel or concealcursor
+    "   let g:spf13_no_conceal = 1
+
+    " Clear search highlighting
+       let g:spf13_clear_search_highlight = 1
+
+       let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+
+    " Disable views
+    "   let g:spf13_no_views = 1
 "}
 
 " key re-maps {
@@ -139,19 +153,6 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
    let mapleader=g:spf13_leader
    "insert carraiage return from normal mode
     nmap '<CR> :a<CR><CR>.<CR>
-
-" Eclim re-maps {
-        map <leader>jf   : JavaFormat<CR>
-        nmap <leader>jfa : %JavaFormat<CR>
-        map <leader>jg   : JavaGet<CR>
-        map <leader>jgs  : JavaGetSet<CR>
-        map <leader>jco  : JavaConstructor<CR>
-        map <leader>jc   : JavaCorrect<CR>
-        map <leader>jdc  : JavaDocComment<CR>
-    " }
-
-   "delete buffer and delete file 
-    nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
 
     " Eclim re-maps {
         map <leader>jf   : JavaFormat<CR>
@@ -161,7 +162,18 @@ let g:spf_consolidated_directory = '/Users/wm/.vim/'
         map <leader>jco  : JavaConstructor<CR>
         map <leader>jc   : JavaCorrect<CR>
         map <leader>jdc  : JavaDocComment<CR>
+        map <leader>jsc  : JavaSearchContext<CR>
+        map <leader>jch  : JavaCallHeirarchy<CR>
+        map <leader>jim  : JavaImport<CR>
+        map <leader>jimo : JavaImportOrganize<CR>
+
+        map <leader>pdo  : ProjectTodo<CR>
+        map <leader>ptr  : ProjectTree<CR>
+        map <leader>ptt  : ProjectTreeToggle<CR>
     " }
 
-" }
+   "delete buffer and delete file 
+    nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
+
+   " }
 
