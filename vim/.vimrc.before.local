@@ -68,7 +68,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
     "let g:syntastic_always_populate_loc_list = 1
     "let g:syntastic_auto_loc_list = 1
-    "let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 1
     
     " Disable neosnippet expansion
@@ -155,21 +155,21 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     nmap '<CR> :a<CR><CR>.<CR>
 
     " Eclim re-maps {
-        map <leader>jf   : JavaFormat<CR>
-        nmap <leader>jfa : %JavaFormat<CR>
-        map <leader>jg   : JavaGet<CR>
-        map <leader>jgs  : JavaGetSet<CR>
-        map <leader>jco  : JavaConstructor<CR>
-        map <leader>jc   : JavaCorrect<CR>
-        map <leader>jdc  : JavaDocComment<CR>
-        map <leader>jsc  : JavaSearchContext<CR>
-        map <leader>jch  : JavaCallHeirarchy<CR>
-        map <leader>jim  : JavaImport<CR>
-        map <leader>jimo : JavaImportOrganize<CR>
+        map <leader>jf   :JavaFormat<CR>
+        nmap <leader>jfa :%JavaFormat<CR>
+        map <leader>jg   :JavaGet<CR>
+        map <leader>jgs  :JavaGetSet<CR>
+        map <leader>jco  :JavaConstructor<CR>
+        map <leader>jc   :JavaCorrect<CR>
+        map <leader>jdc  :JavaDocComment<CR>
+        map <leader>jsc  :JavaSearchContext<CR>
+        map <leader>jch  :JavaCallHeirarchy<CR>
+        map <leader>jim  :JavaImport<CR>
+        map <leader>jimo :JavaImportOrganize<CR>
 
-        map <leader>pdo  : ProjectTodo<CR>
-        map <leader>ptr  : ProjectTree<CR>
-        map <leader>ptt  : ProjectTreeToggle<CR>
+        map <leader>pdo  :ProjectTodo<CR>
+        map <leader>ptr  :ProjectTree<CR>
+        map <leader>ptt  :ProjectTreeToggle<CR>
     " }
 
    "delete buffer and delete file 

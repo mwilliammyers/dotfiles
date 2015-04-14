@@ -45,6 +45,7 @@ makeZshrc(){
         echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         # TODO: make this automatic
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
+        echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
 
@@ -81,6 +82,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
+
+export PYTHONSTARTUP=~/.pythonrc.py
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

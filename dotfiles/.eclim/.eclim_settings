@@ -1,0 +1,2 @@
+let g:EclimLogLevel = 'off'
+let g:EclimMakeLCD
