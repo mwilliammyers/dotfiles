@@ -6,7 +6,7 @@ cd "${init}"
 
 #TODO update this when this gets merged into master also make it multi-line...
 echo -e "${color}Installing spf-vim framework...${reset}"
-REPO_BRANCH="cleanup-bootstrap" REPO_URI='https://github.com/jrobeson/spf13-vim.git' APP_PATH=${vim_spf13} sh <(curl https://raw.githubusercontent.com/jrobeson/spf13-vim/cleanup-bootstrap/bootstrap.sh -L)
+APP_PATH=${vim_spf13} sh <(curl https://raw.githubusercontent.com/jrobeson/spf13-vim/cleanup-bootstrap/bootstrap.sh -L)
 
 echo -e "${color}Linking vim dotfiles from ${vim_src} to ${vim_dst}...${reset}"
 ln -sfv 2> /dev/null "${vim_src}"/.* ~
@@ -45,7 +45,7 @@ function installEclim() {
 # TODO: option to install powerline fonts...
 # TODO: automatically choose to install these or ask at beginning and install later...?
 # TODO: add -q option to silence this and NOT install by default...
-read -r -t 20 -p "Install eclim? (y/n) " -n 1
+read -r -p "Install eclim? (y/n) " -n 1
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     installEclim;
 fi
@@ -53,8 +53,9 @@ fi
 echo -e ""
 
 # TODO: add -q option to silence this and NOT install by default...
-read -r -t 20 -p "Install the YouCompleteMe completion engine binary? (y/n) " -n 1
+read -r -p "Install the YouCompleteMe completion engine binary? (y/n) " -n 1
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    vim +BundleClean +BundleInstall +qall
     installYCM;
 fi
 

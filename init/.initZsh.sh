@@ -41,7 +41,7 @@ makeZshrc(){
         # echo "export HOMEBREW_CASK_OPTS' --appdir=~/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         module purge
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases ant fasd aws osx-aliases osx brew-cask xcode\) >> ${zshrc} 
+        echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle web-search extract zsh_reload copyfile copydir common-aliases npm ant fasd aws osx-aliases osx brew-cask xcode\) >> ${zshrc} 
         echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
         # TODO: make this automatic
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}

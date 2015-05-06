@@ -81,7 +81,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
     let g:EasyClipShareYanks = 1 " share yank history across vim instances
     let g:EasyClipShareYanksDirectory = $HOME . '/.vim/'
-    let g:EasyClipAutoFormat = 1
+    let g:EasyClipAutoFormat = 0
     let g:EasyClipUseSubstituteDefaults = 1
 
     let g:EasyClipUsePasteToggleDefaults = 0
@@ -176,4 +176,3 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
 
    " }
-
