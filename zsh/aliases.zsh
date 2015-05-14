@@ -42,3 +42,5 @@ alias start_eclimd='$ECLIPSE_HOME/eclimd &'
 alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'
 
 alias bcl='rm -rf $(brew --cache)/*'
+
+alias 'brew --cleanup'='noop'

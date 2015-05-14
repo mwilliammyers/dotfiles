@@ -76,7 +76,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 #ZSH_CUSTOM=/path/to/new-custom-folder
 
-source $ZSH/oh-my-zsh.sh
+source \${ZSH}/oh-my-zsh.sh
 
 ## EXPORTS ############################################
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
