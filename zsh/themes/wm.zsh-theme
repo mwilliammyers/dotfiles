@@ -1,6 +1,6 @@
 # My customized version of the Soliah theme from oh-my-zsh
 
-PROMPT='%{$FG[166]%}%n%{$reset_color%}@%{$FG[037]%}%M%{$reset_color%}: %{$FG[033]%}%~%b%{$reset_color%} $(git_time_since_commit)$(check_git_prompt_info)
+PROMPT='%{$FG[061]%}%n%{$reset_color%}@%{$FG[136]%}%M%{$reset_color%}: %{$FG[033]%}%~%b%{$reset_color%} $(git_time_since_commit)$(check_git_prompt_info)
 $ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}"
