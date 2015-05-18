@@ -78,7 +78,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 export _FASD_DATA=~/.cache/fasd
 export _FASD_CACHE=~/.cache/fasd_cache
 export ZSH_CACHE_DIR=~/.cache
-export ZSH_COMPDUMP="\${ZDOTDIR:-${HOME}}/${ZSH_CACHE_DIR}/.zcompdump-\${SHORT_HOST}-\${ZSH_VERSION}"
+export ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/${ZSH_CACHE_DIR}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 ## EXPORTS ############################################
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
