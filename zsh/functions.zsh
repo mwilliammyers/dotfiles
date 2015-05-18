@@ -273,3 +273,7 @@ function ddupepath() {
   	unset old_PATH x
 	fi
 }
+
+function killthis() {
+    pkill -f ${1} -u $(id -u $USER);
+}

@@ -43,4 +43,6 @@ alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'
 
 alias bcl='rm -rf $(brew --cache)/*'
 
+alias sage='pkill -f ssh-agent -u $(id -u $USER); eval "$(ssh-agent -s -t 10800)" && ssh-add ~/.ssh/id_github'
+
 alias taa='tmux a'

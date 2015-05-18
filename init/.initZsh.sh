@@ -48,7 +48,6 @@ makeZshrc(){
         echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
     fi
 
-
 cat <<EOF >> "${zshrc}"
 
 ## ZSH settings ####################################
@@ -57,9 +56,9 @@ ZSH_THEME="wm"
 
 #CASE_SENSITIVE="true"
 
-#DISABLE_AUTO_UPDATE="true"
-DISABLE_UPDATE_PROMPT=true
-UPDATE_ZSH_DAYS=3
+DISABLE_AUTO_UPDATE="true"
+#DISABLE_UPDATE_PROMPT=true
+#UPDATE_ZSH_DAYS=3
 
 #DISABLE_LS_COLORS="true"
 
@@ -76,7 +75,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 #ZSH_CUSTOM=/path/to/new-custom-folder
 
-source \${ZSH}/oh-my-zsh.sh
+export _FASD_DATA=~/.cache/fasd
+export _FASD_CACHE=~/.cache/fasd_cache
+export ZSH_CACHE_DIR=~/.cache
+export ZSH_COMPDUMP="\${ZDOTDIR:-${HOME}}/${ZSH_CACHE_DIR}/.zcompdump-\${SHORT_HOST}-\${ZSH_VERSION}"
 
 ## EXPORTS ############################################
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
@@ -118,6 +120,8 @@ export GREP_OPTIONS='--color=auto';
 
 # Display correct tmux window titles
 #export DISABLE_AUTO_TITLE=true
+
+source \${ZSH}/oh-my-zsh.sh
 EOF
 
 dedupepath;
