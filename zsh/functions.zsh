@@ -277,3 +277,7 @@ function ddupepath() {
 function killthis() {
     pkill -f ${1} -u $(id -u $USER);
 }
+
+function vimsesh(){
+vim -c "SessionOpen ${1}"
+}
