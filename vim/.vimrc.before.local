@@ -1,15 +1,13 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
-let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
 let g:spf13_consolidated_directory = $HOME . '/.vim/'
-
 " general {
     " Prevent automatically changing to open file directory
        "let g:spf13_no_autochdir = 1
 
     " Leader keys
        let g:spf13_leader=','
-    "   let g:spf13_localleader='_'
 
     " Disable easier moving in tabs and windows
     "   let g:spf13_no_easyWindows = 1
@@ -115,6 +113,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 "}
 
 " appearance {
+
     let g:solarized_termcolors=16
     let g:solarized_visibility="low"
     let g:solarized_contrast="normal"
@@ -155,7 +154,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
     " Eclim re-maps {
         map <leader>jf   :JavaFormat<CR>
-        nmap <leader>jfa :%JavaFormat<CR>
+        map <leader>jfa :%JavaFormat<CR>
         map <leader>jg   :JavaGet<CR>
         map <leader>jgs  :JavaGetSet<CR>
         map <leader>jco  :JavaConstructor<CR>
@@ -172,6 +171,6 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     " }
 
    "delete buffer and delete file 
-    nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
+    "nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
 
    " }

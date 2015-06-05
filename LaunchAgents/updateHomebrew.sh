@@ -11,7 +11,7 @@ echo -e "Updating Homebrew..."
 echo -e "---------------------------------------------"
 date
 echo -e "Upgrading all Homebrew formulae..." 
-/usr/local/bin/brew upgrade 
+/usr/local/bin/brew upgrade --all
 
 echo -e "---------------------------------------------"
 date
