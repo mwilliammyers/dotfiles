@@ -1,5 +1,17 @@
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade -all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+function update() {
+    # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+    sudo -v && while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+    echo "\033[0;34mUpgrading OSX Packages...\033[0m"
+    sudo softwareupdate -i -a
+    echo "\033[0;34mUpgrading Homebrew...\033[0m"
+    brew update; brew upgrade -all; brew cleanup; brew cask cleanup;
+    echo "\033[0;34mUpgrading npm...\033[0m"
+    npm install npm -g; npm update -g;
+    echo "\033[0;34mUpgrading gem...\033[0m"
+    sudo gem update --system; sudo gem update
+}
 
 # IP addresses
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
