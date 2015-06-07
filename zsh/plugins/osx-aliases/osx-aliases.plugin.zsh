@@ -11,6 +11,9 @@ function update() {
     npm install npm -g; npm update -g;
     echo "\033[0;34mUpgrading gem...\033[0m"
     sudo gem update --system; sudo gem update
+    echo "\033[0;34mUpgrading pip...\033[0m"
+    pip install --upgrade pip
+    pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 }
 
 # IP addresses

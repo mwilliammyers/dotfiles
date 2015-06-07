@@ -22,7 +22,7 @@ tmux_options: -f ~/.tmux.conf
 startup_window: debug
 
 windows:
-  - editor: vim -c 'SessionOpen debugRecordIndexer' 
+  - editor: nvim -c 'SessionOpen debugRecordIndexer' 
   - RecordIndexer[debug]:
       layout: main-vertical
       panes:
