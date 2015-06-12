@@ -1,7 +1,8 @@
-Bundle "myusuf3/numbers.vim"
-Bundle "SearchComplete"
-Bundle "svermeulen/vim-easyclip"
-"Bundle "xolox/vim-easytags"
+Bundle 'myusuf3/numbers.vim'
+Bundle 'SearchComplete'
+Bundle 'svermeulen/vim-easyclip'
+"Bundle 'xolox/vim-easytags'
+Bundle 'spf13/vim-autoclose'
 
 UnBundle 'groenewege/vim-less'
 UnBundle 'tpope/vim-haml'
@@ -12,3 +13,4 @@ UnBundle 'Puppet-Syntax-Highlighting'
 UnBundle 'tpope/vim-cucumber'
 UnBundle 'kchmck/vim-coffee-script'
 UnBundle 'kchmck/vim-coffee-script'
+UnBundle 'AutoClose'

@@ -50,6 +50,11 @@ makeZshrc(){
 
 cat <<EOF >> "${zshrc}"
 
+## XDG settings ##################################
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
+export XDG_CONFIG_HOME=~/.dotfiles # should be ~/.config
+
 ## ZSH settings ####################################
 export ZSH=$ZSH 
 ZSH_THEME="wm"
@@ -74,18 +79,17 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 #HIST_STAMPS="mm/dd/yyyy"
 
 #ZSH_CUSTOM=/path/to/new-custom-folder
-
-export _FASD_DATA=~/.cache/fasd
-export _FASD_CACHE=~/.cache/fasd_cache
-export ZSH_CACHE_DIR=~/.cache
-export ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/${ZSH_CACHE_DIR}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+export ZSH_CACHE_DIR="\${XDG_CACHE_HOME}/zsh"
+export ZSH_COMPDUMP="\${ZDOTDIR:-\${HOME}}/\${ZSH_CACHE_DIR}/.zcompdump-\${SHORT_HOST}-\${ZSH_VERSION}"
 
 ## EXPORTS ############################################
+export _FASD_DATA="\${XDG_DATA_HOME}/fasd/fasd_data"
+
 export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
-export PYTHONSTARTUP=~/.pythonrc.py
+export PYTHONSTARTUP="\${XDG_CONFIG_HOME}/python/pythonrc.py"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
