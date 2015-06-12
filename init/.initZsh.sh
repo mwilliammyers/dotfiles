@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-#set -e 
 cd "${0%/*}"
 cd .. && source dotfiles.conf;
 cd "${init}"
+
+set -e
 
 if [ ! -n "$ZSH" ]; then
   ZSH="${zsh_dst}"
@@ -55,8 +56,13 @@ export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=~/.dotfiles # should be ~/.config
 
+export ZDOTDIR=\${XDG_CONFIG_HOME}/zsh
+export ZDOTDIR=${ZDOTDIR:-${HOME}}
+#export ZSHDDIR="${HOME}/.config/zsh.d"
+excport HISTFILE="${ZDOTDIR}/.zsh_history"'
+
 ## ZSH settings ####################################
-export ZSH=$ZSH 
+export ZSH=\${XDG_CONFIG_HOME}/oh-my-zsh
 ZSH_THEME="wm"
 
 #CASE_SENSITIVE="true"
@@ -126,9 +132,11 @@ export GREP_OPTIONS='--color=auto';
 #export DISABLE_AUTO_TITLE=true
 
 source \${ZSH}/oh-my-zsh.sh
+
+alias zshrc='nvim ${zshrc}'
 EOF
 
-dedupepath;
+dedupepath; #FIXME TODO this doesnt do anyting. need to use sed to replace path in file... http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
 }
 
 linkZsh() {
@@ -142,6 +150,10 @@ linkZsh() {
     fi
     ln -sfv "${zsh_src}"/themes/* $ZSH/custom/themes
     ln -sfv "${zsh_src}"/plugins/* $ZSH/custom/plugins
+
+    #env zsh
+    source ${zshrc}
+
 }
 
 if [ -d "$ZSH" ]; then
@@ -152,7 +164,7 @@ if [ -d "$ZSH" ]; then
 fi
 
 #TODO: check for zsh and install it using the appropriate method for current OS...
-# brew install zsh
+brew install zsh
 
 echo "${color}Cloning Oh My Zsh...${reset}"
 hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
@@ -167,20 +179,17 @@ then
     chsh "$(echo "$USER")" -s "$(which zsh)"
 else
     rm -ri ~/.bash*
-    touch ~/.bash_login
+    touch ~/.bash_profile
     #TODO: detect if using modules...
     module purge
-    echo "[ -f  $(which zsh) ] && exec $(which zsh) -l" >> ~/.bash_login
-    echo "PATH=$(brew --prefix)/bin:$PATH" >> ~/.bash_login
+    echo "[ -f  $(which zsh) ] && exec $(which zsh) -l" >> ~/.bash_profile
+    echo "PATH=$(brew --prefix)/bin:$PATH" >> ~/.bash_profile
 fi
-
-makeZshrc
-linkZsh
 
 #TODO: check if brew is installed first
 brew install fasd
 
-#env zsh 
-. ~/.zshrc 
+makeZshrc
+linkZsh
 
 exit 0;
