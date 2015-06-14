@@ -30,7 +30,7 @@ dedupepath(){
 }
 
 makeZshrc(){
-    echo "${color}Making ${zshrc} file...${reset}"
+    echo -e "${color}Making ${zshrc} file...${reset}"
     [ -e "${zshrc}" ] &&  mv "${zshrc}" ${ZDOTDIR:-${HOME}}/.zshrc.orig
     touch "${zshrc}"
     echo "## OS specific settings ############################" >> ${zshrc}
@@ -54,12 +54,12 @@ export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
 
-export ZDOTDIR=\${XDG_CONFIG_HOME}/zsh
+export ZDOTDIR="\${XDG_CONFIG_HOME}/zsh"
 #export ZSHDDIR="${HOME}/.config/zsh.d"
-excport HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"'
+export HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
 
 ## ZSH settings ####################################
-export ZSH=\${XDG_CONFIG_HOME}/oh-my-zsh
+export ZSH="\${XDG_CONFIG_HOME}/oh-my-zsh"
 ZSH_THEME="wm"
 
 #CASE_SENSITIVE="true"
@@ -93,6 +93,8 @@ export MANPATH="$(brew --prefix)/share/man:$MANPATH"
 export INFOPATH="$(brew --prefix)/share/info:$INFOPATH"
 
 export PYTHONSTARTUP="\${XDG_CONFIG_HOME}/python/pythonrc.py"
+export ECLIMSTARTUP="\${XDG_CONFIG_HOME}/eclim/eclimrc"
+export CURL_HOME="\${XDG_CONFIG_HOME}/curl"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -102,13 +104,13 @@ export PYTHONSTARTUP="\${XDG_CONFIG_HOME}/python/pythonrc.py"
 
 # Preferred editor for local and remote sessions
 # if [[ -n \$SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # fi
 
 # Make vim the default editor.
-export EDITOR='vim';
+export EDITOR='nvim';
 
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
@@ -130,14 +132,13 @@ export GREP_OPTIONS='--color=auto';
 
 source \${ZSH}/oh-my-zsh.sh
 
-alias zshrc='nvim ${zshrc}'
 EOF
 
 dedupepath; #FIXME TODO this doesnt do anyting. need to use sed to replace path in file... http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
 }
 
 linkZsh() {
-    echo "${color}Linking custom zsh overrides...${reset}"
+    echo -e "${color}Linking custom zsh themes & plugins...${reset}"
     mkdir -p $ZSH/custom/themes
     mkdir -p $ZSH/custom/plugins
     ln -sfv "${zsh_src}"/*.zsh $ZSH/custom
@@ -154,7 +155,7 @@ linkZsh() {
 }
 
 if [ -d "$ZSH" ]; then
-  echo "${yellow}You already have Oh My Zsh installed.${reset} You'll need to remove $ZSH if you want to install..."
+  echo -e "${yellow}You already have Oh My Zsh installed.${reset} You'll need to remove $ZSH if you want to install..."
   makeZshrc
   linkZsh
   exit
@@ -163,7 +164,7 @@ fi
 #TODO: check for zsh and install it using the appropriate method for current OS...
 brew install zsh
 
-echo "${color}Cloning Oh My Zsh...${reset}"
+echo -e "${color}Cloning Oh My Zsh...${reset}"
 hash git >/dev/null 2>&1 && git clone git://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
   echo "git not installed"
   exit

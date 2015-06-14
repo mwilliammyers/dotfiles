@@ -35,16 +35,18 @@ alias htop='sudo htop'
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-# Start the eclim deamon
-alias start_eclimd='$ECLIPSE_HOME/eclimd -f $XDG_CONFIG_HOME/.eclimrc &> /dev/null &'
-
-# Stop the eclim deamon
-alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'
-
 alias bcl='rm -rf $(brew --cache)/*'
 
 alias sage='pkill -f ssh-agent -u $(id -u $USER); eval "$(ssh-agent -s -t 10800)" && ssh-add ~/.ssh/id_github'
 
+# Command aliases
+# TODO: dynamically create these? eg. tmux -f path/to/tmux/startup or env var IF in xdg/config?
 alias taa='tmux a'
-
 alias nvim='nocorrect nvim'
+alias zshrc='nvim ${zshrc}'
+
+# Start the eclim deamon
+alias start_eclimd='$ECLIPSE_HOME/eclimd -f ${ECLIMSTARTUP} &> /dev/null &'
+
+# Stop the eclim deamon
+alias stop_eclimd='$ECLIPSE_HOME/eclimd -f ${ECLIMSTARTUP} -command shutdown'

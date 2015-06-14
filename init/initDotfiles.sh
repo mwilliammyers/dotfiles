@@ -11,24 +11,29 @@ linkDotFiles() {
   # TODO: test if programs exist before linking eg. eclim
   echo -e "${color}Creating symbolic links for: dotfiles...${reset}"
   ln -sfv  2> /dev/null "${dotfiles}"/.* ~
+  if [ -n "${XDG_CONFIG_HOME}" ] && [ -d "${config_dir}/xdg/config" ]; then
+      echo -e "\n${color}Creating symbolic links for: XDG_CONFIG_HOME files...${reset}"
+      ln -sfv  2> /dev/null "${config_dir}"/xdg/config/* "${XDG_CONFIG_HOME}"
+      ln -sfv  2> /dev/null "${config_dir}"/xdg/config/.* "${XDG_CONFIG_HOME}"
+  fi
   IFS=$SAVEIFS
 }
 
 linkXcode() {
-  echo -e "${color}Creating symbolic links for: XCode...${reset}"
+  echo -e "\n${color}Creating symbolic links for: XCode...${reset}"
   # link xcode UserData folder
   # TODO: support for installed plugins...
   ln -sfv "${xcode_src}"/UserData "${xcode_dst}"
 }
 
 linkiTunes() {
-  echo -e "${color}Creating symbolic links for: iTunes...${reset}"
+  echo -e "\n${color}Creating symbolic links for: iTunes...${reset}"
   mkdir ~/Library/iTunes/Scripts/
   ln -sfv "${itunes_src}"/* "${itunes_dst}"
 }
 
 linkLaunchAgents() {
-  echo -e "${color}Creating symbolic links for: LaunchAgents...${reset}"
+  echo -e "\n${color}Creating symbolic links for: LaunchAgents...${reset}"
   ln -sfv "${LaunchAgents}"/* ~/Library/LaunchAgents
 }
 

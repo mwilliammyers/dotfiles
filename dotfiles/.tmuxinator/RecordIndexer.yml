@@ -7,7 +7,7 @@ root: /Users/wm/Documents/Developer/RecordIndexer
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: git pull; $ECLIPSE_HOME/eclimd -f $XDG_CONFIG_DIR/.eclimrc &> /dev/null &
+pre: git pull; $ECLIPSE_HOME/eclimd -f $XDG_CONFIG_HOME/.eclimrc &> /dev/null &
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
