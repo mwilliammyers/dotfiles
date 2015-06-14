@@ -31,7 +31,7 @@ dedupepath(){
 
 makeZshrc(){
     echo "${color}Making ${zshrc} file...${reset}"
-    [ -e "${zshrc}" ] &&  mv "${zshrc}" ~/.zshrc.orig
+    [ -e "${zshrc}" ] &&  mv "${zshrc}" ${ZDOTDIR:-${HOME}}/.zshrc.orig
     touch "${zshrc}"
     echo "## OS specific settings ############################" >> ${zshrc}
     # TODO: add profiles, rsync, ant, atom, autoenv, vim-interaction, virtualenv, command-not-found, dirhistory, & all the git plugins ???
@@ -44,9 +44,7 @@ makeZshrc(){
     elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
         echo plugins=\(git git-extras brew sudo tmux tmuxinator colored-man vundle extract zsh_reload copyfile copydir common-aliases npm ant gem fasd aws osx-aliases osx brew-cask xcode\) >> ${zshrc} 
         echo "export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'" >> ${zshrc}
-        # TODO: make this automatic
-        echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
-        echo "export ECLIPSE_HOME=$(brew --prefix)/Caskroom/eclipse-java/4.4.1/eclipse" >> ${zshrc}
+        echo "export ECLIPSE_HOME=\"$(brew --prefix)/Caskroom/eclipse-java/\$(ls -t $(brew --prefix)/Caskroom/eclipse-java | head -n 1)/eclipse\"" >> ${zshrc}
     fi
 
 cat <<EOF >> "${zshrc}"
@@ -54,12 +52,11 @@ cat <<EOF >> "${zshrc}"
 ## XDG settings ##################################
 export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
-export XDG_CONFIG_HOME=~/.dotfiles # should be ~/.config
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
 
 export ZDOTDIR=\${XDG_CONFIG_HOME}/zsh
-export ZDOTDIR=${ZDOTDIR:-${HOME}}
 #export ZSHDDIR="${HOME}/.config/zsh.d"
-excport HISTFILE="${ZDOTDIR}/.zsh_history"'
+excport HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"'
 
 ## ZSH settings ####################################
 export ZSH=\${XDG_CONFIG_HOME}/oh-my-zsh

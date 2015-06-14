@@ -36,7 +36,7 @@ alias htop='sudo htop'
 alias reload="exec $SHELL -l"
 
 # Start the eclim deamon
-alias start_eclimd='$ECLIPSE_HOME/eclimd &> /dev/null &'
+alias start_eclimd='$ECLIPSE_HOME/eclimd -f $XDG_CONFIG_HOME/.eclimrc &> /dev/null &'
 
 # Stop the eclim deamon
 alias stop_eclimd='$ECLIPSE_HOME/eclim -command shutdown'
