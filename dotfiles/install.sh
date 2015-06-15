@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 cd ${0%/*}
-cd .. && source dotfiles.conf;
-cd "${init}"
+source ../dotfiles.conf;
 
 linkDotFiles() {
   SAVEIFS=$IF

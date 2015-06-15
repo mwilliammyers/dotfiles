@@ -1,1 +1,0 @@
--Support ~/Library/Services (does not support symlinks!)
