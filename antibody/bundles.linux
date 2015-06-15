@@ -11,3 +11,4 @@ chrissicool/zsh-bash
 zsh-users/zsh-completions
 voronkovich/gitignore.plugin.zsh
 caarlos0/zsh-add-upstream
+mdsn/zsh-tmux
