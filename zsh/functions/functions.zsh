@@ -258,7 +258,6 @@ function merge() {
     fi
 }
 
-
 function cleanupPath() {
     export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
     export MANPATH=$(echo "$MANPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')

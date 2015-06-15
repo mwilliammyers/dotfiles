@@ -8,7 +8,8 @@ import os
 import readline
 import rlcompleter
 
-historyPath = os.path.expanduser("~/.python_history")
+dir = os.path.dirname(__file__)
+historyPath = os.path.join(dir, '.python_history')
 
 def save_history(historyPath=historyPath):
     import readline

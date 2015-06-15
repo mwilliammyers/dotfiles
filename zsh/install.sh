@@ -3,12 +3,38 @@
 cd "${0%/*}"
 source ../dotfiles.conf;
 
-set -e
+#set -e
 
 if [ ! -n "$ZSH" ]; then
   ZSH="${zsh_dst}"
 fi
 
+# HELPER FUNCTIONS ############################################################
+function checkDependencies() {
+    if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
+        if [ -n "$(command -v brew)" ]; then
+            for i in "$@"; do
+                [ -z "$(command -v ${i})" ] && brew install "${i}"
+            done
+        else
+            echo -e "${red}Homebrew is not installed. Please install that first.${reset}"
+        fi
+    fi
+}
+
+function cleanupPATH() {
+    export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+    export MANPATH=$(echo "$MANPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+    export INFOPATH=$(echo "$INFOPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+}
+
+function createPaths() {
+    for i in "$@"; do
+        [ -n "${i}" ] && mkdir -vp "${i}"
+    done
+}
+
+# ZSH FUNCTIONS ################################################################
 makeZshrc(){
     echo -e "${color}Making ${zshrc} file...${reset}"
     [ -e "${zshrc}" ] &&  mv "${zshrc}" ${ZDOTDIR:-${HOME}}/.zshrc.orig
@@ -21,10 +47,10 @@ export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
 
 ## ZSH settings ####################################
-#export ZDOTDIR="\${XDG_CONFIG_HOME}/zsh" # exported in /etc/zshenv
+export ZDOTDIR="\${XDG_CONFIG_HOME}/.zsh"
 export ZSH=${ZSH}
 export ZSHRC=${zshrc}
-export HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
+export HISTFILE="\${ZDOTDIR:-\${HOME}}/.zsh_history"
 
 export ANTIBODY_HOME="\${XDG_CONFIG_HOME}/antibody"
 
@@ -76,22 +102,48 @@ export GREP_OPTIONS='--color=auto';
 
 source \${ANTIBODY_HOME}/antibody.zsh
 antibody bundle zsh-users/zsh-syntax-highlighting
-source $(brew --prefix)/etc/grc.bashrc
 
 fpath=(\$ZSH \$ZSH/completions \$fpath)
+autoload -U compinit && compinit
 
 ## OS specific settings ############################
-autoload -U compinit && compinit
 EOF
 
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
 # TODO: detect linux flavor with cat /etc/issue ? in order to load debian plugin
 cat <<EOF >> "${zshrc}"
+export HOMEBREW_CELLAR="/apps"
+export HOMEBREW_BREW_FILE=~/.linuxbrew/bin/linuxbrew
+export HOMEBREW_DEVELOPER=true
+
+export PYENV_ROOT=/bluehome3/wmyers7/.linuxbrew/var/pyenv
+
+source /usr/share/Modules/init/zsh
+source ${HOME}/.modules
+
+function lbrew() {
+    ~/.linuxbrew/bin/linuxbrew $@ --env=inherit
+}
+
+# Perl setup
+perl_module_root="/apps/perlmodules"
+#export PERLBREW_ROOT=\${perl_module_root}/perl5
+##source \${PERLBREW_ROOT}/etc/bashrc
+export PERL_CPANM_HOME=\${perl_module_root}/cpanm
+#export PERL5LIB="\${PERLBREW_ROOT}/lib/perl5:\${PERLBREW_ROOT}/lib/perl5/x86_64-linux-thread-multi/Linux"
+#export PERL_MB_OPT="--install_base = \${PERLBREW_ROOT}"
+#export PERL_MM_OPT="INSTALL_BASE=\${PERLBREW_ROOT}"
+#export PERLBREW_HOME=\${PERLBREW_ROOT}/.perlbrew
+#export PERL_LOCAL_LIB_ROOT=\${PERLBREW_ROOT}
+
+source ~/.linuxbrew/etc/grc.bashrc #FIXME: this is hardcoded
 export ANTIBODY_BUNDLE_FILE=\${ANTIBODY_HOME}/bundles.linux
 antibody bundle < \${ANTIBODY_BUNDLE_FILE}
 EOF
 elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
 cat <<EOF >> "${zshrc}"
+
+source $(brew --prefix)/etc/grc.bashrc
 export ANTIBODY_BUNDLE_FILE=\${ANTIBODY_HOME}/bundles.osx
 antibody bundle < \${ANTIBODY_BUNDLE_FILE}
 export HOMEBREW_CASK_OPTS='--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom'
@@ -100,6 +152,7 @@ EOF
 fi
 
 cat <<EOF >> "${zshrc}"
+
 # Plugin settings ################################
 for configFile in \${ZSH}/* ; do
     source \${configFile}
@@ -136,10 +189,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 EOF
 }
 
-[ -n "${ZDOTDIR}" ] && mkdir -p "${ZDOTDIR}"
-[ -n "${ZSH}" ] && mkdir -p "${ZSH}"
-[ -n "${antibody_config_dst}" ] && mkdir -p "${antibody_config_dst}"
-
 linkZsh() {
     echo -e "${color}Linking zsh...${reset}"
     ln -sfv "${zsh_src}"/*.zsh "${ZSH}"
@@ -152,16 +201,22 @@ linkAntibody() {
     ln -sfv "${antibody_config_src}"/* "${antibody_config_dst}"
 }
 
-#TODO: check if brew is installed first
-[ -z "$(command -v fasd)" ] && brew install fasd
-[ -z "$(command -v grc)" ] && brew install grc
+# MAIN #########################################################################
+paths=( "${ZDOTDIR}" "${ZSH}" "${antibody_config_dst}" ) 
+createPaths ${paths[@]}
 
-makeZshrc
-linkZsh
-linkAntibody
+deps=( "fasd" "grc" )
+checkDependencies ${deps[@]}
+
+#makeZshrc
+#linkZsh
+#linkAntibody
 
 source ${zshrc}
 
-cleanupPath # defined in functions.zsh file
+cleanupPATH
+
+exportedPaths=( "${XDG_DATA_HOME}" "${ZSH_CACHE_DIR}" "${_FASD_DATA}" "${_FASD_CACHE}" )
+createPaths ${exportedPaths[@]}
 
 exit 0;

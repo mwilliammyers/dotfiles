@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
 
 cd "${0%/*}"
-cd .. && source dotfiles.conf;
-cd "${init}"
+source ../dotfiles.conf;
+
+function checkDependencies() {
+    if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
+        if [ -n "$(command -v brew)" ]; then
+            for i in "$@"; do
+                [ ${i} = "eclim" ] && brew tap mkwmms/scripts
+                [ -z "$(command -v ${i})" ] && brew install "${i}"
+            done
+        else
+            echo -e "${red}Homebrew is not installed. Please install that first.${reset}"
+        fi
+    fi
+}
 
 function installSPF13() {
     #TODO update this when this gets merged into master also make it multi-line...
-    echo -e "${color}Installing spf-vim framework...${reset}"
+    echo -e "${color}Installing spf13-vim...${reset}"
     APP_PATH=${vim_spf13} sh <(curl https://j.mp/spf13-vim3 -L)
-
-    echo -e "${color}Linking vim dotfiles from ${vim_src} to ${vim_dst}...${reset}"
-    ln -sfv 2> /dev/null "${vim_src}"/.* ~
-    #echo let g:spf13_consolidated_directory = \'${HOME}/.vim\' >> ~/.vimrc.before
-
     #install other handy VIM plugins
-    brew install ctags
+    checkDependencies "ctags"
 }
 
 function installYCM() {
@@ -25,21 +32,43 @@ function installYCM() {
     ./install.sh --clang-completer #--omnisharp-completer
 }
 
-read -r -p "Install spf-13? (y/n) " -n 1
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    installSPF13;
-    vim +BundleClean +BundleInstall +qall
+function linkVim() {
+ echo -e "${color}Linking vim dotfiles from ${vim_src} to ${vim_dst}...${reset}"
+    ln -sfv 2> /dev/null "${vim_src}"/.* ~
+    #echo let g:spf13_consolidated_directory = \'${HOME}/.vim\' >> ~/.vimrc.before
+}
+
+function promptToInstallSpf13() {
+    printf "${yellow}Install spf13-vim? (y/n) "; read REPLY; printf "${reset}"
+    if [[ $REPLY =~ ^[Yy](es)?$ ]]; then
+        installSPF13
+        vim +BundleClean +BundleInstall +qall
+    fi
+}
+
+[ -d ${vim_spf13} ] && linkVim
+
+if [ -d "${vim_spf13}" ]; then
+    echo -e "${red}spf13-vim is already installed at: ${vim_spf13}"
+    sleep 1
+    promptToInstallSpf13
+else
+    promptToInstallSpf13
 fi
 
-echo -e ""; read -r -p "Install eclim? (y/n) " -n 1
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    brew install eclim
+if [ -d "${vim_spf13}" ]; then
+    printf "${yellow}Install eclim? (y/n) "; read REPLY; printf "${reset}"
+    if [[ $REPLY =~ ^[Yy](es)?$ ]]; then
+        checkDependencies "eclim"
+    fi
 fi
 
-echo -e ""; read -r -p "Install the YouCompleteMe completion engine binary? (y/n) " -n 1
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    vim +BundleClean +BundleInstall +qall
-    installYCM;
+if [ -d "${vim_dst}/bundle/YouCompleteMe" ]; then
+    printf "${yellow}Install the YouCompleteMe completion engine binary? (y/n) "; read REPLY; printf "${reset}"
+    if [[ $REPLY =~ ^[Yy](es)?$ ]]; then
+        vim +BundleClean +BundleInstall +qall
+        installYCM
+    fi
 fi
 
 exit 0;
