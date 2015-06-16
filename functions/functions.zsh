@@ -1,5 +1,7 @@
+#!/usr/bin/env zsh
+
 # Simple calculator (listed last b/c it messes with bash syntax colors)
-function calc() {
+calc() {
     local result="";
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
     #                       └─ default (when `--mathlib` is used) is 20
@@ -17,17 +19,17 @@ function calc() {
 }
 
 # Create a new directory and enter it
-function mkd() {
+mkd() {
     mkdir -p "$@" && cd "$_";
 }
 
 # Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
+cdf() { # short for `cdfinder`
     cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
-function targz() {
+targz() {
     local tmpFile="${@%/}.tar";
     tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
@@ -55,7 +57,7 @@ function targz() {
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+fs() {
     if du -b /dev/null > /dev/null 2>&1; then
         local arg=-sbh;
     else
@@ -71,13 +73,13 @@ function fs() {
  #Use Git’s colored diff when available
 #hash git &>/dev/null;
 #if [ $? -eq 0 ]; then
-    #function diff() {
+    #diff() {
         #git diff --no-index --color-words "$@";
     #}
 #fi;
 
 # Create a data URL from a file
-function dataurl() {
+dataurl() {
     local mimeType=$(file -b --mime-type "$1");
     if [[ $mimeType == text/* ]]; then
         mimeType="${mimeType};charset=utf-8";
@@ -86,7 +88,7 @@ function dataurl() {
 }
 
 # Create a git.io short URL
-function gitio() {
+gitio() {
     if [ -z "${1}" -o -z "${2}" ]; then
         echo "Usage: \`gitio slug url\`";
         return 1;
@@ -95,7 +97,7 @@ function gitio() {
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+server() {
     local port="${1:-8000}";
     sleep 1 && open "http://localhost:${port}/" &
     # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
@@ -105,7 +107,7 @@ function server() {
 
 # Start a PHP server from a directory, optionally specifying the port
 # (Requires PHP 5.4.0+.)
-function phpserver() {
+phpserver() {
     local port="${1:-4000}";
     local ip=$(ipconfig getifaddr en1);
     sleep 1 && open "http://${ip}:${port}/" &
@@ -113,7 +115,7 @@ function phpserver() {
 }
 
 # Compare original and gzipped file size
-function gz() {
+gz() {
     local origsize=$(wc -c < "$1");
     local gzipsize=$(gzip -c "$1" | wc -c);
     local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
@@ -123,7 +125,7 @@ function gz() {
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
-function json() {
+json() {
     if [ -t 0 ]; then # argument
         python -mjson.tool <<< "$*" | pygmentize -l javascript;
     else # pipe
@@ -132,12 +134,12 @@ function json() {
 }
 
 # Run `dig` and display the most useful info
-function digga() {
+digga() {
     dig +nocmd "$1" any +multiline +noall +answer;
 }
 
 # UTF-8-encode a string of Unicode symbols
-function escape() {
+escape() {
     printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u);
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
@@ -146,7 +148,7 @@ function escape() {
 }
 
 # Decode \x{ABCD}-style Unicode escape sequences
-function unidecode() {
+unidecode() {
     perl -e "binmode(STDOUT, ':utf8'); print \"$@\"";
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
@@ -155,7 +157,7 @@ function unidecode() {
 }
 
 # Get a character’s Unicode code point
-function codepoint() {
+codepoint() {
     perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))";
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
@@ -165,7 +167,7 @@ function codepoint() {
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
-function getcertnames() {
+getcertnames() {
     if [ -z "${1}" ]; then
         echo "ERROR: No domain specified.";
         return 1;
@@ -199,7 +201,7 @@ function getcertnames() {
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
-function o() {
+o() {
     if [ $# -eq 0 ]; then
         open .;
     else
@@ -211,12 +213,12 @@ function o() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
 
-function cleanup() {
+cleanup() {
     if [[ "$1" =~ ^[-]?[aA]{1}(ll)*$ ]]; then
         sudo rm -rvf ~/Library/Logs/*
         sudo rm -rvf /Library/Logs/*
@@ -237,7 +239,7 @@ function cleanup() {
     fi
 }
 
-function merge() {
+merge() {
     if [ $# -eq 0 ]; then
         echo "Invalid argument"
         exit 1
@@ -258,16 +260,16 @@ function merge() {
     fi
 }
 
-function cleanupPath() {
+cleanupPath() {
     export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
     export MANPATH=$(echo "$MANPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
     export INFOPATH=$(echo "$INFOPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 }
 
-function killthis() {
+killthis() {
     pkill -f ${1} -u $(id -u $USER);
 }
 
-function vimsesh(){
+vimsesh(){
 vim -c "SessionOpen ${1}"
 }

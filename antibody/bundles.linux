@@ -6,8 +6,5 @@ zsh-users/zsh-history-substring-search
 tarruda/zsh-autosuggestions
 rutchkiwi/copyzshell
 mkwmms/zsh-fasd
-chrissicool/zsh-bash
 zsh-users/zsh-completions
-voronkovich/gitignore.plugin.zsh
 caarlos0/zsh-add-upstream
-mdsn/zsh-tmux
