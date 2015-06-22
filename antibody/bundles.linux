@@ -1,3 +1,5 @@
+mkwmms/zsh-fasd
+mkwmms/zsh-git
 djui/alias-tips
 caarlos0/zsh-mkc
 caarlos0/zsh-open-github-pr
@@ -5,6 +7,7 @@ RobSis/zsh-completion-generator
 zsh-users/zsh-history-substring-search
 tarruda/zsh-autosuggestions
 rutchkiwi/copyzshell
-mkwmms/zsh-fasd
 zsh-users/zsh-completions
 caarlos0/zsh-add-upstream
+TBSliver/zsh-plugin-colored-man
+robertzk/send.zsh

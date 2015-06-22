@@ -30,3 +30,4 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
+export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions

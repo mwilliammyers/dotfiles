@@ -14,7 +14,7 @@
 # fi
 
 # Make vim the default editor.
-export EDITOR='nvim';
+export EDITOR='vim';
 
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';

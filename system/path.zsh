@@ -7,14 +7,12 @@ export XDG_BIN_HOME=~/.local/bin
 export XDG_CONFIG_HOME=~/.config
 
 ## ZSH settings ####################################
-export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZSHRC=${HOME}/.zshrc
 export ANTIBODY_HOME="${XDG_CONFIG_HOME}/antibody"
 export ZSH_COMPDUMP="${XDG_DATA_HOME:-${HOME}}/.zcompdump-${HOST/.*/}"
 
 ## EXPORTS ############################################
 export _FASD_DATA="${XDG_DATA_HOME}/fasd"
-export GENCOMPL_FPATH=${ZDOTDIR:-${HOME}}/completions
 
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export ECLIMSTARTUP="${XDG_CONFIG_HOME}/eclim/eclimrc"
@@ -23,23 +21,24 @@ export GOPATH=${XDG_BIN_HOME}
 
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
-    export PATH="bluehome3/wmyers7/.fslbuild/bin:/bluehome3/wmyers7/.fslbuild/sbin:/apps/ruby/2.1.0/bin:/apps/openmpi/1.8.5_gnu-5.1.0_gnu-5.1.0/bin:/apps/gcc/5.1.0/bin:/apps/gcc/5.1.0/cloog/bin:/fslhome/wmyers7/.linuxbrew/opt/go/libexec/bin/:/fslhome/wmyers7/.local/bin:/usr/lib64/qt-3.3/bin:/usr/local/cuda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ganglia/bin:/opt/ganglia/sbin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin"
-    export MANPATH="${XDG_DATA_HOME}/man:/bluehome3/wmyers7/.fslbuild/share/man:bluehome3/wmyers7/.fslbuild/share/man:/apps/openmpi/1.8.5_gnu-5.1.0_gnu-5.1.0/share/man:/apps/gcc/5.1.0/share/man:/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:/usr/X11R6/man:/opt/rocks/man:/usr/java/latest/man:/usr/java/jdk1.5/man"
-    export INFOPATH="${XDG_DATA_HOME}/info:/bluehome3/wmyers7/.fslbuild/share/info"
+    default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
+    export PATH="/bluehome3/wmyers7/.fslbuild/bin:/bluehome3/wmyers7/.fslbuild/sbin:/fslhome/wmyers7/.linuxbrew/opt/go/libexec/bin:/fslhome/wmyers7/.local/bin:${default_path}"
+    export MANPATH="${XDG_DATA_HOME}/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.linuxbrew/share/man"
+    export INFOPATH="${XDG_DATA_HOME}/info:/bluehome3/wmyers7/.fslbuild/share/info/bluehome3/wmyers7/.linuxbrew/share/info"
 
     ## OS specific settings ############################
     export HOMEBREW_CELLAR="/apps"
+    export HOMEBREW_CACHE="/apps/src"
+    export HOMEBREW_LOGS="${XDG_DATA_HOME}/Homebrew"
+    export HOMEBREW_TAP_USE_SSH=true
     export HOMEBREW_BREW_FILE=~/.linuxbrew/bin/linuxbrew
     export HOMEBREW_DEVELOPER=true
+    export HOMEBREW_TEMP=/dev/shm
 
     export PYENV_ROOT=/bluehome3/wmyers7/.linuxbrew/var/pyenv
 
     lbrew() {
-        ~/.linuxbrew/bin/linuxbrew ${@} --env=inherit
-    }
-
-    brew() {
-        ~/.fslbuild/bin/brew  ${@} --env=fslbuild
+        ~/.linuxbrew/bin/linuxbrew ${@}
     }
 
     # Perl setup
@@ -55,7 +54,7 @@ if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
 
     export ANTIBODY_BUNDLE_FILE=${ZSH}/antibody/bundles.linux
 
-    source ~/.linuxbrew/etc/grc.bashrc #FIXME: this is hardcoded
+    #source ~/.linuxbrew/etc/grc.bashrc #FIXME: this is hardcoded
     source /usr/share/Modules/init/zsh
     source ~/.modules
 elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
