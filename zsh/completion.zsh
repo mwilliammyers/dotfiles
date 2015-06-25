@@ -48,18 +48,25 @@ fi
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
-# Use caching so that commands like apt and dpkg complete are useable
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-${HOME}}"
-
 # forces zsh to realize new commands
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 
+# ignore case
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# menu if nb items > 2
+# zstyle ':completion:*' menu select=2
+# list of completers to use
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+
 # matches case insensitive for lowercase
 # zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-${HOME}}"
 
 # Don't complete uninteresting users
 # zstyle ':completion:*:*:*:users' ignored-patterns \
