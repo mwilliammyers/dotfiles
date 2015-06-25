@@ -39,7 +39,15 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_VERIFY
 setopt HIST_EXPIRE_DUPS_FIRST
 # dont ask for confirmation in rm globs*
-setopt RM_STAR_SILENT
+# setopt RM_STAR_SILENT
+
+# do not autoselect the first completion entry
+unsetopt menu_complete   
+unsetopt flowcontrol
+# show completion menu on succesive tab press
+setopt auto_menu         
+setopt complete_in_word
+setopt always_to_end
 
 zle -N newtab
 
