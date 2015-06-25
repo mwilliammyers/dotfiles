@@ -17,7 +17,6 @@ done
 
 # setup antibody
 source ${ANTIBODY_HOME}/.antibody.zsh
-antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle < "${ANTIBODY_BUNDLE_FILE}"
 
 # load everything but the path and completion files
