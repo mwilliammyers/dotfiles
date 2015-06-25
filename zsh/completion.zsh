@@ -19,17 +19,15 @@ WORDCHARS=''
 zmodload -i zsh/complist
 
 ## case-insensitive (all),partial-word and then substring completion
-if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unset CASE_SENSITIVE
-else
-  if [ "x$HYPHEN_INSENSITIVE" = "xtrue" ]; then
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-    unset HYPHEN_INSENSITIVE
-  else
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  fi
-fi
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# ignore case
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# matches case insensitive for lowercase
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# menu if nb items > 2
+# zstyle ':completion:*' menu select=2
 
 zstyle ':completion:*' list-colors ''
 
@@ -54,15 +52,8 @@ zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 
-# ignore case
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# menu if nb items > 2
-# zstyle ':completion:*' menu select=2
 # list of completers to use
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-
-# matches case insensitive for lowercase
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Use caching so that commands like apt and dpkg complete are useable
 zstyle ':completion::complete:*' use-cache 1
