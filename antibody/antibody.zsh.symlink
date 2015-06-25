@@ -1,4 +1,4 @@
-#!/fslhome/wmyers7/.linuxbrew/bin/zsh
+#!/usr/bin/env zsh
 
 ANTIBODY_BINARIES="$(dirname $0)"
 mkdir -p "${ANTIBODY_HOME}" || true

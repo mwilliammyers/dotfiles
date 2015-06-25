@@ -1,6 +1,6 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
-let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
+let g:spf13_bundle_groups=['general', 'writing', 'YouCompleteMe', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
 let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
 " general {
@@ -36,6 +36,8 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 " }
 
 " plugins {
+    
+    let g:NERDTreeBookmarksFile = $XDG_DATA_HOME . '/.NERDTreeBookmarks'
 
     " Disable  omni complete
     "let g:spf13_no_omni_complete = 1

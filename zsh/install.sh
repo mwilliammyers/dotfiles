@@ -21,9 +21,6 @@ linkZsh() {
 }
 
 # MAIN #########################################################################
-paths=( "${ZDOTDIR}" "${antibody_config_dst}" ) 
-createPaths ${paths[@]}
-
 deps=( "fasd" "grc" )
 checkDependencies ${deps[@]}
 
