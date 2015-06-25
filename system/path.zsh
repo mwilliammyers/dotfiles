@@ -17,6 +17,8 @@ export _FASD_DATA="${XDG_DATA_HOME}/fasd"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 
+export ANTIBODY_BUNDLE_FILE=${ZSH}/antibody/bundles
+
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
     default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
@@ -51,8 +53,6 @@ if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
     #export PERLBREW_HOME=${PERLBREW_ROOT}/.perlbrew
     #export PERL_LOCAL_LIB_ROOT=${PERLBREW_ROOT}
 
-    export ANTIBODY_BUNDLE_FILE=${ZSH}/antibody/bundles.linux
-
     #source ~/.linuxbrew/etc/grc.bashrc #FIXME: this is hardcoded
     source /usr/share/Modules/init/zsh
     source ~/.modules
@@ -64,5 +64,4 @@ elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
     export ECLIMSTARTUP="${XDG_CONFIG_HOME}/eclim/eclimrc"
     export ECLIPSE_HOME="$(brew --prefix)/Caskroom/eclipse-java/$(ls -t $(brew --prefix)/Caskroom/eclipse-java | head -n 1)/eclipse"
     export GOPATH=$(brew --prefix)
-    export ANTIBODY_BUNDLE_FILE=${ZSH}/antibody/bundles.osx
 fi
