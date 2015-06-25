@@ -1,9 +1,9 @@
 # Plugin settings ################################
 # autosuggestions settings ##########
 # Enable autosuggestions automatically.
-zle-line-init() {
-    zle autosuggest-start
-}
+# zle-line-init() {
+#     zle autosuggest-start
+# }
 zle -N zle-line-init
 export AUTOSUGGESTION_HIGHLIGHT_CURSOR=1
 export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=240'
