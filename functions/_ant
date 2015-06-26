@@ -14,3 +14,4 @@ _ant () {
 }
 
 compdef _ant ant
+_ant "$@"
