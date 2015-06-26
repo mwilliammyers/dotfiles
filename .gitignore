@@ -13,3 +13,4 @@ bundle/
 .vim/.vim
 init/spf13-vim.sh
 xdg/config/python/.python_history
+antibody/antibody

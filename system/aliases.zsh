@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2039
 
+alias sudo='nocorrect sudo'
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -46,10 +48,11 @@ alias less="less -r"
   #fi
 #fi
 
-if [ "$(uname -s)" != "Darwin" ]; then
-  if [ -e /usr/bin/xdg-open ]; then
+if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
+  if hash xdg-open &>/dev/null; then
     alias open="xdg-open"
   fi
+  alias sage='pkill -f ssh-agent -u $(id -u $USER); eval "$(ssh-agent -s -t 10800)" && ssh-add ~/.ssh/id_github'
 fi
 
 # greps non ascii chars
@@ -61,8 +64,6 @@ nonascii() {
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
-alias sudo='nocorrect sudo'
-
 # Get week number
 alias week='date +%V'
 
@@ -71,8 +72,6 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 alias which='which -a'
 
-alias speed='speedtest_cli'
-
 # sudo visudo & add:
 # username ALL=NOPASSWD: /usr/local/bin/htop
 alias htop='sudo htop'
@@ -80,18 +79,16 @@ alias htop='sudo htop'
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l && cleanupPath" # cleanupPath defined in functions.zsh
 
-alias bcl='rm -rf $(brew --cache)/*'
-
-alias sage='pkill -f ssh-agent -u $(id -u $USER); eval "$(ssh-agent -s -t 10800)" && ssh-add ~/.ssh/id_github'
-
 # Command aliases
-# TODO: dynamically create these? eg. tmux -f path/to/tmux/startup or env var IF in xdg/config?
 alias taa='tmux a'
 alias nvim='nocorrect nvim'
 alias zshrc='nvim ${ZSHRC}'
+alias speed='speedtest_cli'
 
-# Start the eclim deamon
-alias start_eclimd='$ECLIPSE_HOME/eclimd -f ${ECLIMSTARTUP} &> /dev/null &'
+if [ -e "${ECLIPSE_HOME}/eclimd" ]; then
+  # Start the eclim deamon
+  alias start_eclimd='$ECLIPSE_HOME/eclimd -f ${ECLIMSTARTUP} &> /dev/null &'
 
-# Stop the eclim deamon
-alias stop_eclimd='$ECLIPSE_HOME/eclim -f ${ECLIMSTARTUP} -command shutdown'
+  # Stop the eclim deamon
+  alias stop_eclimd='$ECLIPSE_HOME/eclim -f ${ECLIMSTARTUP} -command shutdown'
+fi
