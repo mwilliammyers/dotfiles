@@ -23,9 +23,8 @@ setopt LOCAL_TRAPS
 setopt SHARE_HISTORY
 # add timestamps to history
 setopt EXTENDED_HISTORY
-setopt PROMPT_SUBST
-setopt CORRECT
-setopt COMPLETE_IN_WORD
+#setopt PROMPT_SUBST
+#setopt CORRECT
 #setopt IGNORE_EOF
 # adds history
 setopt APPEND_HISTORY
@@ -55,7 +54,7 @@ if [[ ! -z "$+terminfo[smkx]" ]] && [[ ! -z "$+terminfo[rmkx]" ]]; then
   zle -N zle-line-finish
 fi
 
-# Key bindings ################################
+# Key bindings ###################################
 # Use emacs key bindings
 bindkey -e
 
@@ -119,12 +118,12 @@ else
 fi
 
 # Plugin settings ################################
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+
+export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
+
 # autosuggestions settings ##########
 export AUTOSUGGESTION_HIGHLIGHT_CURSOR=1
 export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=240'
 export AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
-
-export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
 

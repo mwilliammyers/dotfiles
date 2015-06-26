@@ -1,40 +1,43 @@
 #!/usr/bin/env zsh
 
+# XDG settings
+export XDG_CACHE_HOME=${HOME}/.cache
+export XDG_DATA_HOME=${HOME}/.local/share
+export XDG_BIN_HOME=${HOME}/.local/bin
+export XDG_CONFIG_HOME=${HOME}/.config
+
 # Root dir of dotfiles repo
-export ZSH=${HOME}/.config/dotfiles
-#echo 5
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
-#echo 8
+export ZSH=${XDG_CONFIG_HOME}/dotfiles
+
 # all of our zsh files
 typeset -U config_files
 config_files=( $ZSH/**/*.zsh )
-#echo 12
+
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
   source "$file"
 done
-#echo 17
+
 # setup antibody
-source ${ANTIBODY_HOME}/.antibody.zsh
 antibody bundle < "${ANTIBODY_BUNDLE_FILE}"
-#echo 22
+#source "${ANTIBODY_HOME}/zsh-users-zsh-history-substring-search/zsh-history-substring-search.zsh"
+
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
   source "$file"
 done
-#echo 27
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit -i -d ${ZSH_COMPDUMP}
-#echo 31
+
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
-#echo 36
+
 unset config_files
-#echo 38
+
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 #[[ -a ~/.localrc ]] && source ~/.localrc

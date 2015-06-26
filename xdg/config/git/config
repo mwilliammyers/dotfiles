@@ -87,3 +87,7 @@
 
 [include]
     path = credentials # include credentials file whose path is relative to this (config) file
+
+[alias]
+	add-upstream = !zsh -ic add-upstream
+	sync = !zsh -ic git-sync

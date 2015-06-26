@@ -1,10 +1,22 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
-#cd "${0%/*}"
-#source ../dotfiles.conf;
+cd "${0%/*}"
+source ../dotfiles.conf
 
-#VERSION="0.0.3"
-#mkdir -p ~/.dotfiles/antibody/antibody
-#wget -O /tmp/antibody.tar.gz \
-  #"https://github.com/caarlos0/antibody/releases/download/$VERSION/antibody-$VERSION-$(uname -s).tar.gz"
-#tar xvzf /tmp/antibody.tar.gz -C ~/.dotfiles/antibody/antibody
+set -e
+
+antibody="github.com/mkwmms/antibody"
+info "installing ${antibody}"
+
+go get -v -a "${antibody}"
+#rm -rf ${config_dir}/antibody/antibody/bin
+mkdir -vp ${config_dir}/antibody/antibody/bin
+[[ "$OSTYPE" =~ ^(darwin)+ ]] && gopath="/usr/local" || gopath="${HOME}/.local"
+rsync -ahPEHAX --inplace ${gopath}/bin/antibody ${config_dir}/antibody/antibody/bin
+rsync -ahPEHAX --inplace ${gopath}/src/github.com/mkwmms/antibody/antibody.zsh ${config_dir}/antibody/antibody
+
+success "${antibody} installed"
+unset gopath
+unset antibody
+
+exit 0;

@@ -1,14 +1,7 @@
 #!/usr/bin/env zsh
 
-## XDG settings ##################################
-export XDG_CACHE_HOME=${HOME}/.cache
-export XDG_DATA_HOME=${HOME}/.local/share
-export XDG_BIN_HOME=${HOME}/.local/bin
-export XDG_CONFIG_HOME=${HOME}/.config
-
 ## ZSH settings ####################################
 export ZSHRC=${HOME}/.zshrc
-export ANTIBODY_HOME="${XDG_CONFIG_HOME}/antibody"
 export ZSH_COMPDUMP="${XDG_DATA_HOME:-${HOME}}/.zcompdump-${HOST/.*/}"
 
 ## EXPORTS ############################################
@@ -17,7 +10,6 @@ export _FASD_DATA="${XDG_DATA_HOME}/fasd"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 
-export ANTIBODY_BUNDLE_FILE=${ZSH}/antibody/bundles
 
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
