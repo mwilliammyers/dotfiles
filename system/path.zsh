@@ -21,7 +21,7 @@ export GOPATH=${XDG_BIN_HOME}
 
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
-    default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
+    default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
     export PATH="/bluehome3/wmyers7/.fslbuild/bin:/bluehome3/wmyers7/.fslbuild/sbin:/fslhome/wmyers7/.linuxbrew/opt/go/libexec/bin:/fslhome/wmyers7/.local/bin:${default_path}"
     export MANPATH="${XDG_DATA_HOME}/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.linuxbrew/share/man"
     export INFOPATH="${XDG_DATA_HOME}/info:/bluehome3/wmyers7/.fslbuild/share/info/bluehome3/wmyers7/.linuxbrew/share/info"
