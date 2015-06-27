@@ -15,7 +15,8 @@ export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
     default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
     export PATH="/bluehome3/wmyers7/.fslbuild/bin:/bluehome3/wmyers7/.fslbuild/sbin:/fslhome/wmyers7/.linuxbrew/opt/go/libexec/bin:/fslhome/wmyers7/.local/bin:${default_path}"
-    export MANPATH="${XDG_DATA_HOME}/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.linuxbrew/share/man"
+    default_manpath=/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:/usr/X11R6/man:/opt/rocks/man:/usr/java/latest/man:/usr/java/jdk1.5/man
+    export MANPATH="${XDG_DATA_HOME}/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.fslbuild/share/man:/bluehome3/wmyers7/.linuxbrew/share/man:${default_manpath}"
     export INFOPATH="${XDG_DATA_HOME}/info:/bluehome3/wmyers7/.fslbuild/share/info/bluehome3/wmyers7/.linuxbrew/share/info"
 
     ## OS specific settings ############################

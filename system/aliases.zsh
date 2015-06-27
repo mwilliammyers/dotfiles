@@ -92,3 +92,7 @@ if [ -e "${ECLIPSE_HOME}/eclimd" ]; then
   # Stop the eclim deamon
   alias stop_eclimd='$ECLIPSE_HOME/eclim -f ${ECLIMSTARTUP} -command shutdown'
 fi
+
+alias target='gcc -march=native -Q --help=target'
+alias march='gcc -march=native -Q --help=target | grep march --color=NEVER'
+alias avx='gcc -march=native -Q --help=target | grep avx --color=NEVER'
