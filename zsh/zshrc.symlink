@@ -41,3 +41,6 @@ unset config_files
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 #[[ -a ~/.localrc ]] && source ~/.localrc
+
+# TODO: figure out why specifying this in the bundle file causes everything to explode
+antibody bundle mkwmms/zsh-fasd
