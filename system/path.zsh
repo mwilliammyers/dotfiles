@@ -10,7 +10,6 @@ export _FASD_DATA="${XDG_DATA_HOME}/fasd"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 
-
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
     default_path=/usr/local/cuda/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/opt/ganglia/bin:/opt/ganglia/sbin:/opt/ibutils/bin:/usr/java/latest/bin:/opt/rocks/bin:/opt/rocks/sbin:/opt/dell/srvadmin/bin
@@ -51,7 +50,7 @@ if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
     source ~/.modules
 elif [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/wm/bin:/usr/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/usr/local/opt/go/libexec/bin"
-    export MANPATH="/usr/share/man:/usr/local/share/man"
+    export MANPATH="/usr/local/share/man:/usr/share/man"
 
     export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=$(brew --prefix)/Caskroom" 
     export ECLIMSTARTUP="${XDG_CONFIG_HOME}/eclim/eclimrc"

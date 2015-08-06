@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>34CA5F9F-BEBD-4FE0-A265-503C71F3ABFC</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>git</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>GitHub</string>
+			<key>url</key>
+			<string>https://github.com/search?type=Everything&amp;language=Objective-C&amp;q={query}&amp;repo=&amp;langOverride=&amp;x=25&amp;y=16&amp;start_value=1</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>79CB21F0-28FC-47BC-9EAB-A05082AD179E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>stack</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>StackOverflow</string>
+			<key>url</key>
+			<string>http://stackoverflow.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>E5A445F6-6715-4AE2-A4EF-9A1DCF6FF2A9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>flix</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Netflix</string>
+			<key>url</key>
+			<string>http://movies.netflix.com/WiSearch?oq=skyl&amp;ac_posn=-1&amp;v1={query}&amp;search_submit=</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

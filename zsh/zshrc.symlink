@@ -44,3 +44,5 @@ unset config_files
 
 # TODO: figure out why specifying this in the bundle file causes everything to explode
 antibody bundle mkwmms/zsh-fasd
+
+REPO_URI='https://github.com/mkwmms/spf13-vim.git'
