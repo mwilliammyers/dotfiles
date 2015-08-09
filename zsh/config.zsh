@@ -22,7 +22,7 @@ setopt LOCAL_TRAPS
 # share history between sessions ???
 setopt SHARE_HISTORY
 # add timestamps to history
-setopt EXTENDED_HISTORY
+# setopt EXTENDED_HISTORY
 #setopt PROMPT_SUBST
 #setopt CORRECT
 #setopt IGNORE_EOF
@@ -126,4 +126,3 @@ export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
 export AUTOSUGGESTION_HIGHLIGHT_CURSOR=1
 export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=240'
 export AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-
