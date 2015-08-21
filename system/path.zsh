@@ -9,6 +9,7 @@ export _FASD_DATA="${XDG_DATA_HOME}/fasd"
 
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export CURL_HOME="${XDG_CONFIG_HOME}/curl"
+# export ATOM_HOME="${XDG_CONFIG_HOME}/atom"
 
 # TODO: find away around needing this check...
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then

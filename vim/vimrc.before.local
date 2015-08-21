@@ -1,7 +1,7 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
 let g:spf13_bundle_groups=['general', 'writing', 'YouCompleteMe', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
-let g:spf13_consolidated_directory = $HOME . '/.vim/'
+"let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
 " general {
     " Prevent automatically changing to open file directory
@@ -36,13 +36,13 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 " }
 
 " plugins {
-    
+
     let g:NERDTreeBookmarksFile = $XDG_DATA_HOME . '/.NERDTreeBookmarks'
 
     " Disable  omni complete
     "let g:spf13_no_omni_complete = 1
 
-    "expand UltiSnips snippets on return 
+    "expand UltiSnips snippets on return
     "(while still keeping spf-13 default:  <c-j> )
     let g:ulti_expand_or_jump_res = 0
     function ExpandSnippetOrCarriageReturn()
@@ -71,13 +71,13 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     "let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 1
-    
+
     " Disable neosnippet expansion
     " This maps over <C-k> and does some Supertab
     " emulation with snippets
     "   let g:spf13_no_neosnippet_expand = 1
 
-    " Easy-clip settings 
+    " Easy-clip settings
     let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
     let g:EasyClipShareYanks = 1 " share yank history across vim instances
     let g:EasyClipShareYanksDirectory = $HOME . '/.vim/'
@@ -93,7 +93,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
     " re-map defaults...
     "make mark because easy-clip uses m
-    nnoremap mk m 
+    nnoremap mk m
     " Delete and yank (m) from the cursor to the end of the line
     nnoremap M m$
 
@@ -129,10 +129,10 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
        "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
        autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#404040 ctermbg=234
        autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#404040 ctermbg=234
-    
+
     " Enable powerline symbols
        let g:airline_powerline_fonts = 1
-       
+
     " Leave the default font and size in GVim
     " To set your own font, do it from ~/.vimrc.local
     "   let g:spf13_no_big_font = 1
@@ -173,7 +173,7 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
         map <leader>ptt  :ProjectTreeToggle<CR>
     " }
 
-   "delete buffer and delete file 
+   "delete buffer and delete file
     "nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
 
    " }
