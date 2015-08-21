@@ -16,6 +16,8 @@ alias dt="cd ~/Desktop"
 alias h="history"
 alias jb="jobs"
 
+# Command aliases
+
 # grc overides for ls
 #   Made possible through contributions from generous benefactors like
 #   `brew install coreutils`
@@ -33,7 +35,6 @@ else
   alias ldot='ls -ld .* --color'
 fi
 
-# Command aliases
 alias nvim='nocorrect nvim'
 alias zshrc='${EDITOR} ${ZSHRC}'
 alias speed='speedtest_cli'
@@ -67,6 +68,10 @@ if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
   alias target='gcc -march=native -Q --help=target'
   alias march='gcc -march=native -Q --help=target | grep march --color=NEVER'
   alias avx='gcc -march=native -Q --help=target | grep avx --color=NEVER'
+else
+  if hash gdircolors &>/dev/null; then
+    alias dircolors='gdircolors'
+  fi
 fi
 
 # IP addresses
