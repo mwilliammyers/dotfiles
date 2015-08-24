@@ -7,7 +7,7 @@ fpath=($ZSH/functions $fpath)
 
 autoload -U "$ZSH"/functions/*(:t)
 
-export HISTFILE="${XDG_DATA_HOME:-${HOME}}/.zsh_history"
+export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -19,8 +19,6 @@ setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS
 # allow functions to have local traps
 setopt LOCAL_TRAPS
-# share history between sessions ???
-setopt SHARE_HISTORY
 # add timestamps to history
 # setopt EXTENDED_HISTORY
 #setopt PROMPT_SUBST
@@ -118,7 +116,7 @@ else
 fi
 
 # Plugin settings ################################
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+# export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
 
