@@ -1,0 +1,25 @@
+"*":
+  "exception-reporting":
+    userId: "f7effcfc-e07d-e94f-17b4-a78832f5115d"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    invisibles: {}
+    showInvisibles: true
+  "autocomplete-plus": {}
+  "atom-beautify":
+    _analyticsUserId: "8c53b238-4e16-452b-9f35-7fb74c46709e"
+  "live-doc-viewer": {}
+  "one-dark-ui": {}
+  "remote-sync": {}
+  "git-plus": {}
+  "tree-view": {}
+  "atom-fuzzy-grep": {}
+  "remote-edit":
+    notifications: false
+  "fuzzy-finder": {}
