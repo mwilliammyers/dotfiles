@@ -1,10 +1,26 @@
 #!/usr/bin/env zsh
 
 # XDG settings
-export XDG_CACHE_HOME=${HOME}/.cache
-export XDG_DATA_HOME=${HOME}/.local/share
-export XDG_BIN_HOME=${HOME}/.local/bin
-export XDG_CONFIG_HOME=${HOME}/.config
+if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
+    export XDG_CONFIG_HOME="${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.config"
+    export XDG_CACHE_HOME="${HOME}/Library/Caches"
+    export XDG_DATA_HOME="/usr/local/share"
+    export XDG_BIN_HOME="/usr/local/bin"
+else
+    export XDG_CONFIG_HOME="${HOME}/.config"
+    export XDG_CACHE_HOME="${HOME}/.cache"
+    export XDG_DATA_HOME="${HOME}/.local/share"
+    export XDG_BIN_HOME="${HOME}/.local/bin"
+fi
+
+PROFILE_STARTUP=false
+if [[ "$PROFILE_STARTUP" == true ]]; then
+    zmodload zsh/zprof # Output time statistics
+    # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+    PS4=$'%D{%M%S%.} %N:%i> '
+    exec 3>&2 2>"${XDG_CACHE_HOME:-$HOME/tmp}/.zsh_statup.$$"
+    setopt xtrace prompt_subst
+fi
 
 # Root dir of dotfiles repo
 export ZSH=${XDG_CONFIG_HOME}/dotfiles
@@ -20,7 +36,6 @@ done
 
 # setup antibody
 antibody bundle < "${ANTIBODY_BUNDLE_FILE}"
-#source "${ANTIBODY_HOME}/zsh-users-zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
@@ -38,9 +53,18 @@ done
 
 unset config_files
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-#[[ -a ~/.localrc ]] && source ~/.localrc
+[[ -e ${XDG_CONFIG_HOME}/.localrc ]] && source ${XDG_CONFIG_HOME}/.localrc
+
+eval $(dircolors -b "${XDG_CONFIG_HOME}/dotfiles/dircolors/LS_COLORS")
 
 # TODO: figure out why specifying this in the bundle file causes everything to explode
 antibody bundle mkwmms/zsh-fasd
+export REPO_URI='https://github.com/mkwmms/spf13-vim.git'
+
+if [[ "$PROFILE_STARTUP" == true ]]; then
+    zprof
+    unsetopt xtrace
+    exec 2>&3 3>&-
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

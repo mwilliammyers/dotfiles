@@ -7,14 +7,7 @@
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nvim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Make vim the default editor.
-export EDITOR='vim';
+export EDITOR='vim'
 
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
@@ -33,4 +26,3 @@ export GREP_OPTIONS='--color=auto';
 
 # Display correct tmux window titles
 #export DISABLE_AUTO_TITLE=true
-

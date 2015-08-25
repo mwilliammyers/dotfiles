@@ -1,6 +1,6 @@
 " vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
 
-let g:spf13_bundle_groups=['general', 'writing', 'YouCompleteMe', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
+let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
 let g:spf13_consolidated_directory = $HOME . '/.vim/'
 
 " general {
@@ -75,16 +75,20 @@ let g:spf13_consolidated_directory = $HOME . '/.vim/'
     " Disable neosnippet expansion
     " This maps over <C-k> and does some Supertab
     " emulation with snippets
-    "   let g:spf13_no_neosnippet_expand = 1
+       let g:spf13_no_neosnippet_expand = 0
 
     " Easy-clip settings 
     let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
     let g:EasyClipShareYanks = 1 " share yank history across vim instances
     let g:EasyClipShareYanksDirectory = $HOME . '/.vim/'
-    let g:EasyClipAutoFormat = 0
     let g:EasyClipUseSubstituteDefaults = 1
 
-    let g:EasyClipUsePasteToggleDefaults = 0
+    let g:EasyClipAutoFormat = 1
+    let g:EasyClipUsePasteToggleDefaults = 1
+    nmap <leader>cf <plug>EasyClipToggleFormattedPaste
+    imap <c-v> <plug>EasyClipInsertModePaste
+    cmap <c-v> <plug>EasyClipCommandModePaste
+
     nmap <c-f> <plug>EasyClipSwapPasteForward
     nmap <c-d> <plug>EasyClipSwapPasteBackwards
 

@@ -7,9 +7,9 @@ fpath=($ZSH/functions $fpath)
 
 autoload -U "$ZSH"/functions/*(:t)
 
-export HISTFILE="${XDG_DATA_HOME:-${HOME}}/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE="${XDG_DATA_HOME}/zsh/history"
+HISTSIZE=10000000
+SAVEHIST=10000000
 
 # don't nice background tasks
 setopt NO_BG_NICE
@@ -19,10 +19,8 @@ setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS
 # allow functions to have local traps
 setopt LOCAL_TRAPS
-# share history between sessions ???
-setopt SHARE_HISTORY
 # add timestamps to history
-setopt EXTENDED_HISTORY
+# setopt EXTENDED_HISTORY
 #setopt PROMPT_SUBST
 #setopt CORRECT
 #setopt IGNORE_EOF

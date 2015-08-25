@@ -271,5 +271,6 @@ killthis() {
 }
 
 vimsesh(){
-vim -c "SessionOpen ${1}"
+    vim +"SessionOpen ${1}"
 }
+

@@ -13,7 +13,7 @@ extract () {
             *.bz2)      bunzip2 "$1"                          ;;
             *.dmg)      hdiutil mount "$1"                    ;;
             *.gz)       gunzip "$1"                           ;;
-            *.tar)      tar -xvf "$1"                         ;;
+            *.tar)      tar -xvf "$1" -C ${$2:-${PWD}}        ;;
             *.tbz2)     tar -jxvf "$1"                        ;;
             *.tgz)      tar -zxvf "$1"                        ;;
             *.zip)      unzip "$1"                            ;;
