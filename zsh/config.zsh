@@ -8,8 +8,8 @@ fpath=($ZSH/functions $fpath)
 autoload -U "$ZSH"/functions/*(:t)
 
 export HISTFILE="${XDG_DATA_HOME}/zsh/history"
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # don't nice background tasks
 setopt NO_BG_NICE
@@ -116,7 +116,7 @@ else
 fi
 
 # Plugin settings ################################
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+# export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
 
@@ -124,4 +124,3 @@ export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
 export AUTOSUGGESTION_HIGHLIGHT_CURSOR=1
 export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=240'
 export AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
-

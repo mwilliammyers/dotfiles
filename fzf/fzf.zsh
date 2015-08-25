@@ -1,19 +1,20 @@
+zf_home="$XDG_DATA_HOME/vim/plugged/fzf"
 # Setup fzf
 # ---------
-if [[ ! "$PATH" =~ "$HOME/.vim/plugged/fzf/bin" ]]; then
-  export PATH="$PATH:$HOME/.vim/plugged/fzf/bin"
+if [[ ! "$PATH" =~ "$fzf_home/bin" ]]; then
+  export PATH="$PATH:$fzf_home/bin"
 fi
 
 # Man path
 # --------
-if [[ ! "$MANPATH" =~ "$HOME/.vim/plugged/fzf/man" && -d "$HOME/.vim/plugged/fzf/man" ]]; then
-  export MANPATH="$MANPATH:$HOME/.vim/plugged/fzf/man"
+if [[ ! "$MANPATH" =~ "$fzf_home/man" && -d "$fzf_home/man" ]]; then
+  export MANPATH="$MANPATH:$fzf_home/man"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- =~ i ]] && source "$HOME/.vim/plugged/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- =~ i ]] && source "$fzf_home/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "$HOME/.vim/plugged/fzf/shell/key-bindings.zsh"
+source "$fzf_home/shell/key-bindings.zsh"

@@ -1,0 +1,183 @@
+" vim: set sw=4 ts=4 sts=3 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:"
+
+let g:spf13_bundle_groups=['general', 'writing', 'YouCompleteMe', 'programming', 'python', 'ruby', 'javascript', 'html', 'misc',]
+"let g:spf13_consolidated_directory = $HOME . '/.vim/'
+
+" general {
+    " Prevent automatically changing to open file directory
+       "let g:spf13_no_autochdir = 1
+
+    " Leader keys
+       let g:spf13_leader=','
+
+    " Disable easier moving in tabs and windows
+    "   let g:spf13_no_easyWindows = 1
+
+    " Disable wrap relative motion for start/end line motions
+    "   let g:spf13_no_wrapRelMotion = 1
+
+    let g:spf13_clear_search_highlight = 1
+
+    " Disable fast tab navigation
+    "   let g:spf13_no_fastTabs = 1
+
+    " Disable whitespace stripping
+    "   let g:spf13_keep_trailing_whitespace = 1
+
+    " Don't create default mappings for multicursors
+    " See :help multiple-cursors-mappings
+    "   let g:multi_cursor_use_default_mapping=0
+    "   let g:multi_cursor_next_key='<C-n>'
+    "   let g:multi_cursor_prev_key='<C-p>'
+    "   let g:multi_cursor_skip_key='<C-x>'
+    "   let g:multi_cursor_quit_key='<Esc>'
+    " Require a special keypress to enter multiple cursors mode
+    "   let g:multi_cursor_start_key='+'
+" }
+
+" plugins {
+
+    let g:NERDTreeBookmarksFile = $XDG_DATA_HOME . '/.NERDTreeBookmarks'
+
+    " Disable  omni complete
+    "let g:spf13_no_omni_complete = 1
+
+    "expand UltiSnips snippets on return
+    "(while still keeping spf-13 default:  <c-j> )
+    let g:ulti_expand_or_jump_res = 0
+    function ExpandSnippetOrCarriageReturn()
+        let snippet = UltiSnips#ExpandSnippetOrJump()
+        if g:ulti_expand_or_jump_res > 0
+            return snippet
+        else
+            return "\<CR>"
+        endif
+    endfunction
+    inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+
+    "This makes the completion popup strictly passive.
+    " Keypresses acts normally. <ESC> takes you of insert mode, words don't
+    " automatically complete, pressing <CR> inserts a newline, etc. Iff the
+    " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
+    " expands it and jumps between fields.
+       "let g:spf13_noninvasive_completion = 1
+
+    "Syntastic settings
+    "set statusline+=%#warningmsg#
+    "set statusline+=%{SyntasticStatuslineFlag()}
+    "set statusline+=%*
+
+    "let g:syntastic_always_populate_loc_list = 1
+    "let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 1
+
+    " Disable neosnippet expansion
+    " This maps over <C-k> and does some Supertab
+    " emulation with snippets
+       let g:spf13_no_neosnippet_expand = 0
+
+    " Easy-clip settings
+    let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+    let g:EasyClipShareYanks = 1 " share yank history across vim instances
+    let g:EasyClipShareYanksDirectory = $HOME . '/.vim/'
+    let g:EasyClipUseSubstituteDefaults = 1
+
+    let g:EasyClipAutoFormat = 1
+    let g:EasyClipUsePasteToggleDefaults = 1
+    nmap <leader>cf <plug>EasyClipToggleFormattedPaste
+    imap <c-v> <plug>EasyClipInsertModePaste
+    cmap <c-v> <plug>EasyClipCommandModePaste
+
+    nmap <c-f> <plug>EasyClipSwapPasteForward
+    nmap <c-d> <plug>EasyClipSwapPasteBackwards
+
+    "see https://github.com/svermeulen/vim-easyclip#clipboard-setting
+    set clipboard=unnamed
+
+    " re-map defaults...
+    "make mark because easy-clip uses m
+    nnoremap mk m
+    " Delete and yank (m) from the cursor to the end of the line
+    nnoremap M m$
+
+    " ctrl-p
+    let g:ctrlp_use_caching = 1
+    let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+    let g:ctrlp_clear_cache_on_exit = 1
+
+    "submit a pull request to include most of these by default..."
+    "if exists("g:ctrl_user_command")
+        "unlet g:ctrlp_user_command
+    "endif
+    "set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.jpeg,*.png,*.jpg,*.gif,*.mp4,*.m4v,*mp3,*/vendor/*,*/vendor/*,*/\.git/*
+    "let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.git|\.hg|\.svn|\.settings|\.sass-cache|cache|\.bundles|.bundle|\.rsync_cache|vendor/([^\/]+\/)*vendor)$', 'file': '\v\.(exe|so|dll|o|pdf|jpg|png|jpeg|gif|mpeg|m4v|mp3|mp4)$' }
+
+    "make eclim play nicely with YCM
+    let g:EclimCompletionMethod = 'omnifunc'
+    "let g:EclimLogLevel = 0
+    let g:EclimLoggingDisabled = 1
+"}
+
+" appearance {
+
+    let g:solarized_termcolors=16
+    let g:solarized_visibility="low"
+    let g:solarized_contrast="normal"
+
+    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
+    " Indent guides will attempt to set your colors smartly. If you
+    " want to control them yourself, do it here.
+       let g:indent_guides_auto_colors = 0
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#002b36 ctermbg=234
+       "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#404040 ctermbg=234
+       autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#404040 ctermbg=234
+
+    " Enable powerline symbols
+       let g:airline_powerline_fonts = 1
+
+    " Leave the default font and size in GVim
+    " To set your own font, do it from ~/.vimrc.local
+    "   let g:spf13_no_big_font = 1
+
+    " Don't turn conceallevel or concealcursor
+    "   let g:spf13_no_conceal = 1
+
+    " Clear search highlighting
+       let g:spf13_clear_search_highlight = 1
+
+       let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+
+    " Disable views
+    "   let g:spf13_no_views = 1
+"}
+
+" key re-maps {
+   "insert newline without being in insert mode
+   let mapleader=g:spf13_leader
+   "insert carraiage return from normal mode
+    nmap '<CR> :a<CR><CR>.<CR>
+
+    " Eclim re-maps {
+        map <leader>jf   :JavaFormat<CR>
+        map <leader>jfa :%JavaFormat<CR>
+        map <leader>jg   :JavaGet<CR>
+        map <leader>jgs  :JavaGetSet<CR>
+        map <leader>jco  :JavaConstructor<CR>
+        map <leader>jc   :JavaCorrect<CR>
+        map <leader>jdc  :JavaDocComment<CR>
+        map <leader>jsc  :JavaSearchContext<CR>
+        map <leader>jch  :JavaCallHeirarchy<CR>
+        map <leader>jim  :JavaImport<CR>
+        map <leader>jimo :JavaImportOrganize<CR>
+
+        map <leader>pdo  :ProjectTodo<CR>
+        map <leader>ptr  :ProjectTree<CR>
+        map <leader>ptt  :ProjectTreeToggle<CR>
+    " }
+
+   "delete buffer and delete file
+    "nnoremap <leader>rmf :call delete(expand('%')) \| bdelete!<CR>
+
+   " }

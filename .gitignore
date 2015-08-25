@@ -15,3 +15,6 @@ init/spf13-vim.sh
 xdg/config/python/.python_history
 antibody/antibody
 workbench.xmi
+.DS_Store
+._.DS_Store
+._.*
