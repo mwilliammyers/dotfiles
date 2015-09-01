@@ -118,7 +118,7 @@ fi
 # Plugin settings ################################
 # export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
-export GENCOMPL_FPATH=${XDG_DATA_HOME:-${HOME}}/.completions
+export GENCOMPL_FPATH=${XDG_DATA_HOME}/zsh/completions
 
 # autosuggestions settings ##########
 export AUTOSUGGESTION_HIGHLIGHT_CURSOR=1

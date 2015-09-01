@@ -6,3 +6,4 @@ zsh-users/zsh-history-substring-search
 zsh-users/zsh-completions
 TBSliver/zsh-plugin-colored-man
 mkwmms/zsh-git
+mkwmms/zsh-fzf
