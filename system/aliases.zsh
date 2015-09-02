@@ -83,5 +83,3 @@ alias week='date +%V'
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
-# Reload the shell (i.e. invoke as a login shell)
