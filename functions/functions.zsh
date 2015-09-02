@@ -57,7 +57,7 @@ targz() {
 }
 
 # Determine size of a file or total size of a directory
-fs() {
+size() {
     if du -b /dev/null > /dev/null 2>&1; then
         local arg=-sbh;
     else
