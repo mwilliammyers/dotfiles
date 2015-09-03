@@ -219,24 +219,14 @@ tre() {
 
 
 cleanup() {
-    if [[ "$1" =~ ^[-]?[aA]{1}(ll)*$ ]]; then
-        sudo rm -rvf ~/Library/Logs/*
-        sudo rm -rvf /Library/Logs/*
-        sudo rm -rvf /var/log/*
-    elif [[ "$1" =~ ^[-]?[dD]{1}[sS]{1}$ ]]; then
-        # Recursively delete `.DS_Store` files
-        find . -type f -name '*.DS_Store' -ls -delete
-    elif [[ "$1" =~ ^[-]?[tT]{1}(rash)*$ ]]; then
-        sudo rm -rfv ~/.Trash
-        sudo rm -rfv /Volumes/*/.Trashes
-        # find . -type f -name '*.DS_Store' -ls -delete
-    elif [[ "$1" =~ ^[-]?[uU]{1}(ser)*$ ]]; then
-        rm -rvf ~/Library/Logs/*
-        # find . -type f -name '*.DS_Store' -ls -delete
-    else
-        find . -type f -name '*.DS_Store' -ls -delete
-        cleanupPath;
-    fi
+    export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+    export MANPATH=$(echo "$MANPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+    export INFOPATH=$(echo "$INFOPATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+    
+    find ${1:-.} -type f -name '.*DS_Store' -delete
+    
+    # Recursively removes all dead links from given directory or current directory 
+    find -L ${1:-.} -type l -exec rm -v {} + 
 }
 
 merge() {
@@ -270,7 +260,12 @@ killthis() {
     pkill -f ${1} -u $(id -u $USER);
 }
 
-vimsesh(){
+vimsesh() {
     vim +"SessionOpen ${1}"
+}
+
+# Recursively removes all dead links from given directory or current directory 
+rmdl() {
+  find -L ${1:-.} -type l -exec rm -v {} +  
 }
 
