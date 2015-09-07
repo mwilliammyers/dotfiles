@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 printf "\n\nInstalling Alcatraz..."
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
 exit 0;
