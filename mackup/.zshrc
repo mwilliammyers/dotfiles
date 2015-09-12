@@ -2,16 +2,16 @@
 
 # XDG settings
 if [[ "$OSTYPE" =~ ^(darwin)+ ]]; then
-    export XDG_CONFIG_HOME="${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.config"
-    export XDG_CACHE_HOME="${HOME}/Library/Caches"
-    export XDG_DATA_HOME="/usr/local/share"
-    export XDG_BIN_HOME="/usr/local/bin"
+    # export XDG_CONFIG_HOME="${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.config"
+    export XDG_CACHE_HOME="/Library/Caches"
+    # export XDG_DATA_HOME="/usr/local/share"
+    # export XDG_BIN_HOME="/usr/local/bin"
 else
-    export XDG_CONFIG_HOME="${HOME}/.config"
     export XDG_CACHE_HOME="${HOME}/.cache"
-    export XDG_DATA_HOME="${HOME}/.local/share"
-    export XDG_BIN_HOME="${HOME}/.local/bin"
 fi
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_BIN_HOME="${HOME}/.local/bin"
 
 PROFILE_STARTUP=false
 if [[ "$PROFILE_STARTUP" == true ]]; then
