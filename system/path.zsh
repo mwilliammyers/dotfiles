@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 ## ZSH settings ####################################
 export ZSHRC=$HOME/.zshrc
 export ZSH_COMPDUMP="$XDG_DATA_HOME/zsh/zcompdump-${HOST/.*/}"
