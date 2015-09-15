@@ -77,8 +77,8 @@
   helper = osxkeychain
 
 [user]
-  name = William Myers
-  email = mkwmms@icloud.com
+  name  = mkwmms
+  email = mkwmms@users.noreply.github.com 
 
 ; [include]
 ;     path = credentials # include credentials file whose path is relative to this (config) file
