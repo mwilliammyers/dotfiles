@@ -1,0 +1,1 @@
+/Users/wm/.config/reel/mkwmms/fish-osx/functions/ql.fish
