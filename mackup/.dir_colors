@@ -9,17 +9,17 @@
 #   described in the ECMA-48 document; in other words, you'll need a terminal
 #   with capabilities of displaying 256 colors.
 #
-#   Usage: 1. save this file to: ~/.dir_colors 
-#          2. fish: no need to do anything else 
-#             bash/zsh: you might need to add something like: 
-#                       `eval $( dircolors -b $HOME/.dir_colors )` 
+#   Usage: 1. save this file to: ~/.dir_colors
+#          2. fish: no need to do anything else
+#             bash/zsh: you might need to add something like:
+#                       `eval $( dircolors -b $HOME/.dir_colors )`
 #                       to your shell startup file
 #
-#   Notes: OS X: - install gls via Homebrew (`brew install coreutils`) 
+#   Notes: OS X: - install gls via Homebrew (`brew install coreutils`)
 #                   - link gls to ls ahead of system ls on PATH or alias ls=gls
-#                - install gdircolors via Homebrew (`brew install coreutils`) 
+#                - install gdircolors via Homebrew (`brew install coreutils`)
 #                   - link gdircolors to dircolors or alias dircolors=gdircolors
-#                     or do `eval $( gdircolors -b $HOME/.dir_colors )` 
+#                     or do `eval $( gdircolors -b $HOME/.dir_colors )`
 #
 #   As of this writing, around 300 different filetypes/extensions are supported.
 #   That's indeed a lot of extensions, but there's a lot more! Therefore I need
@@ -143,7 +143,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .pcf                  1
 #   adobe photoshop proof settings file
 .psf                  1
-#   slate 
+#   slate
 .slate                1
 #   shell
 .bashrc               1
