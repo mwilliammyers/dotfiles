@@ -18,3 +18,7 @@ set --export LS_COLORS 'bd=38;5;68:ca=38;5;17:cd=38;5;113;1:di=38;5;30:do=38;5;1
 
 # No fish greeting
 set --erase fish_greeting
+
+set -x _FASD_VIMINFO "$XDG_DATA_HOME/vim/viminfo"
+
+source "$XDG_CONFIG_HOME/reel/config.fish"

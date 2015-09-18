@@ -1,1 +1,1 @@
-/Users/wm/.config/reel/mkwmms/fish-basic/functions/mkcd.fish
+/Users/wm/.config/reel/mkwmms-fish-basic/functions/mkcd.fish

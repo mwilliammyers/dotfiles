@@ -1,1 +1,1 @@
-/Users/wm/.config/reel/mkwmms/shell-fasd/functions/j.fish
+/Users/wm/.config/reel/mkwmms-shell-fasd/functions/j.fish

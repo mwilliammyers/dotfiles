@@ -1,1 +1,1 @@
-/Users/wm/.config/reel/mkwmms/fish-basic/functions/port_kill.fish
+/Users/wm/.config/reel/mkwmms-fish-basic/functions/port_kill.fish
