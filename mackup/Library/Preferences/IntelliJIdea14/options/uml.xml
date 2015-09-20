@@ -1,0 +1,13 @@
+<application>
+  <component name="UmlConfiguration">
+    <option name="defaultScope" value="Project Files" />
+    <option name="fitContentAfterLayout" value="true" />
+    <option name="layout" value="ORGANIC" />
+    <option name="categories">
+      <map>
+        <entry id="DIFF" categories="Details" />
+        <entry id="JAVA" categories="Fields;Constructors;Properties;Inner Classes" />
+      </map>
+    </option>
+  </component>
+</application>

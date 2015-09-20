@@ -65,3 +65,6 @@ Jetty
 com.intellij.gwt
 com.intellij.css
 com.intellij.aop
+com.intellij.aspectj
+com.intellij.spring.roo
+com.intellij.spring.boot

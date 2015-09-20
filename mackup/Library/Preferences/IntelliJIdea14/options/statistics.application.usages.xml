@@ -1,8 +1,34 @@
 <application>
+  <component name="StatisticsApplicationUsages">
+    <group name="language-level">
+      <project id="catan" values="JDK_1_8" collectionTime="1442779061376" />
+    </group>
+    <group name="vcs">
+      <project id="catan" values="Git" collectionTime="1442779061279" />
+    </group>
+    <group name="file-type">
+      <project id="catan" values="CSS,IDEA_MODULE,Images,UNKNOWN,HTML,UML,JavaScript,PLAIN_TEXT" collectionTime="1442779061367" />
+    </group>
+    <group name="module type">
+      <project id="catan" values="JAVA_MODULE" collectionTime="1442779061279" />
+    </group>
+  </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="1" />
-      <entry feature="welcome.screen.WelcomeScreen.GetFromVcs" count="1" />
+      <entry feature="ide.settings.Appearance" count="4" />
+      <entry feature="ide.settings.Code_Style" count="2" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
+      <entry feature="ide.settings.Console_Font" count="2" />
+      <entry feature="ide.settings.Diagrams" count="6" />
+      <entry feature="ide.settings.Font" count="3" />
+      <entry feature="ide.settings.Java" count="2" />
+      <entry feature="ideaapp.started" count="12" />
+      <entry feature="uml.ShowDiagram.JAVA" count="29" />
+      <entry feature="uml.ShowDiagram.JAVA.popup" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.GetFromVcs" count="5" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
     </counts>
   </component>
 </application>
