@@ -1,0 +1,12 @@
+<application>
+  <component name="DimensionService">
+    <location key="#Browse_JetBrains_Plugins_.0.0.1440.900" x="306" y="54" />
+    <location key="#Plugins.0.0.1440.900" x="318" y="57" />
+    <location key="WELCOME_SCREEN.0.0.1440.900" x="718" y="230" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1440.900" x="436" y="288" />
+    <location key="SettingsEditor.0.0.1440.900" x="201" y="112" />
+    <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1440.900" x="308" y="111" />
+    <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1440.900" x="552" y="346" />
+    <location key="FileChooserDialogImpl.0.0.1440.900" x="508" y="184" />
+  </component>
+</application>

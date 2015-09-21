@@ -1,0 +1,68 @@
+<application>
+  <component name="VimSettings">
+    <state version="4" enabled="true" />
+    <globalmarks />
+    <filemarks>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/communication/ChatView.java" timestamp="1442541581795">
+        <mark key="[" line="26" column="32" />
+        <mark key="]" line="26" column="31" />
+        <mark key="^" line="26" column="31" />
+        <mark key="." line="26" column="31" />
+      </file>
+      <file name="/File Header.txt.ft" timestamp="1442548812080">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Class.txt.ft" timestamp="1442547794510">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/.gitignore" timestamp="1442541473489">
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="3" column="0" />
+        <mark key="^" line="3" column="0" />
+        <mark key="." line="3" column="0" />
+      </file>
+      <file name="/Catch Statement Body.txt.ft" timestamp="1442547789642">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Html.txt.ft" timestamp="1442547792745">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/fragment.java" timestamp="1442544718352">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Interface.txt.ft" timestamp="1442547794096">
+        <mark key="[" line="0" column="0" />
+      </file>
+    </filemarks>
+    <jumps />
+    <registers>
+      <register name="1" type="4">
+        <text>/**
+ * Created by ${USER}</text>
+      </register>
+      <register name="&quot;" type="4">
+        <text>/**
+ * Created by ${USER}</text>
+      </register>
+      <register name="2" type="4">
+        <text encoding="base64">VVNFUn0gb24gJHtEQVRFfS4KIA==</text>
+      </register>
+    </registers>
+    <search>
+      <last-dir>0</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search />
+      <history-cmd>
+        <entry>Wa</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+    <shortcut-conflicts />
+    <editor>
+      <key-repeat enabled="true" />
+    </editor>
+  </component>
+</application>

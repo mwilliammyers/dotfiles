@@ -1,0 +1,23 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="log.debug.categories" value="" />
+    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="DefaultHtmlDoctype.Refreshed" value="1" />
+    <property name="evlsprt3.14" value="10" />
+    <property name="installation.uid" value="c865dc46-c1c0-4065-a5cc-9026e676086b" />
+    <property name="PLUGIN_FILTER" value="uml&#10;ruby&#10;doc" />
+    <property name="default.storage.format" value=".idea (directory based)" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
+    <property name="lastTip" value="1" />
+    <property name="file.colors.enable.non.project" value="494539" />
+    <property name="file.colors.enable.tests" value="2a3b2c" />
+    <property name="Non-Project Files" value="494539" />
+    <property name="Tests" value="2a3b2c" />
+    <property name="ProjectStructure.SecondLevelElements" value="0.2" />
+    <property name="project.jdk.splitter" value="0.2" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Tabs and Indents" />
+    <property name="FileTemplates.CurrentTab" value="Includes" />
+    <property name="FileTemplates.SelectedTemplate" value="File Header" />
+  </component>
+</application>

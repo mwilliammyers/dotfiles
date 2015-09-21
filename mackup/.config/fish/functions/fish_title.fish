@@ -1,1 +1,0 @@
-/Users/wm/.config/reel/mkwmms-pure/functions/fish_title.fish

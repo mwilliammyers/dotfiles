@@ -1,1 +1,0 @@
-/Users/wm/.config/reel/mkwmms-fish-basic/functions/td.fish

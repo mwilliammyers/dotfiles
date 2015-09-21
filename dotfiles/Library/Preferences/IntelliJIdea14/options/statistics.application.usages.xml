@@ -1,0 +1,29 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="language-level">
+      <project id="catan" values="JDK_1_8" collectionTime="1442550302523" />
+    </group>
+    <group name="vcs">
+      <project id="catan" values="Git" collectionTime="1442550302424" />
+    </group>
+    <group name="module type">
+      <project id="catan" values="JAVA_MODULE" collectionTime="1442550302424" />
+    </group>
+    <group name="file-type">
+      <project id="catan" values="JAVA,CSS,UNKNOWN,JavaScript,IDEA_MODULE,ARCHIVE,JSON,XML,CLASS,PLAIN_TEXT,HTML,Images,Eclipse" collectionTime="1442550302517" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="ide.settings.File_and_Code_Templates" count="1" />
+      <entry feature="ide.settings.Java" count="4" />
+      <entry feature="ideaapp.started" count="4" />
+      <entry feature="uml.ShowDiagram.JAVA" count="31" />
+      <entry feature="uml.ShowDiagram.JAVA.popup" count="1" />
+      <entry feature="uml.ShowDiagram.MODULES" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Plugins" count="1" />
+    </counts>
+  </component>
+</application>
