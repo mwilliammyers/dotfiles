@@ -19,5 +19,6 @@
     <property name="settings.code.style.selected.tab.JAVA" value="Tabs and Indents" />
     <property name="FileTemplates.CurrentTab" value="Includes" />
     <property name="FileTemplates.SelectedTemplate" value="File Header" />
+    <property name="export.settings.path" value="$APPLICATION_CONFIG_DIR$/settings.jar" />
   </component>
 </application>

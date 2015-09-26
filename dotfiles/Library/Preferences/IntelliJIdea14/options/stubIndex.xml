@@ -2,6 +2,19 @@
   <component name="FileBasedIndex">
     <option name="registeredIndices">
       <list>
+        <option value="gr.method.name" />
+        <option value="gr.field.name" />
+        <option value="gr.script.fqn" />
+        <option value="gr.class.fqn" />
+        <option value="cfml.interface.shortName" />
+        <option value="cfml.inheritors.shortName" />
+        <option value="cfml.component.shortName" />
+        <option value="sql.names" />
+        <option value="sql.column.name" />
+        <option value="sql.table.shortName" />
+        <option value="properties.index" />
+        <option value="dom.elementClass" />
+        <option value="dom.namespaceKey" />
         <option value="Ruby.cucumber.step" />
         <option value="JRuby.import.shortName" />
         <option value="Ruby.require.load.shortName" />
@@ -30,19 +43,6 @@
         <option value="gr.script.class" />
         <option value="gr.annot.members" />
         <option value="gr.annot.method.name" />
-        <option value="gr.method.name" />
-        <option value="gr.field.name" />
-        <option value="gr.script.fqn" />
-        <option value="gr.class.fqn" />
-        <option value="cfml.interface.shortName" />
-        <option value="cfml.inheritors.shortName" />
-        <option value="cfml.component.shortName" />
-        <option value="sql.names" />
-        <option value="sql.column.name" />
-        <option value="sql.table.shortName" />
-        <option value="properties.index" />
-        <option value="dom.elementClass" />
-        <option value="dom.namespaceKey" />
       </list>
     </option>
   </component>
