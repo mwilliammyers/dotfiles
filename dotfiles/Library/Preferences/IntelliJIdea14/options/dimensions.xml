@@ -12,10 +12,42 @@
     <location key="Diagram.Print.Preview.Dialog.0.0.1440.900" x="478" y="49" />
     <location key="SettingsEditor.0.0.3200.1800" x="888" y="667" />
     <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.3200.1800" x="1350" y="775" />
+    <location key="CommitChangelistDialog2.0.0.3200.1800" x="1254" y="610" />
+    <location key="FileChooserDialogImpl.0.0.3200.1800" x="807" y="734" />
+    <location key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog.0.0.3200.1800" x="1355" y="632" />
+    <location key="findTextDialog.0.0.3200.1800" x="1394" y="666" />
+    <location key="RollbackChangesDialog.0.0.3200.1800" x="1387" y="633" />
+    <location key="com.intellij.testIntegration.createTest.CreateTestDialog.0.0.3200.1800" x="714" y="618" />
+    <location key="#Project_Structure.0.0.3200.1800" x="540" y="576" />
+    <location key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog.0.0.3200.1800" x="890" y="732" />
+    <location key="DiffContextDialog.0.0.3200.1800" x="100" y="100" />
+    <location key="#com.intellij.refactoring.turnRefsToSuper.TurnRefsToSuperDialog.0.0.3200.1800" x="1447" y="766" />
+    <location key="#com.intellij.ide.util.TreeClassChooserDialog.0.0.3200.1800" x="1338" y="697" />
+    <location key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.3200.1800" x="1372" y="764" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.3200.1800" x="1284" y="23" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.3200.1800" x="1338" y="661" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.3200.1800" x="1413" y="593" />
+    <location key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog.0.0.3200.1800" x="1270" y="643" />
+    <location key="#toString()_Generation_Settings.0.0.3200.1800" x="1408" y="644" />
+    <location key="replaceTextDialog.0.0.3200.1800" x="818" y="698" />
+    <location key="ReplaceDuplicatesPrompt.0.0.3200.1800" x="1072" y="824" />
+    <location key="Vcs.Push.Dialog.0.0.3200.1800" x="1295" y="620" />
+    <location key="#com.intellij.ide.util.PackageChooserDialog.0.0.3200.1800" x="1338" y="683" />
+    <location key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" x="100" y="100" />
     <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="235" />
     <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="235" />
     <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="235" />
     <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1398" height="235" />
     <size key="SettingsEditor.0.0.1440.900" width="1037" height="509" />
+    <size key="SettingsEditor.0.0.3200.1800" width="1183" height="676" />
+    <size key="findTextDialog.0.0.3200.1800" width="412" height="507" />
+    <size key="DiffContextDialog.0.0.3200.1800" width="3000" height="1600" />
+    <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.3200.1800" width="456" height="274" />
+    <size key="javadoc.popup.0.0.3200.1800" width="481" height="170" />
+    <size key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" width="3000" height="1600" />
+    <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog" state="0" />
+    <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog.0" state="300" />
+    <extendedState key="DiffContextDialog" state="0" />
+    <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog.1" state="500" />
   </component>
 </application>

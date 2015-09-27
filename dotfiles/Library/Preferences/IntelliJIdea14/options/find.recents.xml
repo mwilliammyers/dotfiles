@@ -1,0 +1,17 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>java.dist</find>
+      <find>PlayerInfo</find>
+      <find>OLDPlayerModel</find>
+      <find>OLDGameModel</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>PlayerModel</replace>
+      <replace>GameModel</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$USER_HOME$/Documents/Developer/catan/java/src</dir>
+    </dirStrings>
+  </component>
+</application>

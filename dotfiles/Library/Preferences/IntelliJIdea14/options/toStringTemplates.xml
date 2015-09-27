@@ -1,0 +1,5 @@
+<application>
+  <component name="ToStringTemplates">
+    <option name="defaultTempalteName" value="StringBuilder (JDK 1.5)" />
+  </component>
+</application>

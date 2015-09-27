@@ -1,26 +1,32 @@
 <application>
   <component name="StatisticsApplicationUsages">
     <group name="vcs">
-      <project id="catan" values="Git" collectionTime="1443251583137" />
+      <project id="catan" values="Git" collectionTime="1443324084039" />
     </group>
     <group name="file-type">
-      <project id="catan" values="IDEA_MODULE,JavaScript,CSS,PLAIN_TEXT,ARCHIVE,UNKNOWN,HTML,JAVA,UML,Images" collectionTime="1443251583215" />
+      <project id="catan" values="UML,JAVA,UNKNOWN,PLAIN_TEXT,HTML,ARCHIVE,Images,JavaScript,CSS" collectionTime="1443324084198" />
     </group>
     <group name="module type">
-      <project id="catan" values="JAVA_MODULE" collectionTime="1443251583138" />
+      <project id="catan" values="JAVA_MODULE" collectionTime="1443324084040" />
     </group>
     <group name="language-level">
-      <project id="catan" values="JDK_1_8" collectionTime="1443251583222" />
+      <project id="catan" values="JDK_1_8" collectionTime="1443324084211" />
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
+      <entry feature="ide.settings.Code_Style" count="3" />
       <entry feature="ide.settings.Colors_&amp;_Fonts" count="7" />
-      <entry feature="ide.settings.File_and_Code_Templates" count="1" />
+      <entry feature="ide.settings.Diagrams" count="1" />
+      <entry feature="ide.settings.File_and_Code_Templates" count="2" />
       <entry feature="ide.settings.Font" count="4" />
-      <entry feature="ide.settings.Java" count="4" />
-      <entry feature="ideaapp.started" count="5" />
-      <entry feature="uml.ShowDiagram.JAVA" count="31" />
+      <entry feature="ide.settings.General" count="2" />
+      <entry feature="ide.settings.Java" count="10" />
+      <entry feature="ide.settings.Project_Structure" count="3" />
+      <entry feature="ide.settings.TODO" count="1" />
+      <entry feature="ide.settings.toString()_Generation_Settings" count="3" />
+      <entry feature="ideaapp.started" count="8" />
+      <entry feature="uml.ShowDiagram.JAVA" count="32" />
       <entry feature="uml.ShowDiagram.JAVA.popup" count="1" />
       <entry feature="uml.ShowDiagram.MODULES" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />

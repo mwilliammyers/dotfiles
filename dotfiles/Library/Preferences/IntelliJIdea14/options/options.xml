@@ -5,7 +5,7 @@
     <property name="DefaultHtmlDoctype.Refreshed" value="1" />
     <property name="evlsprt3.14" value="10" />
     <property name="installation.uid" value="c865dc46-c1c0-4065-a5cc-9026e676086b" />
-    <property name="PLUGIN_FILTER" value="uml&#10;ruby&#10;doc" />
+    <property name="PLUGIN_FILTER" value="vim&#10;uml&#10;ruby&#10;doc" />
     <property name="default.storage.format" value=".idea (directory based)" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
@@ -14,11 +14,24 @@
     <property name="file.colors.enable.tests" value="2a3b2c" />
     <property name="Non-Project Files" value="494539" />
     <property name="Tests" value="2a3b2c" />
-    <property name="ProjectStructure.SecondLevelElements" value="0.2" />
+    <property name="ProjectStructure.SecondLevelElements" value="0.37916666" />
     <property name="project.jdk.splitter" value="0.2" />
-    <property name="settings.code.style.selected.tab.JAVA" value="Tabs and Indents" />
-    <property name="FileTemplates.CurrentTab" value="Includes" />
-    <property name="FileTemplates.SelectedTemplate" value="File Header" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Blank Lines" />
+    <property name="FileTemplates.CurrentTab" value="Templates" />
+    <property name="FileTemplates.SelectedTemplate" value="Unnamed" />
     <property name="export.settings.path" value="$APPLICATION_CONFIG_DIR$/settings.jar" />
+    <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.5" />
+    <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="false" />
+    <property name="INSPECTION_FILTER_HISTORY" value="&quot;New in 13&quot;" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/Documents/Developer/catan/java/lib&#10;/Users/wm/Downloads/eclipse-java-google-style.xml&#10;/Users/wm/Downloads/intellij-java-google-style.xml" />
+    <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
+    <property name="FindSplitterProportion" value="0.25" />
+    <property name="ProjectStructure.TopLevelElements" value="0.15" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Paths" />
+    <property name="MoveClass.OpenInEditor" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
 </application>

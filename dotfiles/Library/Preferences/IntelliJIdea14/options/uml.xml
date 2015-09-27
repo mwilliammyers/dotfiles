@@ -1,0 +1,10 @@
+<application>
+  <component name="UmlConfiguration">
+    <option name="fitContentAfterLayout" value="true" />
+    <option name="categories">
+      <map>
+        <entry id="JAVA" categories="Fields;Constructors;Methods;Properties;Inner Classes" />
+      </map>
+    </option>
+  </component>
+</application>
