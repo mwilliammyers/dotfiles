@@ -34,6 +34,15 @@
     <location key="Vcs.Push.Dialog.0.0.3200.1800" x="1295" y="620" />
     <location key="#com.intellij.ide.util.PackageChooserDialog.0.0.3200.1800" x="1338" y="683" />
     <location key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" x="100" y="100" />
+    <location key="CommitChangelistDialog2.-257.-1200.1920.1200" x="357" y="-890" />
+    <location key="FileChooserDialogImpl.-257.-1200.1920.1200" x="490" y="-851" />
+    <location key="Vcs.Push.Dialog.-257.-1200.1920.1200" x="398" y="-880" />
+    <location key="#Notifications.-257.-1200.1920.1200" x="459" y="-874" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.-257.-1200.1920.1200" x="310" y="-1188" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.1440.900" x="533" y="164" />
+    <location key="CommitChangelistDialog2.0.0.1440.900" x="374" y="160" />
+    <location key="findTextDialog.0.0.1440.900" x="514" y="216" />
+    <location key="RollbackChangesDialog.0.0.1440.900" x="507" y="183" />
     <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="235" />
     <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="235" />
     <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="235" />
@@ -45,6 +54,8 @@
     <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.3200.1800" width="456" height="274" />
     <size key="javadoc.popup.0.0.3200.1800" width="481" height="170" />
     <size key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" width="3000" height="1600" />
+    <size key="javadoc.popup.0.0.1440.900" width="481" height="170" />
+    <size key="javadoc.popup.-257.-1200.1920.1200" width="481" height="170" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog" state="0" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog.0" state="300" />
     <extendedState key="DiffContextDialog" state="0" />
