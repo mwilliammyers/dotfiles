@@ -1,0 +1,7 @@
+<keymap version="1" name="Eclipse (Mac OS X) copy" parent="Eclipse (Mac OS X)">
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="back_quote" second-keystroke="back_quote" />
+    <keyboard-shortcut first-keystroke="alt back_quote" />
+  </action>
+</keymap>

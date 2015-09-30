@@ -1,6 +1,7 @@
 <application>
   <component name="StatisticsApplicationUsages">
     <group name="vcs">
+<<<<<<< HEAD
       <project id="catan" values="Git" collectionTime="1443513089551" />
     </group>
     <group name="file-type">
@@ -11,10 +12,23 @@
     </group>
     <group name="language-level">
       <project id="catan" values="JDK_1_8" collectionTime="1443513089641" />
+=======
+      <project id="catan" values="Git" collectionTime="1443550685701" />
+    </group>
+    <group name="file-type">
+      <project id="catan" values="HTML,PLAIN_TEXT,CSS,XML,JAVA,ARCHIVE,JSON,Images,UNKNOWN,IDEA_MODULE,JavaScript" collectionTime="1443550685762" />
+    </group>
+    <group name="module type">
+      <project id="catan" values="JAVA_MODULE" collectionTime="1443550685701" />
+    </group>
+    <group name="language-level">
+      <project id="catan" values="JDK_1_8" collectionTime="1443550685778" />
+>>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
+<<<<<<< HEAD
       <entry feature="ide.settings.Code_Completion" count="1" />
       <entry feature="ide.settings.Code_Folding" count="1" />
       <entry feature="ide.settings.Code_Style" count="4" />
@@ -40,6 +54,9 @@
       <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.Plugins" count="1" />
+=======
+      <entry feature="ideaapp.started" count="3" />
+>>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     </counts>
   </component>
 </application>
