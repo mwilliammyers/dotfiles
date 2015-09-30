@@ -4,6 +4,7 @@
     <option name="categories">
       <map>
         <entry id="JAVA" categories="Fields;Constructors;Methods;Properties;Inner Classes" />
+        <entry id="RailsDependency" categories="System DB fields;Own fields" />
       </map>
     </option>
   </component>

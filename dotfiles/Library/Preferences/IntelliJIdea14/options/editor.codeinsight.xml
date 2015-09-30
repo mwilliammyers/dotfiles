@@ -1,5 +1,12 @@
 <application>
+  <component name="CodeFoldingSettings">
+    <option name="COLLAPSE_DOC_COMMENTS" value="true" />
+  </component>
   <component name="CodeInsightSettings">
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <option name="JAVADOC_INFO_DELAY" value="500" />
+    <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="true" />
+    <option name="HIGHLIGHT_SCOPE" value="true" />
     <option name="USE_ACCESSORS_IN_EQUALS_HASHCODE" value="true" />
   </component>
 </application>

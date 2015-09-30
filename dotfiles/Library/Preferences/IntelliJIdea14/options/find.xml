@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Directory '/Users/wm/Documents/Developer/catan/java'" />
-    <option name="defaultScopeName" value="Directory '/Users/wm/Documents/Developer/catan/java'" />
+    <option name="customScope" value="Project 'catan'" />
+    <option name="defaultScopeName" value="Project 'catan'" />
     <option name="wholeWordsOnly" value="true" />
     <option name="WHOLE_WORDS_ONLY" value="true" />
-    <option name="SEARCH_SCOPE" value="Directory '/Users/wm/Documents/Developer/catan/java'" />
+    <option name="SEARCH_SCOPE" value="Project 'catan'" />
   </component>
 </application>

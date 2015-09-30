@@ -3,46 +3,55 @@
     <state version="4" enabled="true" />
     <globalmarks />
     <filemarks>
-      <file name="/Dummy.txt" timestamp="1443294923469">
-        <mark key="[" line="0" column="0" />
-      </file>
-      <file name="/Singleton.txt.ft" timestamp="1443296393325">
-        <mark key="[" line="0" column="0" />
-      </file>
       <file name="/File Header.txt.ft" timestamp="1443296369377">
         <mark key="[" line="0" column="0" />
       </file>
-      <file name="/a.dummy" timestamp="1443294923512">
+      <file name="/a.dummy" timestamp="1443498281175">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Interface.txt.ft" timestamp="1443296405580">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/map/HexModel.java" timestamp="1443419758762">
+        <mark key="[" line="36" column="35" />
+        <mark key="]" line="36" column="36" />
+        <mark key="." line="36" column="36" />
+        <mark key="^" line="36" column="36" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/map/PortModel.java" timestamp="1443419060663">
+        <mark key="[" line="73" column="0" />
+        <mark key="]" line="73" column="0" />
+        <mark key="^" line="73" column="0" />
+        <mark key="." line="73" column="0" />
+      </file>
+      <file name="/JUnit4 Test Class.txt.ft" timestamp="1443296154662">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Dynamic Method Body.txt.ft" timestamp="1443296376871">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Catch Statement Body.txt.ft" timestamp="1443296377975">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/shared/model/RobberModel.java" timestamp="1443498518360">
+        <mark key="[" line="3" column="35" />
+        <mark key="]" line="3" column="34" />
+        <mark key="^" line="3" column="34" />
+        <mark key="." line="3" column="34" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/map/MapModel.java" timestamp="1443419917104">
+        <mark key="[" line="10" column="0" />
+        <mark key="]" line="10" column="0" />
+        <mark key="." line="10" column="0" />
+        <mark key="^" line="10" column="1" />
+      </file>
+      <file name="/Singleton.txt.ft" timestamp="1443296393325">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/JUnit3 Test Class.txt.ft" timestamp="1443296151113">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/package-info.txt.ft" timestamp="1443296408093">
-        <mark key="[" line="0" column="0" />
-      </file>
-      <file name="/Interface.txt.ft" timestamp="1443296405580">
-        <mark key="[" line="0" column="0" />
-      </file>
-      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/map/HexModel.java" timestamp="1443250482058">
-        <mark key="[" line="36" column="35" />
-        <mark key="]" line="36" column="36" />
-        <mark key="." line="36" column="36" />
-        <mark key="^" line="36" column="36" />
-      </file>
-      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/communication/ChatView.java" timestamp="1442541581795">
-        <mark key="[" line="26" column="32" />
-        <mark key="]" line="26" column="31" />
-        <mark key="^" line="26" column="31" />
-        <mark key="." line="26" column="31" />
-      </file>
-      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/map/PortModel.java" timestamp="1443296535465">
-        <mark key="[" line="70" column="0" />
-        <mark key="]" line="70" column="0" />
-        <mark key="^" line="70" column="0" />
-        <mark key="." line="70" column="0" />
-      </file>
-      <file name="/JUnit4 Test Class.txt.ft" timestamp="1443296154662">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/Enum.txt.ft" timestamp="1443296409449">
@@ -54,52 +63,76 @@
       <file name="/AnnotationType.txt.ft" timestamp="1443296407340">
         <mark key="[" line="0" column="0" />
       </file>
-      <file name="$USER_HOME$/Documents/Developer/catan/.gitignore" timestamp="1442541473489">
-        <mark key="[" line="2" column="0" />
-        <mark key="]" line="3" column="0" />
-        <mark key="^" line="3" column="0" />
-        <mark key="." line="3" column="0" />
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/shared/definitions/TurnStatus.java" timestamp="1443497746204">
+        <mark key="[" line="4" column="41" />
+        <mark key="]" line="4" column="41" />
+        <mark key="." line="4" column="41" />
       </file>
-      <file name="/Dynamic Method Body.txt.ft" timestamp="1443296376871">
-        <mark key="[" line="0" column="0" />
-      </file>
-      <file name="/Catch Statement Body.txt.ft" timestamp="1443296377975">
-        <mark key="[" line="0" column="0" />
-      </file>
-      <file name="/Html.txt.ft" timestamp="1443296598669">
+      <file name="/Html.txt.ft" timestamp="1443419272332">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/JUnit4 Test Method.txt.ft" timestamp="1443296155515">
         <mark key="[" line="0" column="0" />
       </file>
-      <file name="$USER_HOME$/Documents/Developer/catan/build.xml" timestamp="1443298558807" />
-      <file name="/fragment.java" timestamp="1443296775209">
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/data/PlayerModel.java" timestamp="1443417909551">
+        <mark key="[" line="40" column="0" />
+        <mark key="]" line="40" column="12" />
+        <mark key="^" line="37" column="11" />
+        <mark key="." line="40" column="12" />
+      </file>
+      <file name="/fragment.java" timestamp="1443498062169">
         <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/Documents/Developer/catan/java/src/client/data/GameModel.java" timestamp="1443417933654">
+        <mark key="[" line="23" column="32" />
+        <mark key="]" line="23" column="32" />
+        <mark key="." line="23" column="32" />
       </file>
     </filemarks>
     <jumps />
     <registers>
-      <register name="1" type="4">
-        <text>io</text>
-      </register>
       <register name="&quot;" type="4">
-        <text>io</text>
-      </register>
-      <register name="2" type="4">
-        <text>/**
- * Created by ${USER}</text>
-      </register>
-      <register name="3" type="4">
-        <text encoding="base64">VVNFUn0gb24gJHtEQVRFfS4KIA==</text>
-      </register>
-      <register name=":" type="4">
-        <text>%s/java.build.dir/java.build/g</text>
+        <text encoding="base64">CgovKioKICogVXNlZCB0byBwYXNzIHBsYXllciBpbmZvcm1hdGlvbiBpbnRvIHRoZSByb2Igdmlldzxicj4KICogPGJyPgogKiBQUk9QRVJUSUVTOjxicj4KICogPHVsPgogKiA8bGk+SWQ6IFVuaXF1ZSBwbGF5ZXIgSUQ8L2xpPgogKiA8bGk+UGxheWVySW5kZXg6IFBsYXllck1vZGVsJ3Mgb3JkZXIgaW4gdGhlIGdhbWUgWzAtM108L2xpPgogKiA8bGk+TmFtZTogUGxheWVyTW9kZWwncyBuYW1lIChub24tZW1wdHkgc3RyaW5nKTwvbGk+CiAqIDxsaT5Db2xvcjogUGxheWVyTW9kZWwncyBjb2xvciAoY2Fubm90IGJlIG51bGwpPC9saT4KICogPGxpPk51bUNhcmRzOiBOdW1iZXIgb2YgZGV2ZWxvcG1lbnQgY2FyZHMgdGhlIHBsYXllciBoYXMgKD49IDApPC9saT4KICogPC91bD4KICogCiAqLw==</text>
       </register>
       <register name="-" type="4">
-        <text>io</text>
+        <text>;</text>
       </register>
       <register name="/" type="4">
         <text>java.build.dir</text>
+      </register>
+      <register name="0" type="2">
+        <text encoding="base64">ICogQGF1dGhvciBBbGVjIFRoZSBNYXBNb2RlbCBvYmplY3QgcmVwcmVzZW50cyB0aGF0IENhdGFuIGdhbWUgYm9hcmQuCg==</text>
+      </register>
+      <register name="1" type="4">
+        <text encoding="base64">CgovKioKICogVXNlZCB0byBwYXNzIHBsYXllciBpbmZvcm1hdGlvbiBpbnRvIHRoZSByb2Igdmlldzxicj4KICogPGJyPgogKiBQUk9QRVJUSUVTOjxicj4KICogPHVsPgogKiA8bGk+SWQ6IFVuaXF1ZSBwbGF5ZXIgSUQ8L2xpPgogKiA8bGk+UGxheWVySW5kZXg6IFBsYXllck1vZGVsJ3Mgb3JkZXIgaW4gdGhlIGdhbWUgWzAtM108L2xpPgogKiA8bGk+TmFtZTogUGxheWVyTW9kZWwncyBuYW1lIChub24tZW1wdHkgc3RyaW5nKTwvbGk+CiAqIDxsaT5Db2xvcjogUGxheWVyTW9kZWwncyBjb2xvciAoY2Fubm90IGJlIG51bGwpPC9saT4KICogPGxpPk51bUNhcmRzOiBOdW1iZXIgb2YgZGV2ZWxvcG1lbnQgY2FyZHMgdGhlIHBsYXllciBoYXMgKD49IDApPC9saT4KICogPC91bD4KICogCiAqLw==</text>
+      </register>
+      <register name="2" type="4">
+        <text>;</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICoK</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICogQGF1dGhvciBBbGVjIAo=</text>
+      </register>
+      <register name="5" type="4">
+        <text encoding="base64">QWxlYyA=</text>
+      </register>
+      <register name="6" type="4">
+        <text>Alec The MapModel object represents that Catan game board.</text>
+      </register>
+      <register name="7" type="4">
+        <text>`</text>
+      </register>
+      <register name="8" type="4">
+        <text>io</text>
+      </register>
+      <register name="9" type="4">
+        <text>/**
+ * Created by ${USER}</text>
+      </register>
+      <register name=":" type="4">
+        <text>wa</text>
       </register>
     </registers>
     <search>
@@ -114,8 +147,9 @@
         <entry>java.build.dir</entry>
       </history-search>
       <history-cmd>
-        <entry>Wa</entry>
         <entry>%s/java.build.dir/java.build/g</entry>
+        <entry>wa</entry>
+        <entry>Wa</entry>
       </history-cmd>
       <history-expr />
       <history-input />
