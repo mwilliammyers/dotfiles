@@ -19,3 +19,5 @@ workbench.xmi
 ._.DS_Store
 ._.*
 fonts/powerline/
+.stfolder
+.stignore
