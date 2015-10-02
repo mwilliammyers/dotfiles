@@ -5,13 +5,58 @@
       <find>PlayerInfo</find>
       <find>OLDPlayerModel</find>
       <find>OLDGameModel</find>
+      <find>java.src</find>
+      <find>java.src.dir</find>
+      <find>server|server|server|server|server</find>
+      <find>java.dir</find>
+      <find>src.dir</find>
+      <find>build.dir</find>
+      <find>javadoc.dir</find>
+      <find>src</find>
+      <find>${src}</find>
+      <find>${javadoc}</find>
+      <find>${build}</find>
+      <find>${dist}</find>
+      <find>${lib}</find>
+      <find>${images}</find>
+      <find>folder</find>
+      <find>dist</find>
+      <find>gson</find>
+      <find>java.lib.classpath</find>
+      <find>demo</find>
+      <find>check</find>
+      <find>classpath</find>
+      <find>comp</find>
+      <find>ResourceTypeOLD</find>
+      <find>Resource</find>
+      <find>parse</find>
+      <find>create</find>
     </findStrings>
     <replaceStrings>
       <replace>PlayerModel</replace>
       <replace>GameModel</replace>
+      <replace>dist.dir</replace>
+      <replace>src</replace>
+      <replace>build</replace>
+      <replace>javadoc</replace>
+      <replace>src.dir</replace>
+      <replace>${src.dir}</replace>
+      <replace>${javadoc.dir}</replace>
+      <replace>${build.dir}</replace>
+      <replace>${dist}</replace>
+      <replace>${dist.dir}</replace>
+      <replace>${lib.dir}</replace>
+      <replace>${images.dir}</replace>
+      <replace>directories</replace>
+      <replace>directory</replace>
+      <replace>&lt;!-- CLASS PATHS --&gt;     &lt;!-- *********** --&gt;     &lt;path id=&quot;lib-classpath&quot;&gt;         &lt;fileset dir=&quot;${lib}&quot;&gt;             &lt;include name=&quot;**/*.jar&quot; /&gt;         &lt;/fileset&gt;     &lt;/path&gt;</replace>
+      <replace>lib.classpath</replace>
+      <replace>demo.dir</replace>
+      <replace>ResourceType</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$USER_HOME$/Documents/Developer/catan/java/src</dir>
+      <dir>$USER_HOME$/Documents/Developer/catan/src</dir>
     </dirStrings>
   </component>
 </application>

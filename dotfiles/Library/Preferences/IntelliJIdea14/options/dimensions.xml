@@ -2,7 +2,7 @@
   <component name="DimensionService">
     <location key="GitCloneDialog.0.0.1440.900" x="403" y="308" />
     <location key="NewModule_or_Project.wizard.0.0.1440.900" x="340" y="65" />
-    <location key="WELCOME_SCREEN.0.0.1440.900" x="718" y="230" />
+    <location key="WELCOME_SCREEN.0.0.1440.900" x="718" y="438" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1440.900" x="436" y="288" />
     <location key="SettingsEditor.0.0.1440.900" x="276" y="216" />
     <location key="new project wizard.0.0.1440.900" x="244" y="23" />
@@ -12,7 +12,7 @@
     <location key="Diagram.Print.Preview.Dialog.0.0.1440.900" x="478" y="49" />
     <location key="SettingsEditor.0.0.3200.1800" x="888" y="667" />
     <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.3200.1800" x="1350" y="775" />
-    <location key="CommitChangelistDialog2.0.0.3200.1800" x="1159" y="610" />
+    <location key="CommitChangelistDialog2.0.0.3200.1800" x="1254" y="610" />
     <location key="FileChooserDialogImpl.0.0.3200.1800" x="807" y="734" />
     <location key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog.0.0.3200.1800" x="1355" y="632" />
     <location key="findTextDialog.0.0.3200.1800" x="1394" y="666" />
@@ -34,17 +34,6 @@
     <location key="Vcs.Push.Dialog.0.0.3200.1800" x="1295" y="620" />
     <location key="#com.intellij.ide.util.PackageChooserDialog.0.0.3200.1800" x="1338" y="683" />
     <location key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" x="100" y="100" />
-<<<<<<< HEAD
-    <location key="NewModule_or_Project.wizard.0.0.3200.1800" x="1221" y="572" />
-    <location key="new project wizard.0.0.3200.1800" x="1126" y="527" />
-    <location key="OptionsEditor.0.0.3200.1800" x="1088" y="480" />
-    <location key="IgnoredSettingsDialog.0.0.3200.1800" x="1416" y="771" />
-    <location key="#Browse_Repositories.0.0.3200.1800" x="1067" y="666" />
-    <location key="StructurePopup.0.0.3200.1800" x="1383" y="680" />
-    <location key="scopes.0.0.3200.1800" x="1400" y="764" />
-    <location key="chooseDestDirectoryDialog.0.0.3200.1800" x="1395" y="685" />
-    <location key="com.intellij.openapi.vcs.actions.ShowMessageHistoryAction$1.0.0.3200.1800" x="1468" y="912" />
-=======
     <location key="CommitChangelistDialog2.-257.-1200.1920.1200" x="357" y="-890" />
     <location key="FileChooserDialogImpl.-257.-1200.1920.1200" x="490" y="-851" />
     <location key="Vcs.Push.Dialog.-257.-1200.1920.1200" x="398" y="-880" />
@@ -54,30 +43,48 @@
     <location key="CommitChangelistDialog2.0.0.1440.900" x="374" y="160" />
     <location key="findTextDialog.0.0.1440.900" x="514" y="216" />
     <location key="RollbackChangesDialog.0.0.1440.900" x="507" y="183" />
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
-    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="235" />
-    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="235" />
-    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="235" />
-    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1398" height="235" />
-    <size key="SettingsEditor.0.0.1440.900" width="1037" height="509" />
+    <location key="#Browse_JetBrains_Plugins_.0.0.1440.900" x="382" y="132" />
+    <location key="#Browse_Repositories.0.0.1440.900" x="382" y="132" />
+    <location key="#Project_Structure.0.0.1440.900" x="208" y="30" />
+    <location key="findTextDialog.-257.-1200.1920.1200" x="497" y="-834" />
+    <location key="SettingsEditor.-257.-1200.1920.1200" x="184" y="-938" />
+    <location key="#Project_Structure.-257.-1200.1920.1200" x="191" y="-1020" />
+    <location key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog.-257.-1200.1920.1200" x="541" y="-864" />
+    <location key="OptionsEditor.-257.-1200.1920.1200" x="191" y="-1020" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.-257.-1200.1920.1200" x="448" y="-755" />
+    <location key="#Browse_Repositories.-257.-1200.1920.1200" x="290" y="-939" />
+    <location key="#Browse_JetBrains_Plugins_.-257.-1200.1920.1200" x="290" y="-939" />
+    <location key="#checkstyle-6.11.jar.-257.-1200.1920.1200" x="442" y="-943" />
+    <location key="OptionsEditor.0.0.3200.1800" x="1088" y="480" />
+    <location key="#Browse_Repositories.0.0.3200.1800" x="1067" y="666" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.1440.900" x="458" y="211" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1440.900" x="458" y="203" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1440.900" x="283" y="12" />
+    <location key="replaceTextDialog.0.0.1440.900" x="511" y="181" />
+    <location key="ReplaceDuplicatesPrompt.0.0.1440.900" x="192" y="374" />
+    <location key="ProcessPopupWindow.0.0.1440.900" x="1075" y="699" />
+    <location key="WELCOME_SCREEN.0.0.3200.1800" x="1598" y="230" />
+    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1398" height="308" />
+    <size key="SettingsEditor.0.0.1440.900" width="1037" height="583" />
     <size key="SettingsEditor.0.0.3200.1800" width="1183" height="676" />
     <size key="findTextDialog.0.0.3200.1800" width="412" height="507" />
     <size key="DiffContextDialog.0.0.3200.1800" width="3000" height="1600" />
     <size key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes.0.0.3200.1800" width="456" height="274" />
     <size key="javadoc.popup.0.0.3200.1800" width="481" height="170" />
     <size key="com.intellij.history.integration.ui.views.FileHistoryDialog.0.0.3200.1800" width="3000" height="1600" />
-<<<<<<< HEAD
-    <size key="CommitChangelistDialog2.0.0.3200.1800" width="786" height="894" />
-    <size key="StructurePopup.0.0.3200.1800" width="434" height="441" />
-    <size key="GotoFile_FileTypePopup.0.0.3200.1800" width="200" height="200" />
-    <size key="GridCell.Tab.0.left.0.0.3200.1800" width="3158" height="546" />
-    <size key="GridCell.Tab.0.center.0.0.3200.1800" width="3158" height="546" />
-    <size key="GridCell.Tab.0.right.0.0.3200.1800" width="3158" height="546" />
-    <size key="GridCell.Tab.0.bottom.0.0.3200.1800" width="3158" height="546" />
-=======
-    <size key="javadoc.popup.0.0.1440.900" width="481" height="170" />
+    <size key="javadoc.popup.0.0.1440.900" width="481" height="49" />
     <size key="javadoc.popup.-257.-1200.1920.1200" width="481" height="170" />
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
+    <size key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog.-257.-1200.1920.1200" width="546" height="527" />
+    <size key="#checkstyle-6.11.jar.-257.-1200.1920.1200" width="685" height="686" />
+    <size key="findTextDialog.0.0.1440.900" width="412" height="507" />
+    <size key="GridCell.Tab.1.left.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.1.center.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.1.right.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.1.bottom.0.0.1440.900" width="1398" height="308" />
+    <size key="ProcessPopupWindow.0.0.1440.900" width="199" height="175" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog" state="0" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog.0" state="300" />
     <extendedState key="DiffContextDialog" state="0" />

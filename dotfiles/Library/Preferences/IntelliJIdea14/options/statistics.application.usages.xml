@@ -1,62 +1,31 @@
 <application>
   <component name="StatisticsApplicationUsages">
+    <group name="language-level">
+      <project id="catan" values="JDK_1_6" collectionTime="1443756718166" />
+    </group>
     <group name="vcs">
-<<<<<<< HEAD
-      <project id="catan" values="Git" collectionTime="1443513089551" />
+      <project id="catan" values="Git" collectionTime="1443756718121" />
     </group>
     <group name="file-type">
-      <project id="catan" values="JAVA,CSS,JavaScript,Images,IDEA_MODULE,UNKNOWN,HTML,ARCHIVE,PLAIN_TEXT" collectionTime="1443513089622" />
+      <project id="catan" values="CLASS,Images,JSON,XML,JAVA,HTML,CSS,IDEA_MODULE,YAML,Markdown,ARCHIVE,JavaScript,UNKNOWN,Git file,PLAIN_TEXT" collectionTime="1443756718153" />
     </group>
     <group name="module type">
-      <project id="catan" values="JAVA_MODULE" collectionTime="1443513089551" />
-    </group>
-    <group name="language-level">
-      <project id="catan" values="JDK_1_8" collectionTime="1443513089641" />
-=======
-      <project id="catan" values="Git" collectionTime="1443550685701" />
-    </group>
-    <group name="file-type">
-      <project id="catan" values="HTML,PLAIN_TEXT,CSS,XML,JAVA,ARCHIVE,JSON,Images,UNKNOWN,IDEA_MODULE,JavaScript" collectionTime="1443550685762" />
-    </group>
-    <group name="module type">
-      <project id="catan" values="JAVA_MODULE" collectionTime="1443550685701" />
-    </group>
-    <group name="language-level">
-      <project id="catan" values="JDK_1_8" collectionTime="1443550685778" />
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
+      <project id="catan" values="JAVA_MODULE" collectionTime="1443756718122" />
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
-<<<<<<< HEAD
-      <entry feature="ide.settings.Code_Completion" count="1" />
-      <entry feature="ide.settings.Code_Folding" count="1" />
-      <entry feature="ide.settings.Code_Style" count="4" />
-      <entry feature="ide.settings.Colors_&amp;_Fonts" count="7" />
-      <entry feature="ide.settings.Diagrams" count="3" />
-      <entry feature="ide.settings.File_and_Code_Templates" count="2" />
-      <entry feature="ide.settings.Font" count="4" />
-      <entry feature="ide.settings.General" count="4" />
-      <entry feature="ide.settings.IDEA_Doc" count="1" />
-      <entry feature="ide.settings.Java" count="10" />
-      <entry feature="ide.settings.Keymap" count="12" />
-      <entry feature="ide.settings.Plugins" count="1" />
-      <entry feature="ide.settings.Project_Structure" count="3" />
-      <entry feature="ide.settings.Smart_Keys" count="1" />
-      <entry feature="ide.settings.System_Settings" count="1" />
-      <entry feature="ide.settings.TODO" count="1" />
-      <entry feature="ide.settings.Terminal" count="1" />
-      <entry feature="ide.settings.toString()_Generation_Settings" count="3" />
-      <entry feature="ideaapp.started" count="14" />
-      <entry feature="uml.ShowDiagram.JAVA" count="39" />
-      <entry feature="uml.ShowDiagram.JAVA.popup" count="2" />
-      <entry feature="uml.ShowDiagram.MODULES" count="1" />
-      <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
-      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
-      <entry feature="welcome.screen.WelcomeScreen.Plugins" count="1" />
-=======
-      <entry feature="ideaapp.started" count="3" />
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
+      <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="execute.JUnit.Debug" count="2" />
+      <entry feature="execute.JUnit.Run" count="5" />
+      <entry feature="ide.settings.Appearance" count="4" />
+      <entry feature="ide.settings.Code_Style" count="1" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="4" />
+      <entry feature="ide.settings.Font" count="1" />
+      <entry feature="ide.settings.Java" count="1" />
+      <entry feature="ide.settings.Keymap" count="9" />
+      <entry feature="ide.settings.Project_Structure" count="16" />
+      <entry feature="ideaapp.started" count="15" />
     </counts>
   </component>
 </application>

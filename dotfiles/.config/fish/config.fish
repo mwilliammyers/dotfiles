@@ -19,7 +19,7 @@ set -x EDITOR nvim
 # No fish greeting
 set --erase fish_greeting
 
-source "$XDG_CONFIG_HOME/reel/config.fish" 
+source "$XDG_CONFIG_HOME/reel/reel.fish" 
 source "$XDG_CONFIG_HOME/localrc" 
 set -x _FASD_VIMINFO "$XDG_DATA_HOME/vim/viminfo"
 
