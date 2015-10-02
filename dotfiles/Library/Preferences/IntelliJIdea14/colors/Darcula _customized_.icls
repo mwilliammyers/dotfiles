@@ -4,4 +4,15 @@
   <option name="CONSOLE_FONT_NAME" value="Menlo" />
   <option name="CONSOLE_FONT_SIZE" value="12" />
   <option name="EDITOR_FONT_NAME" value="Hack" />
+<<<<<<< HEAD
+=======
+  <attributes>
+    <option name="JAVA_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="cc7832" />
+        <option name="BACKGROUND" value="2b2b2b" />
+      </value>
+    </option>
+  </attributes>
+>>>>>>> 319934e8763487f49712c80f988e66ad372e0242
 </scheme>

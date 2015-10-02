@@ -427,8 +427,6 @@
         </option>
       </plugins>
     </entry>
-<<<<<<< HEAD
-=======
     <entry key="*.channelLayout">
       <plugins>
         <option name="myPlugins">
@@ -442,20 +440,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.chefignore">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="mobi.hsz.idea.gitignore" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     <entry key="*.clj">
       <plugins>
         <option name="myPlugins">
@@ -692,8 +676,6 @@
         </option>
       </plugins>
     </entry>
-<<<<<<< HEAD
-=======
     <entry key="*.customApplicationComponent">
       <plugins>
         <option name="myPlugins">
@@ -720,20 +702,6 @@
         </option>
       </plugins>
     </entry>
-    <entry key="*.cvsignore">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="mobi.hsz.idea.gitignore" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     <entry key="*.d">
       <plugins>
         <option name="myPlugins">
@@ -1069,27 +1037,12 @@
         </option>
       </plugins>
     </entry>
-<<<<<<< HEAD
-=======
     <entry key="*.flexipage">
       <plugins>
         <option name="myPlugins">
           <set>
             <plugin>
               <option name="myPluginId" value="com.illuminatedcloud.intellij" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
-    <entry key="*.flooignore">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="mobi.hsz.idea.gitignore" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
@@ -1110,7 +1063,6 @@
         </option>
       </plugins>
     </entry>
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     <entry key="*.frag">
       <plugins>
         <option name="myPlugins">
@@ -1350,21 +1302,6 @@
         </option>
       </plugins>
     </entry>
-<<<<<<< HEAD
-=======
-    <entry key="*.hgignore">
-      <plugins>
-        <option name="myPlugins">
-          <set>
-            <plugin>
-              <option name="myPluginId" value="mobi.hsz.idea.gitignore" />
-              <option name="myPluginName" />
-              <option name="myBundled" value="false" />
-            </plugin>
-          </set>
-        </option>
-      </plugins>
-    </entry>
     <entry key="*.homePageComponent">
       <plugins>
         <option name="myPlugins">
@@ -1391,7 +1328,6 @@
         </option>
       </plugins>
     </entry>
->>>>>>> 28a87861f5797367cdfdab3930167b8867e08d78
     <entry key="*.hphp">
       <plugins>
         <option name="myPlugins">
@@ -4714,6 +4650,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="dal-mpe" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="jsTestDriver.conf">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="JSTestDriver Plugin" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>

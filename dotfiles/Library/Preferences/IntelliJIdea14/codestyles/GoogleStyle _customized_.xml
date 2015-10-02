@@ -1,6 +1,5 @@
 <code_scheme name="GoogleStyle [customized]">
   <option name="RIGHT_MARGIN" value="100" />
-  <option name="FORMATTER_TAGS_ENABLED" value="true" />
   <DBN-PSQL>
     <case-options enabled="false">
       <option name="KEYWORD_CASE" value="lower" />
@@ -32,7 +31,9 @@
     <option name="KEEP_LINE_BREAKS" value="false" />
     <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
     <option name="KEEP_CONTROL_STATEMENT_IN_ONE_LINE" value="false" />
-    <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+    <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="3" />
+    <option name="KEEP_BLANK_LINES_IN_CODE" value="3" />
+    <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="3" />
     <option name="BLANK_LINES_BEFORE_IMPORTS" value="0" />
     <option name="BLANK_LINES_AROUND_CLASS" value="2" />
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
