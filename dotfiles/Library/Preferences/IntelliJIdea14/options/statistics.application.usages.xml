@@ -1,31 +1,36 @@
 <application>
   <component name="StatisticsApplicationUsages">
-    <group name="language-level">
-      <project id="catan" values="JDK_1_6" collectionTime="1443756718166" />
+    <group name="module type">
+      <project id="catan" values="JAVA_MODULE" collectionTime="1444112912313" />
     </group>
     <group name="vcs">
-      <project id="catan" values="Git" collectionTime="1443756718121" />
+      <project id="catan" values="Git" collectionTime="1444112912313" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="catan" values="JUnit" collectionTime="1444112912314" />
     </group>
     <group name="file-type">
-      <project id="catan" values="CLASS,Images,JSON,XML,JAVA,HTML,CSS,IDEA_MODULE,YAML,Markdown,ARCHIVE,JavaScript,UNKNOWN,Git file,PLAIN_TEXT" collectionTime="1443756718153" />
+      <project id="catan" values="CSS,Markdown,JSON,JavaScript,IDEA_MODULE,CLASS,YAML,HTML,Git file,PLAIN_TEXT,XML,JAVA,UNKNOWN,Images,ARCHIVE" collectionTime="1444112912338" />
     </group>
-    <group name="module type">
-      <project id="catan" values="JAVA_MODULE" collectionTime="1443756718122" />
+    <group name="language-level">
+      <project id="catan" values="JDK_1_7" collectionTime="1444112912358" />
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
       <entry feature="CreateFile.CreateFileAction" count="1" />
-      <entry feature="execute.JUnit.Debug" count="2" />
-      <entry feature="execute.JUnit.Run" count="5" />
+      <entry feature="execute.JUnit.Debug" count="17" />
+      <entry feature="execute.JUnit.Run" count="47" />
       <entry feature="ide.settings.Appearance" count="4" />
-      <entry feature="ide.settings.Code_Style" count="1" />
-      <entry feature="ide.settings.Colors_&amp;_Fonts" count="4" />
-      <entry feature="ide.settings.Font" count="1" />
-      <entry feature="ide.settings.Java" count="1" />
-      <entry feature="ide.settings.Keymap" count="9" />
-      <entry feature="ide.settings.Project_Structure" count="16" />
-      <entry feature="ideaapp.started" count="15" />
+      <entry feature="ide.settings.Code_Style" count="3" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="5" />
+      <entry feature="ide.settings.Font" count="4" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.GitHub" count="1" />
+      <entry feature="ide.settings.Java" count="9" />
+      <entry feature="ide.settings.Keymap" count="10" />
+      <entry feature="ide.settings.Project_Structure" count="24" />
+      <entry feature="ideaapp.started" count="20" />
     </counts>
   </component>
 </application>

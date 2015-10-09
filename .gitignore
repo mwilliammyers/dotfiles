@@ -21,3 +21,5 @@ workbench.xmi
 fonts/powerline/
 .stfolder
 .stignore
+*.sync-conflict*
+*.copy
