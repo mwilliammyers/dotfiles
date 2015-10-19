@@ -16,26 +16,26 @@
     <property name="Tests" value="2a3b2c" />
     <property name="ProjectStructure.SecondLevelElements" value="0.2" />
     <property name="project.jdk.splitter" value="0.2" />
-    <property name="settings.code.style.selected.tab.JAVA" value="Blank Lines" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Tabs and Indents" />
     <property name="FileTemplates.CurrentTab" value="Templates" />
     <property name="FileTemplates.SelectedTemplate" value="Html" />
     <property name="export.settings.path" value="$APPLICATION_CONFIG_DIR$/settings.jar" />
     <property name="CommitChangeListDialog.SPLITTER_PROPORTION_2" value="0.5" />
     <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="false" />
     <property name="INSPECTION_FILTER_HISTORY" value="&quot;New in 13&quot;" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/Downloads/eclipse-java-google-style.xml&#10;/Users/wm/Documents/Developer/catan/lib&#10;/Users/wm/Documents/Developer/catan/build.xml&#10;/Users/wm/Documents/Developer/catan&#10;/Users/wm/Desktop&#10;/Users/wm/Documents/Developer/catan/java/lib&#10;/Users/wm/Downloads/intellij-java-google-style.xml" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/Documents/Developer/catan/lib&#10;/Users/wm/Downloads/eclipse-java-google-style.xml&#10;/Users/wm/Documents/Developer/catan/build.xml&#10;/Users/wm/Documents/Developer/catan&#10;/Users/wm/Desktop&#10;/Users/wm/Documents/Developer/catan/java/lib&#10;/Users/wm/Downloads/intellij-java-google-style.xml" />
     <property name="SingleInspectionProfilePanel.VERTICAL_DIVIDER_PROPORTION" value="0.5" />
     <property name="SingleInspectionProfilePanel.HORIZONTAL_DIVIDER_PROPORTION" value="0.5" />
     <property name="FindSplitterProportion" value="0.25" />
     <property name="ProjectStructure.TopLevelElements" value="0.15" />
-    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Dependencies" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Paths" />
     <property name="MoveClass.OpenInEditor" value="true" />
     <property name="MemberChooser.sorted" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="ChangesViewManager.DETAILS_SPLITTER_PROPORTION" value="0.5" />
     <property name="fileTypeChangedCounter" value="10" />
-    <property name="KEYMAP" value="split&#10;caret&#10;cart&#10;dash" />
+    <property name="KEYMAP" value="replace&#10;split&#10;caret&#10;cart&#10;dash" />
     <property name="decompiler.legal.notice.accepted" value="true" />
     <property name="MoveFile.OpenInEditor" value="true" />
     <property name="ExpandBeforeRunStepsPanel" value="true" />

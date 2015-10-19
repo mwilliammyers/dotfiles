@@ -1,10 +1,6 @@
 <application>
   <component name="FindRecents">
     <findStrings>
-      <find>javadoc.dir</find>
-      <find>src</find>
-      <find>${src}</find>
-      <find>${javadoc}</find>
       <find>${build}</find>
       <find>${dist}</find>
       <find>${lib}</find>
@@ -21,16 +17,20 @@
       <find>Resource</find>
       <find>parse</find>
       <find>create</find>
-      <find>proxydx</find>
-      <find>can</find>
-      <find>initializeR</find>
-      <find>gameResponse</find>
-      <find>canPlayDevCard_NotTurn_ShouldBe_False</find>
-      <find>^\s*</find>
-      <find>send</find>
-      <find>canPlay</find>
-      <find>ports</find>
-      <find>roll</find>
+      <find>GameContainer</find>
+      <find>\&quot;\s</find>
+      <find>\&quot;</find>
+      <find>&quot; \&quot;</find>
+      <find>\n &quot;</find>
+      <find>\&quot; + &quot;</find>
+      <find>dummy</find>
+      <find>test</find>
+      <find>gameContainer</find>
+      <find>container.</find>
+      <find>private IObservedGame container;</find>
+      <find>\(IObservedGame container\) \{\n        this\.container \= container\;\n    \}</find>
+      <find>.*=</find>
+      <find>new .*;</find>
     </findStrings>
     <replaceStrings>
       <replace>PlayerModel</replace>
@@ -53,11 +53,20 @@
       <replace>lib.classpath</replace>
       <replace>demo.dir</replace>
       <replace>ResourceType</replace>
-      <replace>*</replace>
+      <replace>\n&quot;</replace>
+      <replace>&quot;</replace>
+      <replace>observedGame</replace>
+      <replace>ObservedGame.getInstance()</replace>
+      <replace>ObservedGame.getInstance().</replace>
+      <replace />
+      <replace>(IObservedGame container) {  }</replace>
+      <replace>() {  }</replace>
+      <replace>null;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$USER_HOME$/Documents/Developer/catan/java/src</dir>
       <dir>$USER_HOME$/Documents/Developer/catan/src</dir>
+      <dir>$USER_HOME$/Documents/Developer/catan</dir>
     </dirStrings>
   </component>
 </application>

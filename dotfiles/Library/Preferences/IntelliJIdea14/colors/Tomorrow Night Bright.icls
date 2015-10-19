@@ -774,6 +774,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="GHERKIN_TABLE_CELL">
+      <value />
+    </option>
     <option name="GHERKIN_TABLE_HEADER_CELL">
       <value>
         <option name="FOREGROUND" value="7aa6da" />
@@ -1173,6 +1176,9 @@
         <option name="FOREGROUND" value="969896" />
         <option name="FONT_TYPE" value="2" />
       </value>
+    </option>
+    <option name="JSP_DIRECTIVE_BACKGROUND">
+      <value />
     </option>
     <option name="JSP_DIRECTIVE_NAME">
       <value>
@@ -1801,6 +1807,9 @@
         <option name="BACKGROUND" value="d54e53" />
       </value>
     </option>
+    <option name="RUBY_COMMA">
+      <value />
+    </option>
     <option name="RUBY_COMMENT">
       <value>
         <option name="FOREGROUND" value="969896" />
@@ -1924,6 +1933,9 @@
         <option name="FOREGROUND" value="d54e53" />
         <option name="FONT_TYPE" value="1" />
       </value>
+    </option>
+    <option name="RUBY_SEMICOLON">
+      <value />
     </option>
     <option name="RUBY_SPECIFIC_CALL">
       <value>

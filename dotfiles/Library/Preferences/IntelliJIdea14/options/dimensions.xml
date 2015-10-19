@@ -40,7 +40,7 @@
     <location key="#Notifications.-257.-1200.1920.1200" x="459" y="-874" />
     <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.-257.-1200.1920.1200" x="310" y="-1188" />
     <location key="#com.intellij.ide.util.MemberChooser.0.0.1440.900" x="660" y="225" />
-    <location key="CommitChangelistDialog2.0.0.1440.900" x="374" y="160" />
+    <location key="CommitChangelistDialog2.0.0.1440.900" x="251" y="161" />
     <location key="findTextDialog.0.0.1440.900" x="514" y="216" />
     <location key="RollbackChangesDialog.0.0.1440.900" x="507" y="183" />
     <location key="#Browse_JetBrains_Plugins_.0.0.1440.900" x="382" y="132" />
@@ -59,7 +59,7 @@
     <location key="#Browse_Repositories.0.0.3200.1800" x="1067" y="666" />
     <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.1440.900" x="458" y="211" />
     <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1440.900" x="458" y="203" />
-    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1440.900" x="279" y="5" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.1440.900" x="363" y="11" />
     <location key="replaceTextDialog.0.0.1440.900" x="511" y="181" />
     <location key="ReplaceDuplicatesPrompt.0.0.1440.900" x="192" y="374" />
     <location key="ProcessPopupWindow.0.0.1440.900" x="1075" y="699" />
@@ -74,10 +74,13 @@
     <location key="git4idea.merge.GitPullDialog.0.0.3200.1800" x="1326" y="710" />
     <location key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog.0.0.3200.1800" x="1336" y="664" />
     <location key="#Inspections.0.0.3200.1800" x="1235" y="593" />
-    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1398" height="240" />
-    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1398" height="240" />
-    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1398" height="240" />
-    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1398" height="240" />
+    <location key="OptionsEditor.0.0.1440.900" x="208" y="30" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.1440.900" x="482" y="60" />
+    <location key="MultipleFileMergeDialog.0.0.1440.900" x="111" y="187" />
+    <size key="GridCell.Tab.0.left.0.0.1440.900" width="1394" height="139" />
+    <size key="GridCell.Tab.0.center.0.0.1440.900" width="1394" height="139" />
+    <size key="GridCell.Tab.0.right.0.0.1440.900" width="1394" height="139" />
+    <size key="GridCell.Tab.0.bottom.0.0.1440.900" width="1394" height="139" />
     <size key="SettingsEditor.0.0.1440.900" width="1037" height="583" />
     <size key="SettingsEditor.0.0.3200.1800" width="1183" height="676" />
     <size key="findTextDialog.0.0.3200.1800" width="412" height="507" />
@@ -90,10 +93,10 @@
     <size key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog.-257.-1200.1920.1200" width="546" height="527" />
     <size key="#checkstyle-6.11.jar.-257.-1200.1920.1200" width="685" height="686" />
     <size key="findTextDialog.0.0.1440.900" width="412" height="507" />
-    <size key="GridCell.Tab.1.left.0.0.1440.900" width="1398" height="308" />
-    <size key="GridCell.Tab.1.center.0.0.1440.900" width="1398" height="308" />
-    <size key="GridCell.Tab.1.right.0.0.1440.900" width="1398" height="308" />
-    <size key="GridCell.Tab.1.bottom.0.0.1440.900" width="1398" height="308" />
+    <size key="GridCell.Tab.1.left.0.0.1440.900" width="1394" height="290" />
+    <size key="GridCell.Tab.1.center.0.0.1440.900" width="1394" height="290" />
+    <size key="GridCell.Tab.1.right.0.0.1440.900" width="1394" height="290" />
+    <size key="GridCell.Tab.1.bottom.0.0.1440.900" width="1394" height="290" />
     <size key="ProcessPopupWindow.0.0.1440.900" width="199" height="175" />
     <size key="com.intellij.testIntegration.createTest.CreateTestDialog.0.0.3200.1800" width="691" height="947" />
     <size key="GridCell.Tab.0.left.0.0.3200.1800" width="3154" height="546" />
@@ -105,6 +108,7 @@
     <size key="GridCell.Tab.1.right.0.0.3200.1800" width="3154" height="650" />
     <size key="GridCell.Tab.1.bottom.0.0.3200.1800" width="3154" height="650" />
     <size key="XDebugger.FullValuePopup.0.0.3200.1800" width="1598" height="888" />
+    <size key="MultipleFileMergeDialog.0.0.1440.900" width="910" height="525" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog" state="0" />
     <extendedState key="com.intellij.history.integration.ui.views.FileHistoryDialog.0" state="300" />
     <extendedState key="DiffContextDialog" state="0" />
