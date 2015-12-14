@@ -1,0 +1,10 @@
+---
+
+- name: github
+  hosts: all
+  # strategy: free
+  gather_facts: yes
+
+  roles:
+    - role: /Users/wm/Documents/Developer/ansible-github
+

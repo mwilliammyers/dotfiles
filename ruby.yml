@@ -1,0 +1,15 @@
+---
+
+- name: ruby
+  hosts: all
+  # strategy: free
+  gather_facts: yes
+
+  vars:
+    state: present
+
+  roles:
+    - role: /Users/wm/Documents/Developer/ansible-dotstrap-ruby
+      install_state: "{{ state }}"
+      configuration_state: "{{ state }}"
+

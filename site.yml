@@ -1,0 +1,25 @@
+---
+- name: dotfiles
+  hosts: osx
+  # strategy: free
+  gather_facts: yes
+
+  roles:
+    # TODO: uncomment when dotstrap adds gist support
+    # - role: mkwmms.dotstrap
+      # repo: "https://gist.github.com/bcae313de14ab9a3ac66.git"
+    # - role: mkwmms.dotstrap-ruby
+      # tags: ruby
+    # - role: mkwmms.dotstrap-pkg
+      # tags:
+        # - pkg
+        # - packages
+    # - role: /Users/wm/Documents/Developer/ansible-dotstrap-system
+      # tags: system
+    - role: /Users/wm/Documents/Developer/ansible-dotstrap-fish
+    # - role: /Users/wm/Documents/Developer/ansible-dotstrap-java
+      # tags: java
+     # -  role: /Users/wm/Documents/Developer/ansible-dotstrap
+        # repo: "https://github.com/mkwmms/dotstrap-hub"
+    # - role: /Users/wm/Documents/Developer/ansible-gnu-tools
+
