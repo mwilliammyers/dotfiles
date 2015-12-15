@@ -8,6 +8,7 @@ ANSIBLE_CONFIG="$ANSIBLE_CONFIG_DIR/ansible.cfg"
 if [[ -d "$ANSIBLE_CONFIG_DIR/.git" ]]; then
   pushd >/dev/null 2>&1 "$ANSIBLE_CONFIG_DIR" && git pull && popd >/dev/null 2>&1 
 else 
+  # TODO: separate Ansible bootstrapping (apart from the install itself) to own playbook
   git clone https://gist.github.com/bcae313de14ab9a3ac66.git "$ANSIBLE_CONFIG_DIR"
 fi
 
