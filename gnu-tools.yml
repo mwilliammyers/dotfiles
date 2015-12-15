@@ -1,10 +1,9 @@
 ---
 
-- name: github
+- name: gnu-tools
   hosts: all
   # strategy: free
   gather_facts: yes
 
   roles:
-    - role: mkwmms.github
-
+    - role: mkwmms.dotstrap-gnu-tools

@@ -9,7 +9,7 @@
     state: present
 
   roles:
-    - role: /Users/wm/Documents/Developer/ansible-dotstrap-ruby
+    - role: mkwmms.dotstrap-ruby
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

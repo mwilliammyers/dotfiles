@@ -1,0 +1,10 @@
+---
+
+- name: system
+  hosts: all
+  # strategy: free
+  gather_facts: yes
+
+  # FIXME: ERROR! no action detected in task
+  roles:
+    - role: mkwmms.dotstrap-system
