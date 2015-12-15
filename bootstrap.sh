@@ -22,6 +22,6 @@ echo "NOTE: If you intend to use fish as your default shell, remember to do: " \
 
 ansible-galaxy install -r requirements.yml
 
-ansible-playbook -i hosts dotfiles.yml -t bootstrap
+ansible-playbook site.yml -t bootstrap
 
 exit 0
