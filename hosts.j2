@@ -1,0 +1,19 @@
+[osx]
+{% if ansible_system == 'Darwin' %}
+localhost ansible_shell_type=fish
+{% else %}
+macpro ansible_shell_type=fish
+{% endif %}
+
+[linux]
+{% if ansible_system == 'Linux' %}
+localhost ansible_connection=local
+{% else %}
+wabash ansible_shell_type=fish
+{% endif %}
+schizo
+fsl
+
+[osx:vars]
+ansible_python_interpreter="/usr/local/bin/python"
+ansible_ruby_interpreter="/usr/local/bun/ruby"

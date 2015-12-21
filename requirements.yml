@@ -7,3 +7,4 @@
 - src: mkwmms.dotstrap-ruby
 - src: mkwmms.dotstrap-system
 - src: mkwmms.github
+- src: mkwmms.neovim
