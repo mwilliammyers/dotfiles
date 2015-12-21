@@ -8,7 +8,7 @@
   become: true
 
   tasks:
-    # TODO: better way to conditionally set a variable in a playbook?
+    # TODO: better way to conditionally set variables in a playbook?
     - name: setup configuration
       set_fact:
         ansible_config_dir: "/usr/local/etc/ansible"
