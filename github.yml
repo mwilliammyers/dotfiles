@@ -2,9 +2,7 @@
 
 - name: github
   hosts: all
-  # strategy: free
-  gather_facts: yes
+ # strategy: free
 
   roles:
-    - role: mkwmms.github
-
+    - { role: mkwmms.github, username=mkwmms, email=mkwmms@users.noreply.github.com }
