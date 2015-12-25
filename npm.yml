@@ -1,0 +1,16 @@
+---
+
+- name: npm
+  hosts:
+    - localhost
+    - macpro
+    - wabash
+  
+
+  vars:
+    state: present
+
+  roles:
+    - role: mkwmms.ansible-npm
+      install_state: "{{ state }}"
+

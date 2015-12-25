@@ -2,7 +2,13 @@
 
 - name: github
   hosts: all
- # strategy: free
+
+  vars:
+    state: present
 
   roles:
-    - { role: mkwmms.github, username=mkwmms, email=mkwmms@users.noreply.github.com }
+    - role: mkwmms.github
+      username: mkwmms
+      email: mkwmms@users.noreply.github.com
+      install_state: "{{ state }}"
+      # configuration_state: "{{ state }}"

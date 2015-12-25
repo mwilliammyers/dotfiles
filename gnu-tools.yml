@@ -2,7 +2,7 @@
 
 - name: gnu-tools
   hosts: all
-  # strategy: free
+  
   gather_facts: yes
 
   roles:

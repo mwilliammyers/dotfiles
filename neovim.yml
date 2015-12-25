@@ -2,7 +2,7 @@
 
 - name: neovim
   hosts: all
-  # strategy: free
+  
   gather_facts: yes
 
   roles:

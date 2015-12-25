@@ -1,14 +1,14 @@
 ---
 
-- name: ruby
+- name: fasd
   hosts: all
   
-  gather_facts: yes
 
   vars:
     state: present
 
   roles:
-    - role: mkwmms.dotstrap-ruby
+    - role: mkwmms.dotstrap-fasd
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
+

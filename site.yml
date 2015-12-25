@@ -1,7 +1,7 @@
 ---
 - name: dotfiles
   hosts: all
-  # strategy: free
+  
   gather_facts: yes
 
 - include: system.yml

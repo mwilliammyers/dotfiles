@@ -2,7 +2,7 @@
 
 - name: fish
   hosts: all
-  # strategy: free
+  
   gather_facts: yes
 
   roles:

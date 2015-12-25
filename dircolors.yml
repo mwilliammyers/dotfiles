@@ -2,7 +2,7 @@
 
 - name: dircolors
   hosts: osx
-  # strategy: free
+  
   gather_facts: yes
 
   roles:
