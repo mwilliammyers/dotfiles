@@ -1,9 +1,9 @@
 ---
 
 - src: mkwmms.dotstrap-dircolors
+- src: mkwmms.dotstrap-fasd
 - src: mkwmms.dotstrap-fish
 - src: mkwmms.dotstrap-gnu-tools
-- src: mkwmms.dotstrap-pkg
 - src: mkwmms.dotstrap-ruby
 - src: mkwmms.dotstrap-system
 - src: mkwmms.github
