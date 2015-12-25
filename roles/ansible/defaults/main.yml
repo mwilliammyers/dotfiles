@@ -1,0 +1,10 @@
+---
+# defaults file for ansible
+
+install_ansible: yes
+configure_ansible: yes
+
+ansible_config_dir: "{{ (ansible_pkg_mgr == 'homebrew') | ternary('/usr/local/etc/ansible', '/etc/ansible') }}"
+
+install_state: present
+configuration_state: present

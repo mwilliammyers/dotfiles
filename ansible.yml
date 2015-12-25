@@ -2,25 +2,7 @@
 
 - name: ansible
   hosts: all
-  # strategy: free
   gather_facts: yes
 
-  become: true
-
-  tasks:
-    # TODO: better way to conditionally set variables in a playbook?
-    - name: setup configuration
-      set_fact:
-        ansible_config_dir: "/usr/local/etc/ansible"
-      when: ansible_pkg_mgr == 'homebrew'
-
-    - name: setup configuration
-      set_fact:
-        ansible_config_dir: "/etc/ansible"
-      when: ansible_pkg_mgr != 'homebrew'
-
-    - name: configure settings
-      template: src=ansible.j2 dest="{{ ansible_config_dir }}/ansible.cfg" force=yes
-
-    - name: configure hosts
-      template: src=hosts.j2 dest="{{ ansible_config_dir }}/hosts" force=yes
+  roles:
+    - role: ansible

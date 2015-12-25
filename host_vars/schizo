@@ -1,0 +1,4 @@
+gem_user_install: yes
+
+install_ansible: no
+configure_ansible: no
