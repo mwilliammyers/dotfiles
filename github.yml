@@ -2,13 +2,37 @@
 
 - name: github
   hosts: all
+  gather_facts: yes
 
   vars:
     state: present
+    repos:
+      - mkwmms/BYU
+      - mkwmms/ansible-dotstrap-coreutils
+      - mkwmms/ansible-dotstrap-dircolors
+      - mkwmms/ansible-dotstrap-fasd
+      - mkwmms/ansible-dotstrap-fish
+      - mkwmms/ansible-dotstrap-gnu-tools
+      - mkwmms/ansible-dotstrap-pkg
+      - mkwmms/ansible-dotstrap-ruby
+      - mkwmms/ansible-dotstrap-system
+      - mkwmms/ansible-neovim
+      - mkwmms/ansible-npm
+      - mkwmms/dotstrap
+      - mkwmms/dotstrap-basic
+      - mkwmms/dotstrap-osx
 
-  roles:
-    - role: mkwmms.github
-      username: mkwmms
-      email: mkwmms@users.noreply.github.com
-      install_state: "{{ state }}"
-      # configuration_state: "{{ state }}"
+  # roles:
+    # - role: mkwmms.github
+      # username: mkwmms
+      # email: mkwmms@users.noreply.github.com
+      # install_state: "{{ state }}"
+      # # configuration_state: "{{ state }}"
+
+  tasks:
+    - name: git | clone repos
+      git:
+        repo: git@github.com:{{ item }}.git
+        dest: "{{ ansible_user_dir }}/Documents/Developer/{{ item | basename }}"
+        accept_hostkey: yes
+      with_items: "{{ repos }}"

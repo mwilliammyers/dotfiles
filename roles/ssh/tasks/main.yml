@@ -1,0 +1,16 @@
+---
+# tasks file for ssh
+
+# - name: configure | ssh config
+  # template:
+    # src: config.j2
+    # dest: "{{ ansible_user_dir }}/.ssh/config"
+    # force: yes
+    # backup: yes
+
+- name: configure | ssh config
+  ssh_config: host="{{ item.key }}"
+              user="{{ ansible_user_id }}"
+              remote_user="{{ item.value.user }}"
+              hostname="{{ item.value.hostname }}"
+  with_dict: "{{ hosts }}"

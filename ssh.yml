@@ -1,1 +1,10 @@
-# TODO: configure ssh, maybe within system playbook?
+---
+
+- name: ssh
+  hosts: all
+
+  vars_files:
+    - secrets.yml
+
+  roles:
+    - role: ssh

@@ -1,0 +1,37 @@
+---
+language: python
+python: "2.7"
+
+env:
+  - SITE=test.yml
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install ansible
+
+  # Add ansible.cfg to pick up roles path.
+  - { echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg
+
+script:
+  - ansible-playbook -i tests/inventory tests/$SITE --syntax-check
+
+  - ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo
+
+  # Run the role/playbook again, checking to make sure it's idempotent.
+  - >
+    ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
+
+  # Check to make sure gem installed some exectuables
+  - which ghi
+  - which bundler
+
+  # Test if the file is a symbolic link.
+  # - >
+    # [ -h "$HOME/dotstrap/...." ]
+    # && (echo "Files were linked correctly." && exit 0)
+    # || (echo "Files were not linked correctly." && exit 1)

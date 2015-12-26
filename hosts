@@ -1,0 +1,29 @@
+#####=== groups ===#####
+
+[localhost]
+wabash
+
+[osx]
+macpro ansible_shell_type=fish
+
+[linux]
+wabash  
+schizo
+fsl
+
+[archlinux]
+wabash 
+
+#####=== group variables ===#####
+
+[localhost:vars]
+ansible_connection=local
+
+# accommodate non-standard homebrew paths
+[osx:vars]
+ansible_python_interpreter=/usr/local/bin/python
+ansible_ruby_interpreter=/usr/local/bun/ruby
+
+# python3 is default on archlinux & ansible does not like python3 
+[archlinux:vars]
+ansible_python_interpreter=/usr/bin/python2 

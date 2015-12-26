@@ -8,3 +8,5 @@
 - src: mkwmms.dotstrap-system
 - src: mkwmms.github
 - src: mkwmms.neovim
+- src: gaqzi.ssh-config
+  path: library/
