@@ -8,11 +8,11 @@
   # when: ansible.rc != 0
 
 - name: configure | settings
-  template: src=ansible.j2 dest="{{ ansible_config_dir }}/ansible.cfg" force=yes
+  template: src=ansible.j2 dest="{{ ansible_config_dir }}/ansible.cfg" force=yes backup=yes
   # become: "{{ ansible_pkg_mgr != 'homebrew' }}"
   become: yes
 
 - name: configure | hosts
-  template: src=hosts.j2 dest="{{ ansible_config_dir }}/hosts" force=yes
+  template: src=hosts.j2 dest="{{ ansible_config_dir }}/hosts" force=yes backup=yes
   # become: "{{ ansible_pkg_mgr != 'homebrew' }}"
   become: yes

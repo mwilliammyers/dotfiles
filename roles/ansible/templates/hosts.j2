@@ -1,29 +1,7 @@
-#####=== groups ===#####
+{% for host_name, host_info in hosts.iteritems() %}
+{{ host_name }} {{ host_info.host_vars|default('') }}
+{% endfor %}
 
+# ansible fails if ansible_connection == local && ansible_shell_type == fish
 [localhost]
-{{ ansible_hostname }}
-
-[osx]
-macpro {{ (ansible_hostname == 'macpro') | ternary('','ansible_shell_type=fish') }}
-
-[linux]
-wabash {{ (ansible_hostname == 'wabash') | ternary('','ansible_shell_type=fish') }} 
-schizo
-fsl
-
-[archlinux]
-wabash 
-
-#####=== group variables ===#####
-
-[localhost:vars]
-ansible_connection=local
-
-# accommodate non-standard homebrew paths
-[osx:vars]
-ansible_python_interpreter=/usr/local/bin/python
-ansible_ruby_interpreter=/usr/local/bun/ruby
-
-# python3 is default on archlinux & ansible does not like python3 
-[archlinux:vars]
-ansible_python_interpreter=/usr/bin/python2 
+{{ ansible_hostname }} ansible_shell_type=sh ansible_connection=local
