@@ -1,9 +1,8 @@
 ---
 
 - name: dircolors
-  hosts: osx
-  
+  hosts: all
   gather_facts: yes
 
   roles:
-    - role: /Users/wm/Documents/Developer/ansible-dotstrap-dircolors
+    - role: ~/Documents/Developer/ansible-dotstrap-dircolors
