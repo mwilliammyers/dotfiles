@@ -1,0 +1,13 @@
+---
+
+- name: z
+  hosts: all
+
+  vars:
+    state: present
+
+  roles:
+    - role: mkwmms.dotstrap-z
+      install_state: "{{ state }}"
+      configuration_state: "{{ state }}"
+
