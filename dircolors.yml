@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - role: ~/Documents/Developer/ansible-dotstrap-dircolors
+    - role: mkwmms.dotstrap-dircolors
