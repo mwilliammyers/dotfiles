@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - role: mkwmms.dotstrap-dircolors
+    - role: mkwmms.dircolors

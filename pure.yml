@@ -1,13 +1,13 @@
 ---
 
-- name: fasd
+- name: pure
   hosts: all
 
   vars:
     state: present
 
   roles:
-    - role: mkwmms.fasd
+    - role: ~/Documents/Developer/ansible-pure
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

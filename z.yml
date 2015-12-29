@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: mkwmms.dotstrap-z
+    - role: mkwmms.z
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

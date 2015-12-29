@@ -2,8 +2,8 @@
 
 - name: gnu-tools
   hosts: all
-  
+
   gather_facts: yes
 
   roles:
-    - role: mkwmms.dotstrap-gnu-tools
+    - role: mkwmms.gnu-tools

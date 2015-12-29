@@ -8,26 +8,26 @@
     state: present
     repos:
       - mkwmms/BYU
-      - mkwmms/ansible-dotstrap-coreutils
-      - mkwmms/ansible-dotstrap-dircolors
-      - mkwmms/ansible-dotstrap-fasd
-      - mkwmms/ansible-dotstrap-fish
-      - mkwmms/ansible-dotstrap-gnu-tools
-      - mkwmms/ansible-dotstrap-pkg
-      - mkwmms/ansible-dotstrap-ruby
-      - mkwmms/ansible-dotstrap-system
+      - mkwmms/ansible-coreutils
+      - mkwmms/ansible-dircolors
+      - mkwmms/ansible-fasd
+      - mkwmms/ansible-fish
+      - mkwmms/ansible-gnu-tools
+      - mkwmms/ansible-pkg
+      - mkwmms/ansible-ruby
+      - mkwmms/ansible-system
       - mkwmms/ansible-neovim
       - mkwmms/ansible-npm
       - mkwmms/dotstrap
       - mkwmms/dotstrap-basic
       - mkwmms/dotstrap-osx
 
-  # roles:
-    # - role: mkwmms.github
-      # username: mkwmms
-      # email: mkwmms@users.noreply.github.com
-      # install_state: "{{ state }}"
-      # # configuration_state: "{{ state }}"
+  roles:
+    - role: mkwmms.github
+      username: mkwmms
+      email: mkwmms@users.noreply.github.com
+      install_state: "{{ state }}"
+      configuration_state: "{{ state }}"
 
   tasks:
     - name: git | clone repos

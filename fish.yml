@@ -2,8 +2,8 @@
 
 - name: fish
   hosts: all
-  
+
   gather_facts: yes
 
   roles:
-    - role: mkwmms.dotstrap-fish
+    - role: mkwmms.fish

@@ -1,10 +1,10 @@
 ---
 
-- src: mkwmms.dotstrap-dircolors
-- src: mkwmms.dotstrap-fish
-- src: mkwmms.dotstrap-gnu-tools
-- src: mkwmms.dotstrap-ruby
-- src: mkwmms.dotstrap-system
-- src: mkwmms.dotstrap-z
+- src: mkwmms.dircolors
+- src: mkwmms.fish
 - src: mkwmms.github
+- src: mkwmms.gnu-tools
 - src: mkwmms.neovim
+- src: mkwmms.ruby
+- src: mkwmms.system
+- src: mkwmms.z
