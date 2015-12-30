@@ -1,1 +1,2 @@
-dircolors_path: /etc/DIR_COLORS
+dircolors_dest_file: /etc/DIR_COLORS
+dircolors_become: yes
