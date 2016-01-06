@@ -1,0 +1,12 @@
+---
+
+- name: node
+  hosts: all
+
+  vars:
+    state: present
+
+  roles:
+    - role: ~/Documents/Developer/ansible-node
+      install_state: "{{ state }}"
+

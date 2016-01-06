@@ -1,0 +1,10 @@
+---
+
+- name: osx
+  hosts: all
+
+  gather_facts: yes
+
+  roles:
+    - role: ~/Documents/Developer/ansible-osx
+      install_state: present

@@ -1,13 +1,13 @@
 ---
 
-- name: pure
+- name: xdg
   hosts: all
 
   vars:
     state: present
 
   roles:
-    - role: ~/Documents/Developer/ansible-pure
+    - role: ~/Documents/Developer/ansible-xdg
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

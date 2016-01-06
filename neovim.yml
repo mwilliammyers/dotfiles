@@ -2,9 +2,9 @@
 
 - name: neovim
   hosts: all
-  
+
   gather_facts: yes
 
   roles:
-    - role: mkwmms.neovim
+    - role: ~/Documents/Developer/ansible-neovim
 
