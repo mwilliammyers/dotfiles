@@ -10,7 +10,8 @@ BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 RESET='\033[0;m'
 
-############################# functions
+#####=== functions ===#####
+
 info() {
   echo -e "${BLUE}${BOLD}==> ${NORMAL}${BOLD}${1}${RESET}"
 }
@@ -32,7 +33,8 @@ pip_install() {
   return $?
 }
 
-############################# install dependencies
+#####=== install dependencies ===#####
+
 if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
   # Only install python and pip on Linux, they come pre-installed on OS X
   # TODO: determine name of package for python & pip to use - pacman, apt use python-pip 
@@ -42,7 +44,7 @@ fi
 
 # Install ansible via pip if necessary (will install via package manager later)
 info "Install ansible"
-is_installed ansible || pip_install ansible
+is_installed ansible || pip_install git+https://github.com/ansible/ansible.git
 # is_installed redis || pip_install redis
 
 info "Configure ansible"
@@ -51,7 +53,8 @@ ansible-playbook ansible.yml --ask-become-pass
 info "Install role dependencies"
 sudo ansible-galaxy install -r requirements.yml --force
 
-############################# bootstrap
+#####=== bootstrap ===#####
+
 # ansible-playbook site.yml -t bootstrap
 
 exit 0
