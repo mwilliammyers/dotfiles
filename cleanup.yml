@@ -1,0 +1,26 @@
+---
+
+- name: cleanup
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: find | backup files
+      find:
+        paths:
+          - "{{ ansible_user_dir }}"
+          - "{{ ansible_user_dir }}/.config"
+          - "{{ ansible_user_dir }}/.config/fish"
+          - "{{ ansible_user_dir }}/.local"
+          - /etc/ansible
+          - /usr/local/etc/ansible
+        patterns: '.*\~$'
+        use_regex: True
+        hidden: True
+        file_type: file
+        recurse: no
+      register: found
+
+    - name: remove | backup files
+      file: path={{ item.path }} state=absent
+      with_items: found.files
