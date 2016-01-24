@@ -1,0 +1,8 @@
+---
+
+- name: gnome-terminal
+  hosts: all
+  gather_facts: yes
+
+  roles:
+    - role: ~/Documents/Developer/ansible-gnome-terminal
