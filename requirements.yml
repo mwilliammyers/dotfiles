@@ -1,5 +1,6 @@
 ---
 
+- src: geerlingguy.homebrew
 - src: mkwmms.dircolors
 - src: mkwmms.fish
 - src: mkwmms.github
@@ -7,5 +8,4 @@
 - src: mkwmms.neovim
 - src: mkwmms.node
 - src: mkwmms.ruby
-- src: mkwmms.system
 - src: mkwmms.z

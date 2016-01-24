@@ -1,10 +1,20 @@
 ---
 - name: dotfiles
   hosts: all
-  
+
   gather_facts: yes
 
-- include: system.yml
+    # - osx.ym.yml
+  # when: ansible_distribution == 'MacOSX'
+- include: homebrew.yml
 - include: fish.yml
-- include: ruby.yml
+- include: xdg.yml
+- include: gnu-tools.yml
+- include: dircolors.yml
+- include: neovim.yml
+# - include: fasd.yml
+- include: pure.yml
+- include: z.yml
 - include: github.yml
+- include: ruby.yml
+- include: ruby.yml

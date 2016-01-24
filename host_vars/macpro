@@ -1,2 +1,20 @@
 dircolors_dest_file: /etc/DIR_COLORS
 dircolors_become: yes
+
+homebrew_installed_packages:
+  - ffmpeg
+  - go
+  - htop
+  - mysql
+  - python
+  - ruby
+  - tree
+  - the_silver_searcher
+  - wget 
+homebrew_cask_apps:
+  - google-chrome
+  - handbrake
+  - iterm2
+  - plex-media-server
+  - slack
+  - vlc

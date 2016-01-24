@@ -1,0 +1,4 @@
+- hosts: all
+  vars:
+  roles:
+    - role: geerlingguy.homebrew
