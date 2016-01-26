@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: ~/Documents/Developer/ansible-pure
+    - role: mkwmms.pure
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

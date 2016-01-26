@@ -6,5 +6,5 @@
   gather_facts: yes
 
   roles:
-    - role: ~/Documents/Developer/ansible-osx
+    - role: mkwmms.osx
       install_state: present

@@ -7,6 +7,6 @@
     state: present
 
   roles:
-    - role: ~/Documents/Developer/ansible-node
+    - role: mkwmms.node
       install_state: "{{ state }}"
 

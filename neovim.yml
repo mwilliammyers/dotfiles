@@ -6,5 +6,5 @@
   gather_facts: yes
 
   roles:
-    - role: ~/Documents/Developer/ansible-neovim
+    - role: mkwmms.neovim
 

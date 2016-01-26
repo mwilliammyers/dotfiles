@@ -8,9 +8,11 @@ homebrew_installed_packages:
   - mysql
   - python
   - ruby
-  - tree
+  - ssh-copy-id
   - the_silver_searcher
-  - wget 
+  - tree
+  - wget
+  - rsync
 homebrew_cask_apps:
   - google-chrome
   - handbrake

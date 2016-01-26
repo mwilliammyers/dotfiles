@@ -4,25 +4,32 @@
   hosts: all
   gather_facts: yes
 
+  vars_files:
+    - secrets.yml
+
   vars:
     state: present
     repos:
-      - mkwmms/BYU
-      - mkwmms/ansible-coreutils
-      - mkwmms/ansible-dircolors
-      # - mkwmms/ansible-fasd
-      - mkwmms/ansible-fish
-      - mkwmms/ansible-gnu-tools
-      - mkwmms/ansible-ruby
-      - mkwmms/ansible-system
-      - mkwmms/ansible-neovim
-      - mkwmms/ansible-node
-      - mkwmms/dotstrap
+      - "{{ github_username }}/BYU"
+      - "{{ github_username }}/ansible-coreutils"
+      - "{{ github_username }}/ansible-dircolors"
+      - "{{ github_username }}/ansible-fish"
+      - "{{ github_username }}/ansible-github"
+      - "{{ github_username }}/ansible-gnu-tools"
+      - "{{ github_username }}/ansible-neovim"
+      - "{{ github_username }}/ansible-node"
+      - "{{ github_username }}/ansible-osx"
+      - "{{ github_username }}/ansible-pure"
+      - "{{ github_username }}/ansible-ruby"
+      - "{{ github_username }}/ansible-xcode"
+      - "{{ github_username }}/ansible-xdg"
+      - "{{ github_username }}/ansible-z"
+      - "{{ github_username }}/dotstrap"
 
   roles:
-    - role: ~/Documents/Developer/ansible-github
-      username: mwilliammyers
-      email: mkwmms@users.noreply.github.com
+    - role: mkwmms.github
+      username: "{{ github_username }}"
+      email: "{{ github_email }}"
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

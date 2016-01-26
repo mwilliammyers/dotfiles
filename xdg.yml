@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: ~/Documents/Developer/ansible-xdg
+    - role: mkwmms.xdg
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

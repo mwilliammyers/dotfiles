@@ -7,5 +7,7 @@
 - src: mkwmms.gnu-tools
 - src: mkwmms.neovim
 - src: mkwmms.node
+- src: mkwmms.pure
 - src: mkwmms.ruby
+- src: mkwmms.xdg
 - src: mkwmms.z

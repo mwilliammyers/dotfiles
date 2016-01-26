@@ -1,4 +1,12 @@
 - hosts: all
-  vars:
+
+  pre_tasks:
+    - name: setup | fish homebrew env
+      command: >
+        fish -c 'set -Ux HOMEBREW_EDITOR nvim;
+                 set -Ux HOMEBREW_CASK_OPTS --appdir=/Applications --caskroom=/usr/local/Caskroom'
+      when: (ansible_distribution == 'MacOSX') and (ansible_user_shell | basename == 'fish')
+
   roles:
     - role: geerlingguy.homebrew
+      when: ansible_distribution == 'MacOSX'
