@@ -8,7 +8,7 @@
       command: >
         fish -c "set -Ux HOMEBREW_EDITOR nvim;
                  set -Ux HOMEBREW_GITHUB_API_TOKEN {{ homebrew_github_api_token }}
-                 set -Ux HOMEBREW_CASK_OPTS --appdir=/Applications --caskroom=/usr/local/Caskroom"
+                 set -Ux HOMEBREW_CASK_OPTS '--appdir=/Applications --caskroom=/usr/local/Caskroom'"
       when: (ansible_distribution == 'MacOSX') and (ansible_user_shell | basename == 'fish')
       tags:
         - bootstrap
