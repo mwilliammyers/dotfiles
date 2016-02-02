@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: mkwmms.pure
+    - role: mwilliammyers.pure
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

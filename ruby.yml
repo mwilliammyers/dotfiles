@@ -9,6 +9,6 @@
     state: present
 
   roles:
-    - role: mkwmms.ruby
+    - role: mwilliammyers.ruby
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"

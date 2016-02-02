@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: mkwmms.xdg
+    - role: mwilliammyers.xdg
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 
