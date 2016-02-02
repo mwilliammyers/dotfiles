@@ -1,0 +1,8 @@
+---
+
+- name: xcode
+  hosts: all
+
+  roles:
+    - role: mwilliammyers.ansible-xcode
+
