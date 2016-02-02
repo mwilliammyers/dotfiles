@@ -1,6 +1,6 @@
 ansible
 =========
-[![Build Status](https://travis-ci.org/mkwmms/ansible.svg)](https://travis-ci.org/mkwmms/ansible)
+[![Build Status](https://travis-ci.org/mwilliammyers/ansible.svg)](https://travis-ci.org/mwilliammyers/ansible)
 
 Install & configure ansible.
 
@@ -27,7 +27,7 @@ Using all the [default variables]:
 ```
     - hosts: servers
       roles:
-         - role: mkwmms.ansible
+         - role: mwilliammyers.ansible
 ```
 
 License
@@ -38,12 +38,12 @@ GPLv3
 Author Information
 ------------------
 
-[@mkwmms]
+[@mwilliammyers]
 
-[@mkwmms]: https://github.com/mkwmms
+[@mwilliammyers]: https://github.com/mwilliammyers
 [aura]: https://github.com/aurapm/aura
 [default variables]: defaults/main.yml
-[dotstrap]: https://github.com/mkwmms/dotstrap
+[dotstrap]: https://github.com/mwilliammyers/dotstrap
 [fasd]: https://github.com/clvv/fasd
 [files]: files/
 [fish]: http://fishshell.com/
