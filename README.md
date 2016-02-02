@@ -1,22 +1,22 @@
 # dotfiles
 
-> :wrench: My personal, modular dotfiles. Powered by Ansible. [WIP]
+> :wrench: My personal, modular dotfiles. Powered by Ansible. (WIP)
 
-## Requirements
+## requirements
 
 [ansible]
 
-## Bootstrap
+## bootstrap
 
-[WIP]
+(WIP)
+
+ You will need to [edit](#secrets) `secrets.yml` first...
 
 ```bash
 ./bootstrap.sh
 ```
 
-You will need to [edit](#secrets) `secrets.yml`...
-
-## Pick
+## à la carte
 
 install the role dependencies:
 
@@ -36,7 +36,7 @@ ansible-playbook fish.yml
 
 ...
 
-## Hack
+## hacking
 
 I highly recommend forking this repository. 
 
