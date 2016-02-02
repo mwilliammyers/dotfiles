@@ -1,4 +1,5 @@
 # dotfiles
+
 > :wrench: My personal, modular dotfiles. Powered by Ansible. [WIP]
 
 ## Requirements
@@ -16,6 +17,14 @@
 You will need to [edit](#secrets) `secrets.yml`...
 
 ## Pick
+
+install the role dependencies:
+
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
+run individual playbooks:
 
 ```bash
 ansible-playbook neovim.yml 
