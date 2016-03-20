@@ -15,10 +15,11 @@
 
 {% if ansible_pkg_mgr == 'homebrew' %}
 inventory = /usr/local/etc/ansible/hosts
+library = /usr/local/etc/ansible/modules
 {% else %}
 # inventory = /etc/ansible/hosts
+# library = /etc/ansible/modules
 {% endif %}
-# library = /usr/share/my_modules/
 remote_tmp = /tmp
 pattern = *
 forks = 15
