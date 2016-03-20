@@ -8,7 +8,7 @@
             ssh_key_comment="{{ ssh_key_comment }}"
 
     - name: setup | ssh config
-      file: path="{{ ansible_user_dir }}/.ssh/config" state=present
+      file: path="{{ ansible_user_dir }}/.ssh/config" state=touch
 
     - name: configure | ssh config
       ssh_config: host="{{ item.key }}"
