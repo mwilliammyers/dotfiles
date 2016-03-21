@@ -10,6 +10,7 @@
 - src: mwilliammyers.osx
 - src: mwilliammyers.pure
 - src: mwilliammyers.ruby
+- src: mwilliammyers.sensible
 - src: mwilliammyers.xcode
 - src: mwilliammyers.xdg
 - src: mwilliammyers.z

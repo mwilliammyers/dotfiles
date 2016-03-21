@@ -1,0 +1,12 @@
+---
+
+- name: sensible
+  hosts: all
+
+  vars:
+    state: present
+
+  roles:
+    - role: mwilliammyers.sensible
+      sensible_configure_state: "{{ state }}"
+
