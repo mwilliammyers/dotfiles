@@ -27,7 +27,7 @@
       - "{{ github_username }}/dotstrap"
 
   roles:
-    - role: mwilliammyers.github
+    - role: dotstrap.github
       username: "{{ github_username }}"
       email: "{{ github_email }}"
       install_state: "{{ state }}"

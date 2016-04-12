@@ -1,16 +1,16 @@
 ---
 
 - src: geerlingguy.homebrew
-- src: mwilliammyers.dircolors
-- src: mwilliammyers.fish
-- src: mwilliammyers.github
-- src: mwilliammyers.gnu-tools
-- src: mwilliammyers.neovim
-- src: mwilliammyers.node
-- src: mwilliammyers.osx
-- src: mwilliammyers.pure
-- src: mwilliammyers.ruby
-- src: mwilliammyers.sensible
-- src: mwilliammyers.xcode
-- src: mwilliammyers.xdg
-- src: mwilliammyers.z
+- src: dotstrap.dircolors
+- src: dotstrap.fish
+- src: dotstrap.github
+- src: dotstrap.gnu-tools
+- src: dotstrap.neovim
+- src: dotstrap.node
+- src: dotstrap.osx
+- src: dotstrap.pure
+- src: dotstrap.ruby
+- src: dotstrap.sensible
+- src: dotstrap.xcode
+- src: dotstrap.xdg
+- src: dotstrap.z

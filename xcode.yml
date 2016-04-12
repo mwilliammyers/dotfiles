@@ -4,5 +4,5 @@
   hosts: all
 
   roles:
-    - role: mwilliammyers.ansible-xcode
+    - role: dotstrap.ansible-xcode
 

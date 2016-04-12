@@ -27,7 +27,7 @@ Using all the [default variables]:
 ```
     - hosts: servers
       roles:
-         - role: mwilliammyers.ssh
+         - role: dotstrap.ssh
 ```
 
 License

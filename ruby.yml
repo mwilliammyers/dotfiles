@@ -9,6 +9,6 @@
     state: present
 
   roles:
-    - role: mwilliammyers.ruby
+    - role: dotstrap.ruby
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"

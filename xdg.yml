@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: mwilliammyers.xdg
+    - role: dotstrap.xdg
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - role: mwilliammyers.gnome-terminal
+    - role: dotstrap.gnome-terminal

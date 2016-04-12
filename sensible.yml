@@ -7,6 +7,6 @@
     state: present
 
   roles:
-    - role: mwilliammyers.sensible
+    - role: dotstrap.sensible
       sensible_configure_state: "{{ state }}"
 

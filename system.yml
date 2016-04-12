@@ -7,4 +7,4 @@
 
   # FIXME: ERROR! no action detected in task
   roles:
-    - role: mwilliammyers.system
+    - role: dotstrap.system

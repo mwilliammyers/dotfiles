@@ -27,7 +27,7 @@ Using all the [default variables]:
 ```
     - hosts: servers
       roles:
-         - role: mwilliammyers.ansible
+         - role: dotstrap.ansible
 ```
 
 License

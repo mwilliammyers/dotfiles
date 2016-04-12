@@ -7,7 +7,7 @@
     state: present
 
   roles:
-    - role: mwilliammyers.pure
+    - role: dotstrap.pure
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 

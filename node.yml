@@ -7,6 +7,6 @@
     state: present
 
   roles:
-    - role: mwilliammyers.node
+    - role: dotstrap.node
       install_state: "{{ state }}"
 
