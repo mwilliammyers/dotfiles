@@ -6,6 +6,8 @@
 
 [ansible]
 
+These playbooks make heavy use of [dotstrap's] roles.
+
 ## bootstrap
 
 (WIP)
@@ -75,7 +77,8 @@ homebrew_github_api_token: <token>
 [bash]: https://www.gnu.org/software/bash/manual/bashref.html
 [coreutils]: http://www.gnu.org/software/coreutils/
 [default variables]: defaults/main.yml
-[dotstrap]: https://github.com/mwilliammyers/dotstrap
+[dotstrap]: https://github.com/dotstrap
+[dotstrap's]: https://github.com/dotstrap
 [fasd]: https://github.com/clvv/fasd
 [files]: files/
 [fish]: http://fishshell.com/
