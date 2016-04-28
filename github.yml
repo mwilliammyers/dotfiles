@@ -28,8 +28,6 @@
 
   roles:
     - role: dotstrap.github
-      username: "{{ github_username }}"
-      email: "{{ github_email }}"
       install_state: "{{ state }}"
       configuration_state: "{{ state }}"
 
