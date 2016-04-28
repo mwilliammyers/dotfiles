@@ -24,37 +24,70 @@ is_installed() {
 
 package_install() {
   # determine which package manager to use
-  is_installed pacman >/dev/null 2>&1 || sudo pacman -Sy && sudo pacman -S $1 --noconfirm --force
-  return $?
+  # TODO: cache the found package manager
+  is_installed apt-get && _apt_install "$1"
+  is_installed brew && _brew_install "$1"
+  is_installed yum && _pacman_install "$1"
+  is_installed pacman && _pacman_install "$1"
+  is_installed pkg && _pkg_install "$1"
+  is_installed emerge && _emerge_install "$1"
+  is_installed pip && _pip_install "$1"
+  # TODO: build ansible from source and/or warn user to install a package manager
+}
+
+_apt_install() {
+  if [ "$1" == "ansible" ]; then
+    sudo apt-get install "software-properties-common"
+    sudo apt-add-repository "ppa:ansible/ansible"
+    sudo apt-get update
+  fi
+  sudo apt-get install "$1"
+}
+
+_brew_install() {
+  brew install "$1"
+}
+
+_emerge_install() {
+  local package = "$1"
+  if [ $package == "ansible" ]; then
+    package = "app-admin/ansible"  
+  fi
+  emerge -av "$package"
+}
+
+_pacman_install() {
+  sudo pacman -S "$1" --noconfirm --force
 }
 
 pip_install() {
-  pip install $1 --upgrade
-  return $?
+  pip install "$1" --upgrade
+}
+
+_pkg_install() {
+  sudo pkg install "$1"
+}
+
+_yum_install() {
+  sudo yum install "$1"
 }
 
 #####=== install dependencies ===#####
 
-if [[ "$OSTYPE" =~ ^(linux)+ ]]; then
-  # Only install python and pip on Linux, they come pre-installed on OS X
-  # TODO: determine name of package for python & pip to use - pacman, apt use python-pip 
-  info "Install python & pip"
-  package_install python-pip
-fi
-
-# Install ansible via pip if necessary (will install via package manager later)
 info "Install ansible"
-is_installed ansible || pip_install git+https://github.com/ansible/ansible.git
-# is_installed redis || pip_install redis
-
-info "Configure ansible"
-ansible-playbook ansible.yml --ask-become-pass
+is_installed ansible || package_install ansible
 
 info "Install role dependencies"
-sudo ansible-galaxy install -r requirements.yml --force
+sudo ansible-galaxy install -r requirements.yml --force # FIXME: might not require sudo?
+
+info "Configure ssh"
+ansible-playbook ssh.yml -l localhost
+
+info "Configure ansible"
+ansible-playbook ansible.yml --ask-become-pass -l localhost
 
 #####=== bootstrap ===#####
 
 # ansible-playbook site.yml -t bootstrap
 
-exit 0
+exit
