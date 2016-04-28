@@ -1,6 +1,6 @@
 # dotfiles
 
-> :wrench: My personal, modular dotfiles. Powered by Ansible. (WIP)
+> :wrench: My personal, modular dotfiles. Powered by Ansible.
 
 ## requirements
 
@@ -72,7 +72,7 @@ homebrew_github_api_token: <token>
 [GNU]: http://www.gnu.org/
 [OS X]: http://www.apple.com/osx/
 [Xcode]: https://developer.apple.com/xcode/
-[ansible]: http://www.ansible.com/
+[ansible]: http://docs.ansible.com/ansible/intro_installation.html
 [aura]: https://github.com/aurapm/aura
 [bash]: https://www.gnu.org/software/bash/manual/bashref.html
 [coreutils]: http://www.gnu.org/software/coreutils/
