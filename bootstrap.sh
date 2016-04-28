@@ -37,11 +37,11 @@ package_install() {
 
 _apt_install() {
   if [ "$1" == "ansible" ]; then
-    sudo apt-get install "software-properties-common"
-    sudo apt-add-repository "ppa:ansible/ansible"
-    sudo apt-get update
+    sudo apt-get install "software-properties-common" -y
+    sudo apt-add-repository "ppa:ansible/ansible" -y
+    sudo apt-get update -q
   fi
-  sudo apt-get install "$1"
+  sudo apt-get install "$1" -y
 }
 
 _brew_install() {
