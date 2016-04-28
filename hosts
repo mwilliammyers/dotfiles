@@ -1,0 +1,7 @@
+home ansible_ssh_pipelining=yes ansible_python_interpreter=/usr/local/bin/python ansible_ruby_interpreter=/usr/local/bun/ruby ansible_shell_type=fish
+school ansible_ssh_pipelining=yes
+work ansible_ssh_pipelining=yes
+
+# ansible fails if ansible_connection == local && ansible_shell_type == fish
+[localhost]
+localhost ansible_shell_type=sh ansible_connection=local

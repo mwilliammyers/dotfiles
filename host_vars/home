@@ -1,3 +1,5 @@
+---
+
 dircolors_dest_file: /etc/DIR_COLORS
 dircolors_become: yes
 
