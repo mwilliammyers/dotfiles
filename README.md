@@ -8,18 +8,16 @@
 ## usage
 
 1. Read [hacking](#hacking).
-
 1. Install the role dependencies:
 
-```bash
-ansible-galaxy install -r requirements.yml
-```
-
+    ```bash
+    ansible-galaxy install -r requirements.yml
+    ```
 1. Run all the playbooks: 
 
-```bash
-ansible-playbook site.yml
-```
+    ```bash
+    ansible-playbook site.yml
+    ```
 
 Note: you might need to supply options to `ansible-playbook` like
 `--ask-vault-password` or `--ask-become-pass`. Run `ansible-playbook --help`
