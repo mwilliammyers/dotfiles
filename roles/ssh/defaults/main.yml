@@ -1,6 +1,0 @@
----
-# defaults file for ssh
-
-ssh_key_bits: 4096
-
-ssh_key_comment: "{{ ansible_user_id }}@{{ ansible_hostname }}"

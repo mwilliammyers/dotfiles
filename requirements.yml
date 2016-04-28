@@ -1,6 +1,5 @@
 ---
 
-- src: geerlingguy.homebrew
 - src: dotstrap.dircolors
 - src: dotstrap.fish
 - src: dotstrap.github
@@ -11,6 +10,7 @@
 - src: dotstrap.pure
 - src: dotstrap.ruby
 - src: dotstrap.sensible
+- src: dotstrap.ssh
 - src: dotstrap.xcode
 - src: dotstrap.xdg
 - src: dotstrap.z

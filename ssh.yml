@@ -8,4 +8,4 @@
     - secrets.yml
 
   roles:
-    - role: ssh
+    - role: dotstrap.ssh
