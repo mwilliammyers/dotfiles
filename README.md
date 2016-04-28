@@ -33,7 +33,7 @@ Install [ansible] and then run every applicable playbook:
 
 #### à la carte
 
-run individual playbooks:
+Run individual playbooks:
 
 ```bash
 ansible-playbook neovim.yml 
@@ -52,11 +52,13 @@ My dotfiles are under construction; use/fork/hack this repo at your own risk.
 
 #### hacking
 
-1. [fork] this repository
+You might want to make your own dotfiles repo. This repo might be a good place to start:
 
-1. (optional?) [edit](#secrets) `secrets.yml`
+1. [Fork] this repository.
 
-1. edit [host_vars]
+1. (optional?) Edit `secrets.yml`.
+
+1. Edit [host_vars].
 
 #### secrets
 
@@ -101,7 +103,7 @@ homebrew_github_api_token: <token>
 [dotstrap]: https://github.com/dotstrap
 [fasd]: https://github.com/clvv/fasd
 [files]: files/
-[fork]: #fork-destination-box
+[Fork]: #fork-destination-box
 [fish]: http://fishshell.com/
 [homebrew]: https://github.com/Homebrew/homebrew
 [host_vars]: host_vars/
