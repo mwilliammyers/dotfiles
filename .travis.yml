@@ -1,7 +1,20 @@
 ---
 language: python
 python: "2.7"
-sudo: true
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - python-pip
+
+install:
+  # TODO: use apt package when it is updated to ansible v2.0.0+
+  - pip install git+https://github.com/ansible/ansible.git
+  # - printf '[defaults]\nroles_path=../' >ansible.cfg
+  
+before_script:
+  - ansible --version
 
 script:
-  - ./bootstrap.sh
+  - ansible-playbook site.yml
