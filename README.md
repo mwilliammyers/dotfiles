@@ -28,7 +28,7 @@ for more options.
 Install [ansible] and then run every applicable playbook:
 
 ```bash
-./bootstrap.sh
+curl -L http://bit.ly/1XXss21 | bash -s -- https://github.com/mwilliammyers/dotfiles.git ~/.local/share/dotfiles
 ```
 
 #### à la carte
