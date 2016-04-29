@@ -21,6 +21,10 @@ env:
     - ANSIBLE_DISPLAY_ARGS_TO_STDOUT=True
     - ANSIBLE_NO_LOG=True
     - ANSIBLE_NO_TARGET_SYSLOG=True
+    - ANSIBLE_ASK_VAULT_PASS=False # TODO: somehow use `travis encrypt` for vault pass
+
+before_install: 
+  - mkdir -p "$ANSIBLE_LIBRARY" "$ANSIBLE_ROLES_PATH" "$ANSIBLE_LOCAL_TEMP"
 
 install:
   # TODO: use apt package when it is updated to ansible v2.0.0+
@@ -30,18 +34,18 @@ install:
   
 before_script:
   - ansible --version
-  - mkdir -p "$ANSIBLE_LIBRARY" "$ANSIBLE_ROLES_PATH" "$ANSIBLE_LOCAL_TEMP"
 
 script:
   - >
     find . -type f \( 
-    -name "cleanup.yml" 
-    -o -name "site.yml"
+    -name "site.yml"
     -o -name ".travis.yml"
+    -o -name "secrets.yml" 
+    -o -name "cleanup.yml" 
     -o -name "requirements.yml"
     -o -name "ansible.yml" 
     -o -name "ssh.yml"
     -o -name "github.yml" 
     \) -prune 
     -o -name "*.yml" -print0 
-    | xargs -0 ansible-playbook
+    | xargs -0 ansible-playbook -l localhost
