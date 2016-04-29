@@ -6,15 +6,42 @@ sudo: false
 addons:
   apt:
     packages:
-    - python-pip
+      - python-pip
+
+# https://github.com/ansible/ansible/blob/devel/lib/ansible/constants.py
+env:
+  global:
+    - ANSIBLE_LIBRARY="/tmp/ansible/library"
+    - ANSIBLE_ROLES_PATH="/tmp/ansible/roles"
+    - ANSIBLE_LOCAL_TEMP="/tmp/ansible/cache"
+    - ANSIBLE_REMOTE_TEMP="/tmp/ansible"
+    - ANSIBLE_TRANSPORT=local
+    - ANSIBLE_SSH_PIPELINING=True
+    - ANSIBLE_HOST_KEY_CHECKING=False
+    - ANSIBLE_DISPLAY_ARGS_TO_STDOUT=True
+    - ANSIBLE_NO_LOG=True
+    - ANSIBLE_NO_TARGET_SYSLOG=True
 
 install:
   # TODO: use apt package when it is updated to ansible v2.0.0+
   - pip install git+https://github.com/ansible/ansible.git
   # - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - ansible-galaxy install -r requirements.yml
   
 before_script:
   - ansible --version
+  - mkdir -p "$ANSIBLE_LIBRARY" "$ANSIBLE_ROLES_PATH" "$ANSIBLE_LOCAL_TEMP"
 
 script:
-  - ansible-playbook site.yml
+  - >
+    find . -type f \( 
+    -name "cleanup.yml" 
+    -o -name "site.yml"
+    -o -name ".travis.yml"
+    -o -name "requirements.yml"
+    -o -name "ansible.yml" 
+    -o -name "ssh.yml"
+    -o -name "github.yml" 
+    \) -prune 
+    -o -name "*.yml" -print0 
+    | xargs -0 ansible-playbook
