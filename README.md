@@ -20,7 +20,7 @@
     ```
 
 Note: you might need to supply options to `ansible-playbook` like
-`--ask-vault-password` or `--ask-become-pass`. Run `ansible-playbook --help`
+`--ask-vault-pass` or `--ask-become-pass`. Run `ansible-playbook --help`
 for more options.
 
 #### bootstrap 
