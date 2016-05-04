@@ -3,8 +3,8 @@
 
 # - name: setup | install
   # include: install.yml
-  # when: install_ansible == True
+  # when: ansible_install_state == 'present'
 
 - name: setup | configure
   include: configure.yml
-  when: configure_ansible == True
+  when: ansible_configure_state == 'present'

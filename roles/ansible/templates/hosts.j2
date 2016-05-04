@@ -1,4 +1,4 @@
-{% for host_name, host_info in hosts.iteritems() %}
+{% for host_name, host_info in ssh_hosts.iteritems() %}
 {{ host_name }} {{ host_info.host_vars|default('') }}
 {% endfor %}
 
