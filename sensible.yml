@@ -1,0 +1,13 @@
+---
+
+- name: sensible
+  hosts: all
+
+  vars:
+    state: present
+
+  roles:
+    - role: dotstrap.sensible
+      install_state: "{{ state }}"
+      configuration_state: "{{ state }}"
+

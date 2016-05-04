@@ -9,7 +9,7 @@
 - src: dotstrap.osx
 - src: dotstrap.pure
 - src: dotstrap.ruby
-# - src: dotstrap.sensible
+- src: dotstrap.sensible
 - src: dotstrap.ssh
 - src: dotstrap.xcode
 - src: dotstrap.xdg
