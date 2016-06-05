@@ -22,5 +22,5 @@
       register: found
 
     - name: remove | backup files
-      file: path={{ item.path }} state=absent
-      with_items: found.files
+      file: path="{{ item.path }}" state=absent
+      with_items: "{{ found.files }}"
