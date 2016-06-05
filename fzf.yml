@@ -1,0 +1,8 @@
+---
+
+- name: fzf
+  hosts: all
+
+  roles:
+    - role: dotstrap.fzf
+
