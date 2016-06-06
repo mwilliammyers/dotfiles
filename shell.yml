@@ -1,0 +1,20 @@
+---
+- name: shell
+  gather_facts: yes
+  hosts: all
+
+  roles:
+    - role: ~/Documents/dotstrap/ansible-fish
+      tags: fish
+    - role: ~/Documents/dotstrap/ansible-sensible
+      tags: sensible
+    - role: ~/Documents/dotstrap/ansible-dircolors
+      tags: dircolors
+    - role: ~/Documents/dotstrap/ansible-pure
+      tags: pure
+    - role: ~/Documents/dotstrap/ansible-fzf
+      tags: fzf
+    - role: ~/Documents/dotstrap/ansible-enhancd
+      tags: enhancd
+    - role: ~/Documents/dotstrap/ansible-z
+      tags: z

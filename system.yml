@@ -1,0 +1,18 @@
+---
+- name: system
+  gather_facts: yes
+  hosts: all
+
+  roles:
+    - role: dotstrap.ansible
+      tags: ansible
+    - role: dotstrap.gnu-tools
+      tags: gnu-tools
+    - role: dotstrap.homebrew
+      tags: homebrew
+    - role: dotstrap.osx
+      tags: osx
+    - role: dotstrap.ssh
+      tags: ssh
+    - role: dotstrap.xdg
+      tags: xdg

@@ -1,7 +1,9 @@
 ---
 
 - src: dotstrap.dircolors
+- src: dotstrap.enhancd
 - src: dotstrap.fish
+- src: dotstrap.fzf
 - src: dotstrap.github
 - src: dotstrap.gnu-tools
 - src: dotstrap.neovim

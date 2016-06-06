@@ -1,9 +1,0 @@
----
-
-- name: gnu-tools
-  hosts: all
-
-  gather_facts: yes
-
-  roles:
-    - role: dotstrap.gnu-tools

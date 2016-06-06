@@ -4,17 +4,6 @@
 
   gather_facts: yes
 
-    # - osx.ym.yml
-  # when: ansible_distribution == 'MacOSX'
-- include: homebrew.yml
-- include: fish.yml
-- include: xdg.yml
-- include: gnu-tools.yml
-- include: dircolors.yml
-- include: neovim.yml
-# - include: fasd.yml
-- include: pure.yml
-- include: z.yml
-- include: github.yml
-- include: ruby.yml
-- include: ruby.yml
+- include: developer.yml
+- include: shell.yml
+- include: system.yml

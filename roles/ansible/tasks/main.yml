@@ -8,3 +8,8 @@
 - name: setup | configure
   include: configure.yml
   when: ansible_configure_state == 'present'
+  tags:
+    - bootstrap
+    - bootstrap_ansible
+    - configure
+    - configure_ansible

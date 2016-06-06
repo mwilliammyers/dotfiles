@@ -16,3 +16,4 @@
   template: src=hosts.j2 dest="{{ ansible_config_dir }}/hosts" force=yes backup=yes
   # become: "{{ ansible_pkg_mgr != 'homebrew' }}"
   become: yes
+

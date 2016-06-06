@@ -1,8 +1,0 @@
----
-
-- name: enhancd
-  hosts: all
-
-  roles:
-    - role: dotstrap.enhancd
-

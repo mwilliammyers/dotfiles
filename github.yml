@@ -35,6 +35,6 @@
     - name: git | clone repos
       git:
         repo: git@github.com:{{ item }}.git
-        dest: "{{ ansible_user_dir }}/Documents/Developer/{{ item | basename }}"
+        dest: "{{ ansible_user_dir }}/Documents/{{ item | basename }}"
         accept_hostkey: yes
       with_items: "{{ repos }}"

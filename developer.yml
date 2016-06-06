@@ -1,0 +1,18 @@
+---
+- name: developer.yml
+  gather_facts: yes
+  hosts: all
+
+  roles:
+    - role: dotstrap.neovim
+      tags: neovim
+    - role: dotstrap.node
+      tags: node
+    - role: dotstrap.ruby
+      tags: ruby
+    - role: dotstrap.xcode
+      tags: xcode
+
+  tasks:
+    include: github.yml
+    tags: github

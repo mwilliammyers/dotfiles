@@ -1,9 +1,0 @@
----
-
-- name: fish
-  hosts: all
-
-  gather_facts: yes
-
-  roles:
-    - role: dotstrap.fish
