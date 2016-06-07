@@ -4,11 +4,11 @@
   hosts: all
 
   roles:
-    - role: dotstrap.ansible
+    - role: ansible
       tags: ansible
     - role: dotstrap.gnu-tools
       tags: gnu-tools
-    - role: dotstrap.homebrew
+    - role: geerlingguy.homebrew
       tags: homebrew
     - role: dotstrap.osx
       tags: osx
