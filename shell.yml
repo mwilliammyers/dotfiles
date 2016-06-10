@@ -4,17 +4,17 @@
   hosts: all
 
   roles:
-    - role: ~/Documents/dotstrap/ansible-fish
+    - role: dotstrap.fish
       tags: fish
-    - role: ~/Documents/dotstrap/ansible-sensible
+    - role: dotstrap.sensible
       tags: sensible
-    - role: ~/Documents/dotstrap/ansible-dircolors
+    - role: dotstrap.dircolors
       tags: dircolors
-    - role: ~/Documents/dotstrap/ansible-pure
+    - role: dotstrap.pure
       tags: pure
-    - role: ~/Documents/dotstrap/ansible-fzf
+    - role: dotstrap.fzf
       tags: fzf
-    - role: ~/Documents/dotstrap/ansible-enhancd
+    - role: dotstrap.enhancd
       tags: enhancd
-    - role: ~/Documents/dotstrap/ansible-z
+    - role: dotstrap.z
       tags: z

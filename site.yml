@@ -4,6 +4,6 @@
 
   gather_facts: yes
 
+- include: system.yml
 - include: developer.yml
 - include: shell.yml
-- include: system.yml

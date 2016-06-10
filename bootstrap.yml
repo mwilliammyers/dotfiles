@@ -1,14 +1,12 @@
 ---
-
-- name: github
-  hosts: all
-  gather_facts: yes
+- name: bootstrap 
+  gather_facts: yes 
+  hosts: localhost 
 
   vars_files:
     - secrets.yml
 
   vars:
-    state: present
     repos:
       - "{{ github_username }}/BYU"
       - "{{ github_username }}/ansible-coreutils"
@@ -24,17 +22,16 @@
       - "{{ github_username }}/ansible-xcode"
       - "{{ github_username }}/ansible-xdg"
       - "{{ github_username }}/ansible-z"
-      - "{{ github_username }}/dotstrap"
 
   roles:
+    - role: dotstrap.ssh 
+    - role: ansible
     - role: dotstrap.github
-      install_state: "{{ state }}"
-      configuration_state: "{{ state }}"
 
   tasks:
     - name: git | clone repos
       git:
         repo: git@github.com:{{ item }}.git
-        dest: "{{ ansible_user_dir }}/Documents/{{ item | basename }}"
+        dest: "{{ ansible_user_dir }}/{{ item | basename }}"
         accept_hostkey: yes
       with_items: "{{ repos }}"
