@@ -4,8 +4,6 @@
   hosts: all
 
   roles:
-    - role: dotstrap.fish
-      tags: fish
     - role: dotstrap.sensible
       tags: sensible
     - role: dotstrap.dircolors
@@ -16,5 +14,3 @@
       tags: fzf
     - role: dotstrap.enhancd
       tags: enhancd
-    - role: dotstrap.z
-      tags: z
