@@ -1,7 +1,7 @@
 ---
 - name: bootstrap 
   gather_facts: yes 
-  hosts: localhost 
+  hosts: all
 
   vars_files:
     - secrets.yml
@@ -38,4 +38,6 @@
         dest: "{{ item.path | default(default_repo_dest_path) }}"
         accept_hostkey: yes
       with_items: "{{ repos }}"
-      tags: github
+      tags: 
+        - github
+        - github_repos
