@@ -1,6 +1,5 @@
 ---
 - name: developer.yml
-  gather_facts: yes
   hosts: all
 
   roles:

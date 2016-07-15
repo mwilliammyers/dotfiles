@@ -2,8 +2,6 @@
 - name: dotfiles
   hosts: all
 
-  gather_facts: yes
-
 - include: system.yml
 - include: developer.yml
 - include: shell.yml

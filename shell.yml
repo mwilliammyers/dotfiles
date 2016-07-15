@@ -1,6 +1,5 @@
 ---
 - name: shell
-  gather_facts: yes
   hosts: all
 
   roles:

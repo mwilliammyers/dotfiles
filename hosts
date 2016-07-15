@@ -1,4 +1,4 @@
 localhost ansible_connection=local
-# home ansible_ssh_pipelining=yes
+home ansible_ssh_pipelining=yes
 # school ansible_ssh_pipelining=yes
-# work ansible_ssh_pipelining=yes
+work ansible_ssh_pipelining=yes
