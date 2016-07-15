@@ -1,0 +1,6 @@
+---
+- name: run 
+  hosts: "{{ host | default('all') }}"
+
+  roles:
+    - role: "{{ role }}"
