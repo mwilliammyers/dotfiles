@@ -4,7 +4,7 @@
   hosts: all
 
   vars_files:
-    - secrets.yml
+    - secrets
 
   vars:
     default_repo_prefix: "{{ ansible_user_dir }}/Documents/developer"
