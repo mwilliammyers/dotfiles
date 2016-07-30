@@ -56,17 +56,17 @@ You might want to make your own dotfiles repo. This repo might be a good place t
 
 1. [Fork] this repository.
 
-1. (optional?) Edit `secrets.yml`.
+1. (optional?) Edit `secrets`.
 
 1. Edit [host_vars].
 
 #### secrets
 
 I use some secret variables in a couple of these playbooks. They are encrypted
-in the file `secrets.yml`, so remove it & then do `ansible-vault create
-secrets.yml` 
+in the file `secrets`, so remove it & then do `ansible-vault create
+secrets` 
 
-My `secrets.yml` looks something like this:
+My `secrets` looks something like this:
 
 ```yaml
 ---
