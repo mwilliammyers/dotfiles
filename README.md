@@ -25,10 +25,10 @@ for more options.
 
 #### bootstrap 
 
-Install [ansible] and then run every applicable playbook:
+macOS:
 
 ```bash
-bash <(curl -s http://bit.ly/2fWNEYP)
+bash <(curl -s https://raw.githubusercontent.com/mwilliammyers/dotfiles/master/bootstrap-macos.sh)
 ```
 
 #### à la carte
