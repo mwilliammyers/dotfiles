@@ -11,8 +11,11 @@ is_installed brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubuserconten
 is_installed ansible || brew install ansible
 is_installed git || brew install git
 
-mkdir git clone git@github.com:mwilliammyers/dotfiles.git "${dotfiles_dir}" \
-  && cd "${dotfiles_dir}"
+[ -d "${dotfiles_dir}/.git" ]; then
+  cd "${dotfiles_dir}" && git pull 
+else 
+  git clone git@github.com:mwilliammyers/dotfiles.git "${dotfiles_dir}" && cd "${dotfiles_dir}"
+fi
 
 # bootstrap!
 ansible-playbook -i localhost -c local bootstrap.yml
