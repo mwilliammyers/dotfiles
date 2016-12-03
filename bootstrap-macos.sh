@@ -14,7 +14,7 @@ is_installed git || brew install git
 if [ -d "${dotfiles_dir}/.git" ]; then
   cd "${dotfiles_dir}" && git pull 
 else 
-  git clone git@github.com:mwilliammyers/dotfiles.git "${dotfiles_dir}" && cd "${dotfiles_dir}"
+  git clone https://github.com/mwilliammyers/dotfiles.git "${dotfiles_dir}" && cd "${dotfiles_dir}"
 fi
 
 # bootstrap!
