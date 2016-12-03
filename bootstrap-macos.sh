@@ -12,9 +12,11 @@ is_installed ansible || brew install ansible
 is_installed git || brew install git
 
 if [ -d "${dotfiles_dir}/.git" ]; then
-  cd "${dotfiles_dir}" && git pull 
+  cd "${dotfiles_dir}"
+  git pull || exit 1
 else 
-  git clone https://github.com/mwilliammyers/dotfiles.git "${dotfiles_dir}" && cd "${dotfiles_dir}"
+  git clone https://github.com/mwilliammyers/dotfiles.git "${dotfiles_dir}" || exit 1
+  cd "${dotfiles_dir}"
 fi
 
 # bootstrap!
