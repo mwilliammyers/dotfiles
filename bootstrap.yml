@@ -12,16 +12,16 @@
     repos:
       - name: "{{ github_username }}/BYU"
         path: "{{ default_repo_prefix }}/BYU"
-      - name: "dotstrap/ansible-coreutils"
-      - name: "dotstrap/ansible-dircolors"
-      - name: "dotstrap/ansible-github"
-      - name: "dotstrap/ansible-gnu-tools"
-      - name: "dotstrap/ansible-node"
-      - name: "dotstrap/ansible-osx"
-      - name: "dotstrap/ansible-pure"
-      - name: "dotstrap/ansible-ruby"
-      - name: "dotstrap/ansible-xcode"
-      - name: "dotstrap/ansible-xdg"
+      # - name: "dotstrap/ansible-coreutils"
+      # - name: "dotstrap/ansible-dircolors"
+      # - name: "dotstrap/ansible-github"
+      # - name: "dotstrap/ansible-gnu-tools"
+      # - name: "dotstrap/ansible-node"
+      # - name: "dotstrap/ansible-osx"
+      # - name: "dotstrap/ansible-pure"
+      # - name: "dotstrap/ansible-ruby"
+      # - name: "dotstrap/ansible-xcode"
+      # - name: "dotstrap/ansible-xdg"
 
   roles:
     - role: dotstrap.ssh 
