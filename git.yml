@@ -30,6 +30,7 @@
       tags: github
 
   tasks:
+    # TODO: switch to github_key module
     - name: git | upload public ssh key 
       uri:
         url: https://api.github.com/user/keys

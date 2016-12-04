@@ -6,7 +6,7 @@
   vars_files:
     - secrets
 
-   roles:
+  roles:
     - role: dotstrap.ssh 
       tags: ssh
     - role: ansible

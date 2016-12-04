@@ -1,4 +1,8 @@
 ---
+- hosts: all
+  tasks:
+     - group_by: key="{{ ansible_distribution }}"
+
 - name: shell
   hosts: all
 

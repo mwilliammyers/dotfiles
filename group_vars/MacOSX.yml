@@ -3,12 +3,18 @@
 dircolors_dest_file: /etc/DIR_COLORS
 dircolors_become: yes
 
-caskroom_dir: '/usr/local/Caskroom'
+homebrew_caskroom_dir: '/usr/local/Caskroom'
+
+homebrew_taps:
+  - homebrew/dupes
+
+homebrew_casks:
+  - google-chrome
+  - iterm2
+  - slack
+  - docker
 
 packages:
-  - wget
   - rsync
   - ripgrep
-  - caskroom/cask/google-chrome
-  - caskroom/cask/iterm2
-  - caskroom/cask/slack
+

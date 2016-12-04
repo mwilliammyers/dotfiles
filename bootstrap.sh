@@ -24,4 +24,4 @@ fi
 
 # bootstrap!
 ansible-galaxy install -r requirements.yml
-ansible-playbook -i 'localhost,' -c local --ask-vault-pass bootstrap.yml
+ansible-playbook -i 'localhost,' -c local --ask-become-pass --ask-vault-pass bootstrap.yml

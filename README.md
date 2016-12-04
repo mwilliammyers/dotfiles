@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mwilliammyers/dotfiles.svg?branch=master)](https://travis-ci.org/mwilliammyers/dotfiles)
 
-> :wrench: My personal, modular dotfiles. Powered by [ansible].
+> :wrench: My modular dotfiles. Powered by [ansible].
 
 
 ## usage

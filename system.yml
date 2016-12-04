@@ -9,22 +9,37 @@
   roles:
     # - role: dotstrap.gnu-tools
       # tags: gnu-tools
-    - # role: dotstrap.macos
+    # - role: dotstrap.macos
       # tags: macos
     - role: dotstrap.xdg
       tags: xdg
 
   tasks:
-    - name: package | setup
-      file:
-        path: "{{ caskroom_dir }}" 
-        state: directory
-        mode: 'u=rwx,g=rwx,o=r-x'
-        become: yes
-      when: caskroom_dir is defined
-    
-    - name: package
-      package: "{{ item }}"
+    - name: homebrew_tap | install
+      homebrew_tap:
+        name: "{{ item }}"
+      with_items: "{{ homebrew_taps }}"
+      when: homebrew_taps is defined
+
+    - name: package | install
+      package: 
+        name: "{{ item }}"
+        state: present
       with_items: "{{ packages }}"
       when: packages is defined
-      
+
+    - name: homebrew_cask | setup
+      file:
+        path: "{{ homebrew_caskroom_dir }}" 
+        state: directory
+        owner: "{{ ansible_user_id }}"
+        group: admin
+        mode: 'u=rwx,g=rwx,o=rx'
+      become: yes
+      when: homebrew_caskroom_dir is defined
+
+    - name: homebrew_cask | install
+      homebrew_cask:
+        name: "{{ item }}"
+      with_items: "{{ homebrew_casks }}"
+      when: homebrew_casks is defined

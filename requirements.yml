@@ -6,6 +6,7 @@
 - src: dotstrap.fzf
 - src: dotstrap.github
 - src: dotstrap.gnu-tools
+- src: dotstrap.neovim
 - src: dotstrap.node
 - src: dotstrap.macos
 - src: dotstrap.pure
