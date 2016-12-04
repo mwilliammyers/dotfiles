@@ -2,15 +2,15 @@
 
 - src: dotstrap.dircolors
 - src: dotstrap.enhancd
+- src: dotstrap.fish
 - src: dotstrap.fzf
 - src: dotstrap.github
 - src: dotstrap.gnu-tools
 - src: dotstrap.node
-- src: dotstrap.osx
+- src: dotstrap.macos
 - src: dotstrap.pure
 - src: dotstrap.ruby
 - src: dotstrap.sensible
 - src: dotstrap.ssh
 - src: dotstrap.xcode
 - src: dotstrap.xdg
-- src: geerlingguy.homebrew 

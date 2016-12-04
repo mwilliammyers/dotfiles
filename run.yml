@@ -1,8 +1,4 @@
 ---
-# usage: ansible-playbook run.yml -e "role=foo"
-
-- name: run 
-  hosts: all 
-
+- hosts: all 
   roles:
-    - role: "{{ role }}"
+    - "{{ role }}"

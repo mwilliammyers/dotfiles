@@ -1,0 +1,14 @@
+---
+
+dircolors_dest_file: /etc/DIR_COLORS
+dircolors_become: yes
+
+caskroom_dir: '/usr/local/Caskroom'
+
+packages:
+  - wget
+  - rsync
+  - ripgrep
+  - caskroom/cask/google-chrome
+  - caskroom/cask/iterm2
+  - caskroom/cask/slack

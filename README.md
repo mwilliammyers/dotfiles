@@ -25,10 +25,10 @@ for more options.
 
 #### bootstrap 
 
-macOS:
+macOS: 
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/mwilliammyers/dotfiles/master/bootstrap-macos.sh)
+bash <(curl -s https://raw.githubusercontent.com/mwilliammyers/dotfiles/master/bootstrap.sh)
 ```
 
 #### à la carte

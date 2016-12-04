@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: dotstrap.fish
+      tags: fish 
     - role: dotstrap.sensible
       tags: sensible
     - role: dotstrap.dircolors

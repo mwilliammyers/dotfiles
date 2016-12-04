@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# TODO: support Linux?
+[ "$(uname -s)" == "Darwin" ] || exit 1
+
 dotfiles_dir="$HOME/Documents/developer/dotfiles"
 
 is_installed() {

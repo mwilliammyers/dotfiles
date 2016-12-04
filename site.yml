@@ -1,6 +1,6 @@
 ---
 
 - include: git.yml
-- include: system.yml
-- include: developer.yml
 - include: shell.yml
+- include: system.yml
+# - include: developer.yml

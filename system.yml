@@ -1,17 +1,30 @@
 ---
+- hosts: all
+  tasks:
+     - group_by: key="{{ ansible_distribution }}"
+
 - name: system
   hosts: all 
 
   roles:
-    - role: ansible
-      tags: ansible
-    - role: dotstrap.gnu-tools
-      tags: gnu-tools
-    - role: geerlingguy.homebrew
-      tags: homebrew
-    - role: dotstrap.osx
-      tags: osx
-    - role: dotstrap.ssh
-      tags: ssh
+    # - role: dotstrap.gnu-tools
+      # tags: gnu-tools
+    - # role: dotstrap.macos
+      # tags: macos
     - role: dotstrap.xdg
       tags: xdg
+
+  tasks:
+    - name: package | setup
+      file:
+        path: "{{ caskroom_dir }}" 
+        state: directory
+        mode: 'u=rwx,g=rwx,o=r-x'
+        become: yes
+      when: caskroom_dir is defined
+    
+    - name: package
+      package: "{{ item }}"
+      with_items: "{{ packages }}"
+      when: packages is defined
+      
