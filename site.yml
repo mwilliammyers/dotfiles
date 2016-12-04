@@ -1,7 +1,6 @@
 ---
-- name: dotfiles
-  hosts: all
 
+- include: git.yml
 - include: system.yml
 - include: developer.yml
 - include: shell.yml

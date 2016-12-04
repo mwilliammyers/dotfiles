@@ -6,38 +6,10 @@
   vars_files:
     - secrets
 
-  vars:
-    default_repo_prefix: "{{ ansible_user_dir }}/Documents/developer"
-    default_repo_dest_path: "{{ default_repo_prefix }}/{{ item.name }}"
-    repos:
-      - name: "{{ github_username }}/BYU"
-        path: "{{ default_repo_prefix }}/BYU"
-      # - name: "dotstrap/ansible-coreutils"
-      # - name: "dotstrap/ansible-dircolors"
-      # - name: "dotstrap/ansible-github"
-      # - name: "dotstrap/ansible-gnu-tools"
-      # - name: "dotstrap/ansible-node"
-      # - name: "dotstrap/ansible-osx"
-      # - name: "dotstrap/ansible-pure"
-      # - name: "dotstrap/ansible-ruby"
-      # - name: "dotstrap/ansible-xcode"
-      # - name: "dotstrap/ansible-xdg"
-
-  roles:
+   roles:
     - role: dotstrap.ssh 
       tags: ssh
     - role: ansible
       tags: ansible
-    - role: dotstrap.github
-      tags: github
-
-  tasks:
-    - name: git | clone repos
-      git:
-        repo: git@github.com:{{ item.name }}.git
-        dest: "{{ item.path | default(default_repo_dest_path) }}"
-        accept_hostkey: yes
-      with_items: "{{ repos }}"
-      tags: 
-        - github
-        - github_repos
+   
+- include: site.yml 
