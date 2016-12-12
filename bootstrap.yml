@@ -1,6 +1,5 @@
 ---
 - name: bootstrap 
-  gather_facts: yes 
   hosts: all
 
   vars_files:
