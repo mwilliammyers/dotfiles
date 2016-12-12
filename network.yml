@@ -1,0 +1,26 @@
+- name: hosts
+  hosts: all
+
+  vars:
+    hosts_url: "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts"
+
+  tasks:
+    - group_by:
+        key: "{{ ansible_distribution }}"
+
+    # TODO: set DNS nameservers to 208.67.222.123 208.67.220.123 2620:0:ccc::2 2620:0:ccd::2
+    - block:
+      - name: hosts | download
+        get_url:
+          url:  "{{ hosts_url }}" 
+          dest: /etc/hosts
+          mode: "u=rw,g=r,o=r"
+          force: true
+          owner: root
+        register: hostsfile
+
+      - name: hosts | flush DNS cache
+        command: "{{ item }}"
+        with_items: "{{ dns_restart_commands }}"
+        when: "{{ hostsfile.changed }}"
+      become: true
