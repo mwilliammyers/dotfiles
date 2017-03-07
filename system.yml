@@ -1,11 +1,11 @@
 ---
 - hosts: all
   tasks:
-     - group_by: 
+     - group_by:
          key: "{{ ansible_distribution }}"
 
 - name: system
-  hosts: all 
+  hosts: all
 
   roles:
     # - role: dotstrap.gnu-tools
@@ -23,15 +23,14 @@
       when: homebrew_taps is defined
 
     - name: package | install
-      package: 
-        name: "{{ item }}"
+      package:
+        name: "{{ packages }}"
         state: present
-      with_items: "{{ packages }}"
       when: packages is defined
 
     - name: homebrew_cask | setup
       file:
-        path: "{{ homebrew_caskroom_dir }}" 
+        path: "{{ homebrew_caskroom_dir }}"
         state: directory
         owner: "{{ ansible_user_id }}"
         group: admin
@@ -41,6 +40,5 @@
 
     - name: homebrew_cask | install
       homebrew_cask:
-        name: "{{ item }}"
-      with_items: "{{ homebrew_casks }}"
+        name: "{{ homebrew_casks }}"
       when: homebrew_casks is defined
