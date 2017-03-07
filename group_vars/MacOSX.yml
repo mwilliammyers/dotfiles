@@ -7,17 +7,32 @@ homebrew_caskroom_dir: '/usr/local/Caskroom'
 
 homebrew_taps:
   - homebrew/dupes
+  - homebrew/science
 
 homebrew_casks:
+  - atom
+  - dash
+  - docker-beta
   - google-chrome
   - iterm2
   - slack
-  - docker
 
 packages:
-  - rsync
+  - ansible
+  - awscli
+  - fish
+  - fzf
+  - git-extras
+  - git-lfs
+  - hub
+  - neovim
+  - node
+  - numpy
+  - python
+  - python3
   - ripgrep
+  - rsync
 
 dns_restart_commands:
   - "dscacheutil -flushcache"
-  - "killall -HUP mDNSResponder" 
+  - "killall -HUP mDNSResponder"
