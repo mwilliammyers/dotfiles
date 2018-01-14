@@ -17,5 +17,5 @@
       tags: pure
     - role: dotstrap.fzf
       tags: fzf
-    - role: dotstrap.enhancd
-      tags: enhancd
+    - role: dotstrap.j
+      tags: j 
