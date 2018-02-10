@@ -6,7 +6,7 @@ sudo: false
 addons:
   apt:
     packages:
-      - python-pip
+      - ansible
 
 # https://github.com/ansible/ansible/blob/devel/lib/ansible/constants.py
 env:
@@ -27,10 +27,8 @@ before_install:
   - mkdir -p "$ANSIBLE_LIBRARY" "$ANSIBLE_ROLES_PATH" "$ANSIBLE_LOCAL_TEMP"
 
 install:
-  # TODO: use apt package when it is updated to ansible v2.0.0+
-  - pip install git+https://github.com/ansible/ansible.git
   # - printf '[defaults]\nroles_path=../' >ansible.cfg
-  - ansible-galaxy install -r requirements.yml
+  - ansible-galaxy install --ignore-errors -r requirements.yml
   
 before_script:
   - ansible --version
