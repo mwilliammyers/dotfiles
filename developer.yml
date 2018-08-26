@@ -5,8 +5,8 @@
   roles:
     - role: dotstrap.neovim
       tags: neovim 
-    # - role: dotstrap.node
-      # tags: node
+    - role: dotstrap.node
+      tags: node
     # - role: dotstrap.ruby
       # tags: ruby
     # - role: dotstrap.xcode
