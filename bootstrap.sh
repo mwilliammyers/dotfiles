@@ -152,4 +152,10 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
 	git_pull_or_clone "https://github.com/${repo}.git" "${dotfiles_dir}" \
 		|| die "dotfiles must be up to date"
+
+	cd "${dotfiles_dir}" || die "Could not find dotfiles directory"
+
+	chmod u+x *.sh
+
+	./install.sh python3
 fi
