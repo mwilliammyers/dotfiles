@@ -3,6 +3,8 @@
 # TODO: make everything support $DOTFILES_VERBOSE
 
 DOTFILES_VERBOSE="${DOTFILES_VERBOSE:-true}"
+DOTFILES_REPO="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.config/dotfiles}"
 
 info() {
 	if [ "x$DOTFILES_VERBOSE" = 'xtrue' ]; then
@@ -148,13 +150,10 @@ install_packages_if_necessary "git" "curl" >> /dev/null
 
 # bootstrap!
 if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
-	repo="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
-	dotfiles_dir="${DOTFILES_DIR:-$HOME/Documents/developer/dotfiles}"
-
-	git_pull_or_clone "https://github.com/${repo}.git" "${dotfiles_dir}" \
+	git_pull_or_clone "https://github.com/${DOTFILES_REPO}.git" "${DOTFILES_DIR}" \
 		|| die "dotfiles must be up to date"
 
-	cd "${dotfiles_dir}" || die "Could not find dotfiles directory"
+	cd "${DOTFILES_DIR}" || die "Could not find dotfiles directory"
 
 	chmod u+x *.sh
 
