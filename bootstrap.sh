@@ -134,23 +134,8 @@ safe_npm_global() {
 	npm install -g "${@}" || sudo -H npm install -g "${@}"
 }
 
-_git_pull_or_clone() {
-	git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${1}"
-	if [ "${?}" -eq 0 ]; then
-		git -C "${2}" pull --ff-only --depth=1
-	else
-		# Do not use recursive to avoid:
-		# `Fetched in submodule path <path> but it did not contain <hash>. Direct fetching of that commit failed.`
-		git clone "${1}" "${2}" --depth=1
-	fi
-	# TODO: this will update all submodules instead of using the version at HEAD
-	git -C "${2}" submodule update --depth=1 --remote --init --checkout
-}
 
-git_pull_or_clone() {
-	info "Ensuring the ${2} repo is up to date..."
-	_git_pull_or_clone "${@}" || error "Error ensuring ${2} is up to date"
-}
+# install prerequisites
 
 if [ "$(uname -s)" == "Darwin" ]; then
 	if ! [ -x "$(command -v brew)" ]; then
@@ -158,10 +143,13 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	fi
 fi
 
-install_packages_if_necessary "git" "curl" >> /dev/null
+install_packages_if_necessary "git" >> /dev/null
 
-repo="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
-dotfiles_dir="${DOTFILES_DIR:-$HOME/Documents/developer/dotfiles}"
+# bootstrap!
+if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
+	repo="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
+	dotfiles_dir="${DOTFILES_DIR:-$HOME/Documents/developer/dotfiles}"
 
-git_pull_or_clone "https://github.com/${repo}.git" "${dotfiles_dir}" \
-	|| die "dotfiles must be up to date"
+	git_pull_or_clone "https://github.com/${repo}.git" "${dotfiles_dir}" \
+		|| die "dotfiles must be up to date"
+fi
