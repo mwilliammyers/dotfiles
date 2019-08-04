@@ -158,10 +158,8 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	chmod u+x *.sh
 
 	./fish.sh
-
-	./install.sh python3
+	./install.sh python3 fzf
 	./nodejs.sh
-
 	./neovim.sh
 	./sublime-text.sh
 
