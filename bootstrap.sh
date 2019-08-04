@@ -158,4 +158,5 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	chmod u+x *.sh
 
 	./install.sh python3
+	./neovim.sh
 fi
