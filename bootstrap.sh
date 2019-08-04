@@ -161,4 +161,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	./nodejs.sh
 	./neovim.sh
 	./sublime-text.sh
+
+	# TODO: this takes for ever...
+	./musl-cross.sh
 fi
