@@ -137,6 +137,25 @@ safe_npm_global() {
 	npm install -g "${@}" || sudo -H npm install -g "${@}"
 }
 
+configure_single_package() {
+	source_config_dir="$1"
+	dest_config_dir="$2"
+	package=$(basename $1)
+
+	info "Configuring $package"
+
+	mkdir -p "$dest_config_dir" 2> /dev/null
+	for source_file in "$source_config_dir"/*; do
+		dest_file="$dest_config_dir"/$(basename "$source_file")
+
+		if [ -e "$dest_file" ]; then
+			warn "Overwriting existing configuration file: $dest_file"
+			rm -ri "$dest_file"
+		fi
+
+		ln -sv  "$source_file" "$dest_file"
+	done
+}
 
 # install prerequisites
 
