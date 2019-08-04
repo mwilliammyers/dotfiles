@@ -86,7 +86,7 @@ install_packages() {
 
 command_is_executable() {
 	if [ -x "$(command -v ${1})" ]; then
-		# info "${1} is already installed; skipping..."
+		info "${1} is already installed; skipping..."
 		return 0
 	else
 		return 1
