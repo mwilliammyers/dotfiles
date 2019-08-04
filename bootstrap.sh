@@ -160,4 +160,5 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	./install.sh python3
 	./nodejs.sh
 	./neovim.sh
+	./sublime-text.sh
 fi
