@@ -1,50 +1,25 @@
 # dotfiles
 
-[![Build Status](https://travis-ci.org/mwilliammyers/dotfiles.svg?branch=master)](https://travis-ci.org/mwilliammyers/dotfiles)
-
-> :wrench: My modular dotfiles. Powered by [ansible].
+> :wrench: My modular dotfiles.
 
 
 ## usage
 
 1. Read [hacking](#hacking).
-1. Install the role dependencies:
 
-    ```bash
-    ansible-galaxy install -r requirements.yml
-    ```
-1. Run all the playbooks: 
-
-    ```bash
-    ansible-playbook site.yml
-    ```
-
-Note: you might need to supply options to `ansible-playbook` like
-`--ask-vault-pass` or `--ask-become-pass`. Run `ansible-playbook --help`
-for more options.
-
-#### bootstrap 
-
-macOS: 
+#### bootstrap
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/mwilliammyers/dotfiles/master/bootstrap.sh)
+curl https://git.io/mwilliammyers-dotfiles -fsSL | sh
 ```
 
 #### à la carte
 
-Run individual playbooks:
-
+Configure/install individual apps:
 ```bash
-ansible-playbook neovim.yml 
+./neovim.sh
 ```
-
-```bash
-ansible-playbook fish.yml 
-```
-
 ...
-
 
 ## notes
 
@@ -55,39 +30,7 @@ My dotfiles are under construction; use/fork/hack this repo at your own risk.
 You might want to make your own dotfiles repo. This repo might be a good place to start:
 
 1. [Fork] this repository.
-
-1. (optional?) Edit `secrets`.
-
-1. Edit [host_vars].
-
-#### secrets
-
-I use some secret variables in a couple of these playbooks. They are encrypted
-in the file `secrets`, so remove it & then do `ansible-vault create
-secrets` 
-
-My `secrets` looks something like this:
-
-```yaml
----
-
-hosts:
-  <host nickname>:
-      user: <username on remote host>
-      hostname: <hostname>
-      ansible_shell_type: fish
-      host_vars: ansible_ssh_pipelining=yes ansible_python_interpreter=/usr/local/bin/python
-  <other host nickname>:
-      user: <other username on remote host>
-      hostname: <other hostname>
-      ansible_shell_type: bash
-
-github_username: <username>
-github_email: <email>
-
-homebrew_github_api_token: <token>
-```
-
+1. TODO
 
 [@mwilliammyers]: https://github.com/mwilliammyers
 [GNU]: http://www.gnu.org/

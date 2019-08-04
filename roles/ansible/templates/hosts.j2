@@ -1,7 +1,0 @@
-{% for host_name, host_info in ssh_hosts.iteritems() %}
-{{ host_name }} {{ host_info.host_vars|default('') }}
-{% endfor %}
-
-# ansible fails if ansible_connection == local && ansible_shell_type == fish
-[localhost]
-{{ ansible_hostname }} ansible_shell_type=sh ansible_connection=local

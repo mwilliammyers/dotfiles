@@ -1,7 +1,0 @@
----
-- name: run
-  hosts: all
-  gather_facts: yes
-  roles:
-    - role: "{{ role }}"
-  tasks: []

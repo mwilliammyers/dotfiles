@@ -1,5 +1,0 @@
----
-
- - name: package | ansible
-   package: name=ansible state={{ ansible_install_state }}
-   become: "{{ ansible_pkg_mgr != 'homebrew' }}"
