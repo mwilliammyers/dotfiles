@@ -51,7 +51,7 @@ _install_packages() {
 		# TODO: better way to pass options?
 		if is_truthy "${DOTFILES_HOMEBREW_CASK}"; then
 			env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
-				brew cask install "${@}" "${DOTFILES_HOMEBREW_OPTS}"
+				brew cask install "${@}"
 		else
 			env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
 				brew install "${@}" "${DOTFILES_HOMEBREW_OPTS}"
