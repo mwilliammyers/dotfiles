@@ -165,6 +165,14 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	./neovim.sh
 	./sublime-text.sh
 
+	if [ "$(uname -s)" == "Darwin" ]; then
+		DOTFILES_HOMEBREW_CASK=true ./install.sh \
+			google-chrome \
+			appcleaner
+
+		./iterm2.sh
+	fi
+
 	# TODO: this takes for ever...
 	./musl-cross.sh
 fi
