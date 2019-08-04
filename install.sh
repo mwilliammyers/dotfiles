@@ -2,10 +2,10 @@
 
 DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
 
-package="${1:-$DOTFILES_PACKAGE}"
+packages="${@:-$DOTFILES_PACKAGES}"
 
-if [ "x$package" = 'x' ]; then
-	die "no package specified to install"
+if [ "x$packages" = 'x' ]; then
+	die "no package(s) specified to install"
 fi
 
-install_packages_if_necessary "${package}" || die "Installing ${package} failed"
+install_packages_if_necessary "${packages}" || die "Installing ${packages} failed"
