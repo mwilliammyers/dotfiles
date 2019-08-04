@@ -57,6 +57,7 @@ _install_packages() {
 				brew install "${@}" "${DOTFILES_HOMEBREW_OPTS}"
 		fi
 		DOTFILES_HOMEBREW_OPTS=""
+		DOTFILES_HOMEBREW_CASK=""
 	elif [ -x "$(command -v pacman)" ]; then
 		sudo pacman -Syu "${@}"
 	elif [ -x "$(command -v dnf)" ]; then
@@ -143,7 +144,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	fi
 fi
 
-install_packages_if_necessary "git" >> /dev/null
+install_packages_if_necessary "git" "curl" >> /dev/null
 
 # bootstrap!
 if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
