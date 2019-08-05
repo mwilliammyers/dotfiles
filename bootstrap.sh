@@ -186,8 +186,10 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	./sublime-text.sh
 
 	if [ "$(uname -s)" == "Darwin" ]; then
+		# TODO: add support for other platforms for docker
 		DOTFILES_HOMEBREW_CASK=true ./install.sh \
 			google-chrome \
+			docker \
 			appcleaner
 
 		./install.sh trash
