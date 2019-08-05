@@ -1,0 +1,102 @@
+[apply]
+	whitespace = fix
+
+[core]
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+	trustctime = false
+	precomposeunicode = false
+	autocrlf = false
+
+[diff]
+	renames = copies
+
+[help]
+	autocorrect = 1
+
+[merge]
+	log = true
+
+[push]
+	default = simple
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+# [http]
+# 	postBuffer = 524288000
+
+# [submodule]
+# 	fetchJobs = 12
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	# FIXME: git-lfs complains about overridden URLs
+	# pushInsteadOf = "github:"
+	# pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	# pushInsteadOf = "gist:"
+	# pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+[url "git@github.com:mwilliammyers/"]
+	insteadOf = "me@ssh"
+	insteadOf = "me"
+
+[url "git://github.com/mwilliammyers/"]
+	insteadOf = "me@https"
+
+[user]
+	name = William Myers
+	email = mwilliammyers@gmail.com
+
+[github]
+	user = mwilliammyers
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[pull]
+	rebase = true
+
+[rebase]
+	instructionFormat = %s [%an]
+	autoStash = true
+
+[alias]
+	gio = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+
+[commit]
+	verbose = true
+
+[tag]
+	sort = creatordate
+
+
+[includeIf "gitdir/i:~/Developer/voxjar/"]
+	path = ~/Developer/voxjar/.gitconfig

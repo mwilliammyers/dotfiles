@@ -179,6 +179,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 	chmod u+x *.sh
 
 	./fish.sh
+	./git.sh
 	./install.sh python3 fzf
 	./nodejs.sh
 	./neovim.sh
