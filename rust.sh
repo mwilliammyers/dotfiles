@@ -7,6 +7,8 @@ if ! command_is_executable cargo; then
 	curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 fi
 
+command_is_executable fish && fish -c "set -Ux fish_user_paths $HOME/.cargo/bin/cargo"
+
 $HOME/.cargo/bin/cargo install \
 	cargo-watch \
 	cargo-edit \
