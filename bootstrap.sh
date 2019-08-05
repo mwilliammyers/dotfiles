@@ -160,6 +160,8 @@ configure_single_package() {
 # install prerequisites
 
 if [ "$(uname -s)" == "Darwin" ]; then
+	xcode-select --install 2> /dev/null
+
 	if ! [ -x "$(command -v brew)" ]; then
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
