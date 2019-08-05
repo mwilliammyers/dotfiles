@@ -190,6 +190,8 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 			google-chrome \
 			appcleaner
 
+		./install.sh trash
+
 		./iterm2.sh
 	fi
 
