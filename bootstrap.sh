@@ -56,9 +56,10 @@ _install_packages() {
 				brew cask install "${@}"
 		else
 			env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
-				brew install "${@}" "${DOTFILES_HOMEBREW_OPTS}"
+				brew install "${@}"
 		fi
-		DOTFILES_HOMEBREW_OPTS=""
+		# FIXME: DOTFILES_HOMEBREW_OPTS
+		# DOTFILES_HOMEBREW_OPTS=""
 		DOTFILES_HOMEBREW_CASK=""
 	elif [ -x "$(command -v pacman)" ]; then
 		sudo pacman -Syu "${@}"
