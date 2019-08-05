@@ -195,6 +195,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 		./iterm2.sh
 	fi
 
-	# TODO: this takes for ever...
+	# TODO: these take forever...
+	./rust.sh
 	./musl-cross.sh
 fi
