@@ -11,12 +11,21 @@ fi
 
 command_is_executable fish >> /dev/null && fish -c "set -Ux fish_user_paths $cargo_path"
 
+if [ "$(uname -s)" == "Darwin" ]; then
+	command_is_executable "clang" || xcode-select --install 2> /dev/null
+else
+	install_packages_if_necessary "gcc" || die "Installing gcc failed"
+fi
+
+# if [ "$(uname -s)" == "Darwin" ]; then
+# 	# needed for cargo-update & cargo-tree
+# 	install_packages "openssl"
+# fi
+
 command "$cargo_path" install --force \
 	cargo-watch \
 	cargo-edit \
 	cargo-bloat \
-	cargo-tree \
-	cargo-update \
 	ripgrep \
 	exa \
 	fd-find
