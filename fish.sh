@@ -20,6 +20,7 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 command "${fish_path}" -c 'fisher add \
 	mwilliammyers/pack \
 	mwilliammyers/handy \
+	mwilliammyers/google-cloud-sdk \
 	mwilliammyers/j \
 	jethrokuan/fzf \
 	rafaelrinaldi/pure \
