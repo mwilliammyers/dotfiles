@@ -566,10 +566,16 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>B79A9239-8876-4C5C-A9C9-75BDC6354AA9</string>
+	<key>DimOnlyText</key>
+	<true/>
+	<key>FlashTabBarInFullscreen</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideScrollbar</key>
 	<true/>
+	<key>HideTabNumber</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -619,12 +625,18 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-575 1406 570 1013 -1087 1050 3840 2160 </string>
+	<string>191 14 570 1013 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-569 1250 570 452 -1087 1050 3840 2160 </string>
+	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1361,6 +1373,7 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.0</string>
+		<string>3.3.1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1376,15 +1389,17 @@
 	<key>NoSyncInstallationId</key>
 	<string>2CB0CD46-1747-4CA4-98CB-70A7229DFFFA</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>10</integer>
+	<integer>14</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>586822059.32937002</real>
+	<real>587078645.58187497</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -1720,6 +1735,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.termid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2083,6 +2106,13 @@
 			<key>Action</key>
 			<string>kPasteFromClipboardPointerAction</string>
 		</dict>
+		<key>Gesture,ForceTouchSingleClick,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kNewVerticalSplitWithProfilePointerAction</string>
+			<key>Argument</key>
+			<string>B79A9239-8876-4C5C-A9C9-75BDC6354AA9</string>
+		</dict>
 		<key>Gesture,ThreeFingerSwipeDown,,</key>
 		<dict>
 			<key>Action</key>
@@ -2117,20 +2147,32 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-06T00:56:06Z</date>
+	<date>2019-08-09T22:13:55Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<true/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowPaneTitles</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.48065990691489369</real>
+	<key>StretchTabsToFillBar</key>
+	<true/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>4</integer>
+	<key>TabsHaveCloseButton</key>
+	<true/>
 	<key>UKCrashReporterLastCrashReportDate</key>
 	<real>1564960000</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.0</string>
+	<string>3.3.1</string>
 </dict>
 </plist>
