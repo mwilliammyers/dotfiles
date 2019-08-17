@@ -28,4 +28,5 @@ command "$cargo_bin_path/cargo" install --force \
 	cargo-bloat \
 	ripgrep \
 	exa \
+	bat \
 	fd-find
