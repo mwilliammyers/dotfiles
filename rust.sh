@@ -17,11 +17,6 @@ else
     install_packages_if_necessary "gcc" || die "Installing gcc failed"
 fi
 
-NUM_LOGICAL_CORES="$(getconf _NPROCESSORS_ONLN)"
-if ! grep -q "jobs" ~/.cargo/config; then
-    printf "\n\n[build]\njobs=$NUM_LOGICAL_CORES" >> ~/.cargo/config
-fi
-
 # if [ "$(uname -s)" == "Darwin" ]; then
 #   # needed for cargo-update & cargo-tree
 #   install_packages "openssl"
