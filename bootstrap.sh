@@ -203,6 +203,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
         DOTFILES_HOMEBREW_CASK=true ./install.sh \
             google-chrome \
             docker \
+	    google-cloud-sdk \
             appcleaner
 
         ./install.sh trash
