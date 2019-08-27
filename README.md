@@ -10,14 +10,14 @@
 #### bootstrap
 
 ```bash
-curl https://git.io/mwilliammyers-dotfiles -fsSL | sh
+curl git.io/mwilliammyers-dotfiles -fsSL | sh
 ```
 
 #### à la carte
 
 Configure/install individual apps:
 ```bash
-./neovim.sh
+./rust.sh
 ```
 ...
 
