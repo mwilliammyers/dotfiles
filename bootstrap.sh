@@ -158,6 +158,17 @@ configure_single_package() {
     done
 }
 
+git_pull_or_clone() {
+	git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${DOTFILES_REPO}"
+    if [ "${?}" -eq 0 ]; then
+		git -C "${2}" pull --ff-only --depth=1
+	else
+		# Do not use recursive to avoid:
+		# `Fetched in submodule path <path> but it did not contain <hash>. Direct fetching of that commit failed.`
+		git clone "${1}" "${2}" --depth=1
+	fi
+}
+
 # install prerequisites
 
 if [ "$(uname -s)" == "Darwin" ]; then
