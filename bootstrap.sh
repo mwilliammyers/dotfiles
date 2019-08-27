@@ -45,10 +45,26 @@ is_truthy() {
     esac
 }
 
+update_package_index() {
+    # TODO: should we add `brew update`?
+
+    if [ -x "$(command -v apt-get)" ]; then
+        sudo apt-get update
+    elif [ -x "$(command -v dnf)" ]; then
+        dnf check-update
+    elif [ -x "$(command -v yum)" ]; then
+        yum check-update
+    elif [ -x "$(command -v zypper)" ]; then
+        sudo zypper refresh
+    elif [ -x "$(command -v port)" ]; then
+        sudo port selfupdate
+    fi
+}
+
 # TODO: update first, only if we haven't already
 _install_packages() {
     if [ -x "$(command -v apt-get)" ]; then
-        sudo apt install -y "${@}"
+        sudo apt-get install -y "${@}"
     elif [ -x "$(command -v brew)" ]; then
         # TODO: better way to pass options?
         if is_truthy "${DOTFILES_HOMEBREW_CASK}"; then
@@ -64,20 +80,23 @@ _install_packages() {
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu "${@}"
     elif [ -x "$(command -v dnf)" ]; then
-        dnf -y "${@}"
+        sudo dnf -y "${@}"
+    elif [ -x "$(command -v yum)" ]; then
+        sudo yum -y "${@}"
     elif [ -x "$(command -v zypper)" ]; then
-        sudo zypper in "${@}"
+        sudo zypper install "${@}"
     elif [ -x "$(command -v pkg)" ]; then
         sudo pkg install "${@}"
     elif [ -x "$(command -v pkg_add)" ]; then
         pkg_add "${@}"
     elif [ -x "$(command -v port)" ]; then
-        sudo port selfupdate
         sudo port install "${@}"
     elif [ -x "$(command -v emerge)" ]; then
         emerge "${@}"
     elif [ -x "$(command -v pkgin)" ]; then
         pkgin -y install "${@}"
+    elif [ -x "$(command -v nix-env)" ]; then
+        nix-env -i "${@}"
     else
         return 1
     fi
@@ -189,7 +208,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     cd "${DOTFILES_DIR}" || die "Could not find dotfiles directory"
 
     chmod u+x *.sh
-    
+
     ./ssh.sh
     ./fish.sh
     ./git.sh
