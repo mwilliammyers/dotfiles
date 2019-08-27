@@ -184,7 +184,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./git.sh
     ./install.sh python3 fzf
     # ./nodejs.sh
-    ./neovim.sh
+    # ./neovim.sh
     ./sublime-text.sh
 
     if [ "$(uname -s)" == "Darwin" ]; then
