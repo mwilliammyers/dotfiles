@@ -15,7 +15,7 @@ fi
 # TODO: handle Linux mountpoints
 if [ "$(uname -s)" == "Darwin" ]; then
     # TODO: check if file exists first?
-    cp -r /Volumes/config/$USER/.local/share/fish ~/.local/share/
+    cp -fr /Volumes/config/$USER/.local/share/fish ~/.local/share/
 fi
 
 info "Installing fisher..."
