@@ -11,3 +11,7 @@ if ! command_is_executable nvim; then
 fi
 
 curl -sSL git.io/speedcola | sh -s -- ~/.config/nvim
+
+command_is_executable "fish" \
+    && command_is_executable "nvim" \
+    && fish -c "set -Ux EDITOR nvim"
