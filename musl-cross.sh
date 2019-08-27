@@ -16,11 +16,7 @@ if ! command_is_executable x86_64-linux-musl-gcc; then
 fi
 
 if command_is_executable cargo >/dev/null 2>&1; then
-    if ! grep -q "x86_64-linux-musl-gcc" ~/.cargo/config
-    cat >>~/.cargo/config <<EOF
-
-[target.x86_64-unknown-linux-musl]
-linker = "x86_64-linux-musl-gcc"
-EOF
+    if ! grep -q "x86_64-linux-musl-gcc" ~/.cargo/config 2>/dev/null; then
+        printf '\n\n[target.x86_64-unknown-linux-musl]\nlinker = "x86_64-linux-musl-gcc"' >> ~/.cargo/config
     fi
 fi
