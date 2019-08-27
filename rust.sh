@@ -27,11 +27,7 @@ fi
 #   install_packages "openssl"
 # fi
 
-command "$cargo_bin_path/cargo" install --force \
-    cargo-watch \
-    cargo-edit \
-    cargo-bloat \
-    ripgrep \
-    exa \
-    bat \
-    fd-find
+for package in "cargo-watch" "cargo-edit" "ripgrep" "exa" "bat" "fd-find"; do
+    command "$cargo_bin_path/cargo" install $package &
+done
+wait
