@@ -625,14 +625,8 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>523 2376 620 392 -1087 1050 3840 2160 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>191 14 570 1013 0 0 1680 1050 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-569 1250 570 452 -1087 1050 3840 2160 </string>
+	<string>-155 1822 1025 1177 -978 1200 3840 2137 </string>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9_selection</key>
@@ -904,7 +898,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>120</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -1299,7 +1293,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>58</integer>
+			<integer>130</integer>
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
@@ -1372,35 +1366,27 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.0</string>
-		<string>3.3.1</string>
 		<string>3.3.2</string>
-	</array>
-	<key>NoSyncBFPRecents</key>
-	<array>
-		<string>Monaco</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1087, 1050}, {3840, 2160}}</string>
+		<string>{{-978, 1200}, {3840, 2160}}</string>
 		<key>topLeft</key>
-		<string>{689, 2518}</string>
+		<string>{-710, 1796}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
-	<string>2CB0CD46-1747-4CA4-98CB-70A7229DFFFA</string>
+	<string>97387079-A6B4-41FF-8AE5-040BAE59B845</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>6</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>587078645.58187497</real>
+	<real>588793241.983356</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -1815,6 +1801,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>number</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -1824,14 +1818,6 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.commandLine</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1886,6 +1872,14 @@
 		</array>
 		<key>2</key>
 		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.path</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
@@ -2002,7 +1996,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.path</string>
+				<string>currentSession.termid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2056,19 +2050,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -2100,7 +2094,7 @@
 		</array>
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>586649259.32921398</real>
+	<real>588620441.98322701</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -2151,21 +2145,17 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=79</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=13</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-24T06:01:44Z</date>
+	<date>2019-08-27T17:41:37Z</date>
 	<key>SUSendProfileInfo</key>
-	<false/>
-	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<true/>
@@ -2183,8 +2173,6 @@
 	<integer>4</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1564960000</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>iTerm Version</key>

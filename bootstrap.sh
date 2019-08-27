@@ -223,6 +223,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
             google-chrome \
             docker \
 	    google-cloud-sdk \
+            slack \
             appcleaner
 
         ./install.sh trash
