@@ -32,6 +32,14 @@ if [ "$(uname -s)" == "Darwin" ]; then
     # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
     defaults write com.apple.menuextra.battery ShowPercent -bool true
+    
+    # Enable the Develop menu and the Web Inspector in Safari
+    defaults write com.apple.Safari IncludeDevelopMenu -bool true
+    defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+    defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+    # Add a context menu item for showing the Web Inspector in web views
+    defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
     info "Restarting affected apps..."
     for app in "Dock" "SystemUIServer"; do
