@@ -216,6 +216,8 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh
+    
+    ./install.sh rsync
 
     if [ "$(uname -s)" == "Darwin" ]; then
         # TODO: add support for other platforms for docker
