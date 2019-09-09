@@ -626,7 +626,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-155 1822 1025 1177 -978 1200 3840 2137 </string>
+	<string>0 0 1991 1166 0 0 1920 1200 </string>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9_selection</key>
@@ -1371,22 +1371,24 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-978, 1200}, {3840, 2160}}</string>
+		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{-710, 1796}</string>
+		<string>{312, 835}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>97387079-A6B4-41FF-8AE5-040BAE59B845</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>6</integer>
+	<integer>13</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>588793241.983356</real>
+	<real>588906985.10171998</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -2154,7 +2156,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-27T17:41:37Z</date>
+	<date>2019-09-01T20:02:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2162,7 +2164,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>ShowPaneTitles</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
