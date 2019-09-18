@@ -66,6 +66,7 @@ _install_packages() {
     if [ -x "$(command -v apt-get)" ]; then
         sudo apt-get install -y "${@}"
     elif [ -x "$(command -v brew)" ]; then
+        # TODO: DOTFILES_HOMEBREW_OPTS
         # TODO: better way to pass options?
         if is_truthy "${DOTFILES_HOMEBREW_CASK}"; then
             env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
@@ -74,9 +75,8 @@ _install_packages() {
             env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
                 brew install "${@}"
         fi
-        # FIXME: DOTFILES_HOMEBREW_OPTS
-        # DOTFILES_HOMEBREW_OPTS=""
-        DOTFILES_HOMEBREW_CASK=""
+        # unset DOTFILES_HOMEBREW_OPTS
+        unset DOTFILES_HOMEBREW_CASK
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu "${@}"
     elif [ -x "$(command -v dnf)" ]; then
@@ -224,23 +224,21 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./ssh.sh
     ./fish.sh
     ./git.sh
-    ./install.sh python3 fzf
+    install_packages_if_necessary "rsync" "python3" "fzf"
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh
 
-    ./install.sh rsync
-
     if [ "$(uname -s)" = "Darwin" ]; then
         # TODO: add support for other platforms for docker
-        DOTFILES_HOMEBREW_CASK=true ./install.sh \
+        DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary \
             google-chrome \
             docker \
             google-cloud-sdk \
             slack \
             appcleaner
 
-        ./install.sh trash
+        install_packages_if_necessary "trash"
 
         ./iterm2.sh
     fi
