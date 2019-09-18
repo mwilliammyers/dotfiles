@@ -11,7 +11,7 @@ fish_path=$(which fish)
 login_shell="unknown"
 if [ "$(uname -s)" == "Darwin" ]; then
     login_shell="$(finger $USER | perl -n -e'/.*Shell\:\s+(.*)/ && print $1')"
-elif [ "$(uname -s)" == "Darwin" ]; then
+elif [ "$(uname -s)" == "Linux" ]; then
     login_shell="$(getent passwd $LOGNAME | cut -d: -f7)"
 fi
 
