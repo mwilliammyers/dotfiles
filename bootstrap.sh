@@ -224,7 +224,9 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./ssh.sh
     ./fish.sh
     ./git.sh
-    install_packages_if_necessary "rsync" "python3" "fzf"
+    ./fd.sh
+    ./ripgrep.sh
+    install_packages_if_necessary "rsync" "python3" "fzf" "bat" "exa"
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh
