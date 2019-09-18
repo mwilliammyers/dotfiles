@@ -46,10 +46,10 @@ is_truthy() {
 }
 
 update_package_index() {
-    # TODO: should we add `brew update`?
-
     if [ -x "$(command -v apt-get)" ]; then
         sudo apt-get update
+    elif [ -x "$(command -v brew)" ]; then
+        brew update
     elif [ -x "$(command -v dnf)" ]; then
         dnf check-update
     elif [ -x "$(command -v yum)" ]; then
@@ -216,7 +216,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh
-    
+
     ./install.sh rsync
 
     if [ "$(uname -s)" == "Darwin" ]; then
