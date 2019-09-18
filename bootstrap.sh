@@ -103,11 +103,13 @@ _install_packages() {
 }
 
 install_packages() {
-    info "Installing ${@}..."
-    if _install_packages "${@}"; then
-        info "Installed ${@}"
-    else
-        error "Could not install ${@}"
+    if [ $# -ne 0 ] && [ "x$@" != 'x' ]; then
+        info "Installing ${@}..."
+        if _install_packages $@; then
+            info "Installed ${@}"
+        else
+            error "Could not install ${@}"
+        fi
     fi
 }
 
@@ -121,7 +123,13 @@ command_is_executable() {
 }
 
 install_packages_if_necessary() {
-    command_is_executable "$@" || install_packages "$@"
+    packages=""
+    # echo "$@" | tr ' ' '\n' | while read package; do
+    for package in $@; do
+        command_is_executable "$package" || packages="$package $packages"
+    done
+
+    install_packages "$packages"
 }
 
 # TODO: make this smarter
