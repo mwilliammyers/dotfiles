@@ -10,7 +10,7 @@ if ! command_is_executable nvim; then
     install_packages $package || die "Installing $package failed"
 fi
 
-curl -sSL git.io/speedcola | sh -s -- ~/.config/nvim
+curl -fsSL git.io/speedcola | sh -s -- nvim
 
 command_is_executable "fish" \
     && command_is_executable "nvim" \
