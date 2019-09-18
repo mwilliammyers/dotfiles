@@ -178,14 +178,14 @@ configure_single_package() {
 }
 
 git_pull_or_clone() {
-	git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${DOTFILES_REPO}"
+    git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${DOTFILES_REPO}"
     if [ "${?}" -eq 0 ]; then
-		git -C "${2}" pull --ff-only --depth=1
-	else
-		# Do not use recursive to avoid:
-		# `Fetched in submodule path <path> but it did not contain <hash>. Direct fetching of that commit failed.`
-		git clone "${1}" "${2}" --depth=1
-	fi
+        git -C "${2}" pull --ff-only --depth=1
+    else
+        # Do not use recursive to avoid:
+        # `Fetched in submodule path <path> but it did not contain <hash>. Direct fetching of that commit failed.`
+        git clone "${1}" "${2}" --depth=1
+    fi
 }
 
 # install prerequisites
@@ -224,7 +224,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
         DOTFILES_HOMEBREW_CASK=true ./install.sh \
             google-chrome \
             docker \
-	    google-cloud-sdk \
+            google-cloud-sdk \
             slack \
             appcleaner
 
