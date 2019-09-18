@@ -2,7 +2,7 @@
 
 # TODO: use install_packages...
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 if [ -x "$(command -v brew)" ]; then
     brew cask install sublime-text

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 version="${NODEJS_VERSION:-12}"
 

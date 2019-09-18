@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 cargo_bin_path="$HOME/.cargo/bin"
 
@@ -11,13 +11,13 @@ fi
 
 command_is_executable fish >> /dev/null && fish -c "set -Ux fish_user_paths $cargo_bin_path"
 
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     command_is_executable "clang" || xcode-select --install 2> /dev/null
 else
     install_packages_if_necessary "gcc" || die "Installing gcc failed"
 fi
 
-# if [ "$(uname -s)" == "Darwin" ]; then
+# if [ "$(uname -s)" = "Darwin" ]; then
 #   # needed for cargo-update & cargo-tree
 #   install_packages "openssl"
 # fi

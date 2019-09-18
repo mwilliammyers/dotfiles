@@ -104,7 +104,11 @@ _install_packages() {
 
 install_packages() {
     info "Installing ${@}..."
-    ( _install_packages ${@} && info "Installed ${@}" ) || error "Could not install ${@}"
+    if _install_packages "${@}"; then
+        info "Installed ${@}"
+    else
+        error "Could not install ${@}"
+    fi
 }
 
 command_is_executable() {
@@ -190,7 +194,7 @@ git_pull_or_clone() {
 
 # install prerequisites
 
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     xcode-select --install 2> /dev/null
 
     if ! [ -x "$(command -v brew)" ]; then
@@ -219,7 +223,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     ./install.sh rsync
 
-    if [ "$(uname -s)" == "Darwin" ]; then
+    if [ "$(uname -s)" = "Darwin" ]; then
         # TODO: add support for other platforms for docker
         DOTFILES_HOMEBREW_CASK=true ./install.sh \
             google-chrome \

@@ -1,17 +1,17 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 package="fish"
 
 install_packages_if_necessary "${package}" || die "Installing ${package} failed"
 
-fish_path=$(which fish)
+fish_path=$(command -v fish)
 
 login_shell="unknown"
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     login_shell="$(finger $USER | perl -n -e'/.*Shell\:\s+(.*)/ && print $1')"
-elif [ "$(uname -s)" == "Linux" ]; then
+elif [ "$(uname -s)" = "Linux" ]; then
     login_shell="$(getent passwd $LOGNAME | cut -d: -f7)"
 fi
 
@@ -23,7 +23,7 @@ else
 fi
 
 # TODO: handle Linux mountpoints
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     # TODO: check if file exists first?
     cp -fr "/Volumes/config/$USER/.local/share/fish" ~/.local/share/ 2>/dev/null
 fi

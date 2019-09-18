@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 ./fish.sh
 
@@ -10,7 +10,7 @@ command_is_executable "brew" \
     && command fish -c 'set -Ux HOMEBREW_AUTO_UPDATE_SECS 604800'
 
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
-if [ "$(uname -s)" == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     defaults write com.apple.dock mru-spaces -bool false
     defaults write com.apple.dock expose-animation-duration -float 0.1
 

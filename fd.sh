@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false source ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 package=fd
 if [ -x "$(command -v apt-get)" ] || [ -x "$(command -v dnf)" ]; then
