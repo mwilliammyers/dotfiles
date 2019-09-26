@@ -221,6 +221,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     chmod u+x *.sh
 
+    ./google-cloud-sdk.sh
     ./ssh.sh
     ./fish.sh
     ./git.sh
@@ -236,7 +237,6 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
         DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary \
             google-chrome \
             docker \
-            google-cloud-sdk \
             slack \
             appcleaner
 
