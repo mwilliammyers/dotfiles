@@ -7,7 +7,10 @@ fi
 
 DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
-install_packages_if_necessary openssl
+package=gnupg
+if ! command_is_executable gpg; then
+    install_packages $package || die "Installing $package failed"
+fi
 
-openssl aes-256-cbc -salt -a -d -in "${1}" -out "${2}"
+gpg --output="${2}" --decrypt "${1}"
 
