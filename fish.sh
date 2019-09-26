@@ -22,11 +22,15 @@ else
     info "The login shell is already fish"
 fi
 
-# TODO: handle Linux mountpoints
-if [ "$(uname -s)" = "Darwin" ]; then
-    # TODO: check if file exists first?
-    cp -fr "/Volumes/config/$USER/.local/share/fish" ~/.local/share/ 2>/dev/null
-fi
+info "Appending saved fish_history to current fish_history"
+mkdir -p ~/.local/share/fish 2>/dev/null
+tmpfile="$(mktemp)"
+trap 'rm -f -- "$tmpfile"' INT TERM HUP EXIT
+./decrypt.sh ./secrets/fish_history "$tmpfile"
+cat "$tmpfile" >> ~/.local/share/fish/fish_history
+rm -f "$tmpfile"
+
+exit
 
 info "Installing fisher..."
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish \
