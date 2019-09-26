@@ -13,10 +13,5 @@ else
     DOTFILES_HOMEBREW_CASK=true install_packages $package
 fi
 
-source_config_dir="$DOTFILES_DIR/config/$package"
-# TODO: rely on $HOME being set?
-# TODO: support XDG...
-dest_config_dir=$HOME/.config/$package
-
-configure_single_package "$source_config_dir" "$dest_config_dir"
+# TODO: automate Settings > General > Preferences > load preferences from a custom folder or URL
 
