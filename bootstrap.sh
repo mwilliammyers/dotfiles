@@ -248,4 +248,6 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     # TODO: these take forever...
     ./rust.sh
     # ./musl-cross.sh
+
+    ./system.sh
 fi
