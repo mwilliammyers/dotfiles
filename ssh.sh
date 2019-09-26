@@ -11,7 +11,6 @@ if [ ! -e ~/.ssh/config ]; then
 
 fi
 
-# TODO: or should we just decrypt an existing one?
 if [ ! -e ~/.ssh/id_rsa ]; then
     # TODO: get these from git config
     username=mwilliammyers
@@ -39,17 +38,6 @@ if [ ! -e ~/.ssh/id_rsa ]; then
         https://api.github.com/user/keys
 
     if [ -x "$(command -v gcloud)" ]; then
-        info "Uploading new public key to Google Cloud Platform..."
-        gcloud auth login
-        
-        project="$CLOUDSDK_CORE_PROJECT"
-        if [ "x$project" = "x" ]; then
-            read -p "Google Cloud project? " project
-        fi
-
-        # TODO: do this https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys instead
-        gcloud compute ssh api
-        
         if [ -x "$(command -v pbcopy)" ]; then
             echo "$key" | pbcopy
         elif [ -x "$(command -v pbcopy)" ]; then
@@ -59,7 +47,7 @@ if [ ! -e ~/.ssh/id_rsa ]; then
         info "Attempting to open browser; check clipboard for public keys..."
 
         # TODO: does this work on Linux?
-        # open 'https://console.cloud.google.com/compute/metadata/sshKeys?pli=1'
+        open 'https://console.cloud.google.com/compute/metadata/sshKeys?pli=1'
 
         # TODO: is an API available for this? does this work on Linux?
         open 'https://source.cloud.google.com/user/ssh_keys?register=true'
