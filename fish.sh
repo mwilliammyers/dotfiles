@@ -30,8 +30,6 @@ trap 'rm -f -- "$tmpfile"' INT TERM HUP EXIT
 cat "$tmpfile" >> ~/.local/share/fish/fish_history
 rm -f "$tmpfile"
 
-exit
-
 info "Installing fisher..."
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish \
     || die "Installing fisher failed"
