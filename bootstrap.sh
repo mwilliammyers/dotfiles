@@ -233,12 +233,12 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh
+    ./docker.sh
 
     if [ "$(uname -s)" = "Darwin" ]; then
         # TODO: add support for other platforms for docker
         DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary \
             google-chrome \
-            docker \
             slack \
             appcleaner
 
