@@ -49,6 +49,8 @@ update_package_index() {
     if [ -x "$(command -v apt-get)" ]; then
         sudo apt-get update
     elif [ -x "$(command -v brew)" ]; then
+        # homebrew doesn't print anything at the beginning
+        info "Updating Homebrew; this could take a while..."
         brew update
     elif [ -x "$(command -v dnf)" ]; then
         dnf check-update
