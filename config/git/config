@@ -19,6 +19,9 @@
 [push]
 	default = simple
 
+[pull]
+	rebase = merges
+
 [color]
 	ui = auto
 
@@ -80,9 +83,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-
-[pull]
-	rebase = true
 
 [rebase]
 	instructionFormat = %s [%an]
