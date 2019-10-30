@@ -4,7 +4,8 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 package="fish"
 
-install_packages_if_necessary "${package}" || die "Installing ${package} failed"
+# TODO: support starship install on Debian ish systems
+install_packages_if_necessary $package starship || die "Installing ${package} failed"
 
 fish_path=$(command -v fish)
 
@@ -36,10 +37,10 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 
 # TODO: use fishfile?
 command "${fish_path}" -c 'fisher add \
+    mwilliammyer/starship \
     mwilliammyers/pack \
     mwilliammyers/handy \
     mwilliammyers/google-cloud-sdk \
     mwilliammyers/j \
     jethrokuan/fzf \
-    rafaelrinaldi/pure \
     patrickf3139/Colored-Man-Pages'
