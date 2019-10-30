@@ -4,8 +4,7 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 package="fish"
 
-# TODO: support starship install on Debian ish systems
-install_packages_if_necessary $package starship || die "Installing ${package} failed"
+install_packages_if_necessary curl $package || die "Installing curl or ${package} failed"
 
 fish_path=$(command -v fish)
 
@@ -34,6 +33,16 @@ rm -f "$tmpfile"
 info "Installing fisher..."
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish \
     || die "Installing fisher failed"
+
+package="starship"
+if ! command_is_executable "${package}"; then
+    if [ -x "$(command -v brew)" ]; then
+        install_packages "${package}" || die "Installing ${package} failed"
+    else
+        curl -fsSL https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz \
+            | sudo tar -xz -C /usr/local/bin/ --strip=3 target/x86_64-unknown-linux-gnu/release/starship
+    fi
+fi
 
 # TODO: use fishfile?
 command "${fish_path}" -c 'fisher add \
