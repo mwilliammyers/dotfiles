@@ -19,6 +19,8 @@ if [ ! -e ~/.ssh/id_rsa ]; then
     # TODO: or should we decrypt an existing private key?
     info "Generating new ssh key pair..."
     ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "$email"
+    
+    ssh-add -K ~/.ssh/id_rsa
 
     # TODO: should we always do the rest of this?
 
