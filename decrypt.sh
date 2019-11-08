@@ -7,10 +7,7 @@ fi
 
 DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
-package=gnupg
-if ! command_is_executable gpg; then
-    install_packages $package || die "Installing $package failed"
-fi
+./gpg.sh
 
 gpg --output="${2}" --decrypt "${1}"
 
