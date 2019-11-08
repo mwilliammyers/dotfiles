@@ -42,7 +42,7 @@ if [ ! -e ~/.ssh/id_rsa ]; then
     if [ -x "$(command -v gcloud)" ]; then
         if [ -x "$(command -v pbcopy)" ]; then
             echo "$key" | pbcopy
-        elif [ -x "$(command -v pbcopy)" ]; then
+        elif [ -x "$(command -v xsel)" ]; then
             echo "$key" | xsel -ib
         fi
 
