@@ -21,27 +21,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
     fi
 fi
 
-# gpg --list-secret-keys | wc -l | grep -q 0
-# cat >keyconfig <<EOF
-#     %echo Generating a basic OpenPGP key
-#     Key-Type: eddsa
-#     Key-Curve: Ed25519
-#     Key-Usage: sign
-#     Subkey-Type: ecdh
-#     Subkey-Curve: Curve25519
-#     Subkey-Usage: encrypt
-#     Name-Real: William Myers
-#     Name-Email: mwilliammyers@gmail.com
-#     Expire-Date: 0
-
-#     %ask-passphrase
-
-#     %commit
-#     %echo done
-# EOF
-
-# gpg --batch --generate-key keyconfig
-
 # https://www.gnupg.org/faq/whats-new-in-2.1.html#ecc
 # https://github.com/NicoHood/gpgit#12-key-generation
 # https://lists.gnupg.org/pipermail/gnupg-users/2017-December/059622.html
