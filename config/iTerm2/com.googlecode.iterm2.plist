@@ -628,7 +628,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 606 620 392 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 0 1690 1177 0 0 1920 1200 </string>
+	<string>226 0 970 1177 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9_selection</key>
@@ -1289,7 +1289,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Inconsolata-Regular 14.5</string>
+			<string>Inconsolata-Regular 15</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1390,7 +1390,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>374124F5-99EC-4D59-A46B-2444AE6FE89B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>23</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2109,9 +2109,12 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>/opt/intel</string>
 		<string>FAILED</string>
 		<string>failed</string>
 	</array>
+	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
+	<true/>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>591237644.07674801</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -2175,7 +2178,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-29T23:56:36Z</date>
+	<date>2019-11-15T03:06:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
