@@ -110,7 +110,7 @@ install_packages() {
         if _install_packages $@; then
             info "Installed ${@}"
         else
-            error "Could not install ${@}"
+            warn "Could not install ${@}"
         fi
     fi
 }
@@ -230,6 +230,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     ./fd.sh
     ./ripgrep.sh
     install_packages_if_necessary "rsync" "python3" "fzf" "bat" "exa"
+    install_packages "git-delta"
     ./nodejs.sh
     ./neovim.sh
     # ./sublime-text.sh

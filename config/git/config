@@ -6,6 +6,10 @@
 	user = mwilliammyers
 
 
+[core]
+	pager = delta --dark || less
+
+
 [commit]
 	verbose = true
 	gpgsign = true
