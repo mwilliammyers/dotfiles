@@ -84,6 +84,11 @@
 # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 [alias]
 	gio = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+
+	bc = log --grep='BREAKING CHANGE' --grep='!:'
+	lbc = log --grep='BREAKING CHANGE' --grep='!:'
+	breaking = log --grep='BREAKING CHANGE' --grep='!:'
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
