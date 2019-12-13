@@ -85,6 +85,13 @@
 	insteadOf = "me@https"
 
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+
 # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 [alias]
 	gio = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
