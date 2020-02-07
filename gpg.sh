@@ -44,9 +44,7 @@ if gpg --quick-generate-key "$user" future-default default 0; then
 fi
 
 if command_is_executable git; then
-    key_id=$(gpg --list-secret-keys --keyid-format LONG --with-colons "$user" | awk -F: '/^sec:/ { print $5 }')
-    
+    # git figures out which key to use for signing based on user.email config
     git config --global commit.gpgsign true
-    git config --global user.signingkey "$key_id"
 fi
 
