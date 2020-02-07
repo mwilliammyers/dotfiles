@@ -37,7 +37,7 @@ general:
 * [Peltoche/lsd](https://github.com/Peltoche/lsd)* - An ls with a lot of pretty colors and awesome icons
 * [sharkdp/bat](https://github.com/sharkdp/bat) - A `cat(1)` clone with wings.
 * [sharkdp/fd](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to find.
-* [sitkevij/hex](https://github.com/sitkevij/hex) - A colorized hexdump terminal utility.
+* [sitkevij/hex](https://github.com/sitkevij/hex)* - A colorized hexdump terminal utility.
 * [toshi-search/Toshi](https://github.com/toshi-search/Toshi)* - A full-text search engine in rust
 * [XAMPPRocky/tokei](https://github.com/XAMPPRocky/tokei)* - counts the lines of code
 * [xi-editor](https://github.com/xi-editor/xi-editor)* - A modern editor with a backend written in Rust.
