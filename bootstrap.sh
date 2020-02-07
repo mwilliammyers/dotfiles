@@ -6,6 +6,12 @@ DOTFILES_VERBOSE="${DOTFILES_VERBOSE:-true}"
 DOTFILES_REPO="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.config/dotfiles}"
 
+debug() {
+    if [ "x$DOTFILES_DEBUG" = 'xtrue' ]; then
+        printf "$(tput bold)${@}$(tput sgr0)\n"
+    fi
+}
+
 info() {
     if [ "x$DOTFILES_VERBOSE" = 'xtrue' ]; then
         printf "$(tput bold)${@}$(tput sgr0)\n"
@@ -117,7 +123,7 @@ install_packages() {
 
 command_is_executable() {
     if [ -x "$(command -v ${1})" ]; then
-        info "${1} is already installed; skipping..."
+        debug "${1} is already installed; skipping..."
         return 0
     else
         return 1
