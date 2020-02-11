@@ -44,6 +44,8 @@ if ! command_is_executable "${package}"; then
     fi
 fi
 
+command "${fish_path}" -c "set -Ux LESSHISTFILE $HOME/.local/share/lesshst"
+
 # TODO: use fishfile?
 command "${fish_path}" -c 'fisher add \
     mwilliammyer/starship \
