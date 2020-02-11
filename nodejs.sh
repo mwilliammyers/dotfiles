@@ -24,3 +24,7 @@ if ! command_is_executable node; then
 fi
 
 safe_npm_global "prettier"
+
+if command_is_executable fish; then
+    fish -c "set -Ux NODE_REPL_HISTORY $HOME/.local/share/node_repl_history"
+fi
