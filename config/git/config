@@ -9,7 +9,6 @@
 [core]
 	pager = delta --dark || less
 
-
 [commit]
 	verbose = true
 	gpgsign = true
@@ -31,6 +30,20 @@
 [apply]
 	whitespace = fix
 
+[diff]
+	renames = copies
+
+[log]
+	# override with `git log --no-abbrev-commit`
+	abbrevCommit = true
+
+[tag]
+	sort = creatordate
+
+[help]
+	autocorrect = 1
+
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -46,20 +59,6 @@
 	added = yellow
 	changed = green bold
 	untracked = cyan bold
-
-
-[tag]
-	sort = creatordate
-
-[log]
-	# override with `git log --no-abbrev-commit`
-	abbrevCommit = true
-
-[diff]
-	renames = copies
-
-[help]
-	autocorrect = 1
 
 
 [url "git@github.com:"]
