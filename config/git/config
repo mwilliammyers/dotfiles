@@ -51,6 +51,10 @@
 [tag]
 	sort = creatordate
 
+[log]
+	# override with `git log --no-abbrev-commit`
+	abbrevCommit = true
+
 [diff]
 	renames = copies
 
