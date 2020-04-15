@@ -10,7 +10,7 @@
 #### bootstrap
 
 ```bash
-curl git.io/mwilliammyers-dotfiles -fsSL | sh
+curl -fsSL git.io/mwilliammyers-dotfiles | sh
 ```
 
 #### à la carte
