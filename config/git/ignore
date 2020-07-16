@@ -1,12 +1,13 @@
+.vscode/
 # Created by https://www.gitignore.io/api/vim,code,macos
 # Edit at https://www.gitignore.io/?templates=vim,code,macos
 
 ### Code ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# .vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 ### macOS ###
 # General
