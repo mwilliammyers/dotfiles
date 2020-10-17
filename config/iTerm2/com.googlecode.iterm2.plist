@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AboutToPasteTabsWithCancel</key>
+	<true/>
+	<key>AboutToPasteTabsWithCancel_selection</key>
+	<integer>2</integer>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -687,7 +691,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 606 620 392 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>262 0 970 2107 0 0 1920 1177 </string>
+	<string>3 3 1914 1170 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_B79A9239-8876-4C5C-A9C9-75BDC6354AA9_selection</key>
@@ -1447,14 +1451,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{3840, -769}, {2160, 3840}}</string>
 		<key>topLeft</key>
-		<string>{689, 838}</string>
+		<string>{4109, -174}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>374124F5-99EC-4D59-A46B-2444AE6FE89B</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>112</integer>
+	<integer>116</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2245,7 +2249,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-19T18:30:28Z</date>
+	<date>2020-08-29T18:52:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
