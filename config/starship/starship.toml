@@ -1,0 +1,9 @@
+# https://github.com/starship/starship/pull/921
+[git_status]
+disabled = false
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true

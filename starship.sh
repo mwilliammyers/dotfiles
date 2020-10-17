@@ -16,11 +16,9 @@ if ! command_is_executable "${package}"; then
 fi
 
 if command_is_executable "${package}"; then
-    # https://github.com/starship/starship/pull/921
-    # starship config git_status.disabled true
-    starship config gcloud.disabled true
-    starship config aws.disabled true
+    # TODO: rely on $HOME being set?
+    # TODO: support XDG...
+    configure_single_package "$DOTFILES_DIR/config/$package" "$HOME/.config"
 
-    command fish -c 'fisher add mwilliammyers/starship' \
-        || echo 'Visit https://starship.rs/guide/ to configure starship'
+    command fish -c 'fisher add mwilliammyers/starship' || true
 fi
