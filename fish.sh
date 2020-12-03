@@ -34,18 +34,6 @@ info "Installing fisher..."
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish \
     || die "Installing fisher failed"
 
-package="starship"
-if ! command_is_executable "${package}"; then
-    if [ -x "$(command -v brew)" ]; then
-        install_packages "${package}" || die "Installing ${package} failed"
-    else
-        curl -fsSL https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz \
-            | sudo tar -xz -C /usr/local/bin/ --strip=3 target/x86_64-unknown-linux-gnu/release/starship
-    fi
-fi
-
-command "${fish_path}" -c "set -Ux LESSHISTFILE $HOME/.local/share/lesshst"
-
 # TODO: use fishfile?
 command "${fish_path}" -c 'fisher add \
     mwilliammyers/pack \

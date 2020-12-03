@@ -7,7 +7,11 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 info "Configuring system settings..."
 
 command_is_executable "brew" \
-    && command fish -c 'set -Ux HOMEBREW_AUTO_UPDATE_SECS 604800'
+    && command fish -c 'set -Ux HOMEBREW_AUTO_UPDATE_SECS 604800;
+                        set -Ux HOMEBREW_CLEANUP_MAX_AGE_DAYS 30;
+                        set -Ux HOMEBREW_NO_ANALYTICS true;'
+
+command fish -c "set -Ux LESSHISTFILE $HOME/.local/share/lesshst"
 
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 if [ "$(uname -s)" = "Darwin" ]; then
