@@ -5,8 +5,9 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 cargo_bin_path="$HOME/.cargo/bin"
 
 if ! [ -x  "$cargo_bin_path/cargo" ]; then
-    info "Installing rust..."
-    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+    info "Installing Rust..."
+    install_packages_if_necessary "curl" || die "Installing curl failed"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 fi
 
 command_is_executable fish >> /dev/null && fish -c "set -Ux fish_user_paths $cargo_bin_path"
