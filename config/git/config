@@ -1,10 +1,15 @@
 [user]
 	name = William Myers
 	email = mwilliammyers@gmail.com
+	signkey = 87AC27DE8462AB71
 
 [github]
 	user = mwilliammyers
 
+
+[credenital]
+	; helper = ''
+	helper = store
 
 [core]
 	pager = delta --dark || less
@@ -66,8 +71,7 @@
 	; FIXME: git-lfs complains about overridden URLs for these
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-	# always push using SSH
-	pushInsteadOf = "https://github.com/"
+	insteadOf = "https://github.com/"
 
 [url "git://github.com/"]
 	insteadOf = "github:"
