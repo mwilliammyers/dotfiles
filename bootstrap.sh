@@ -197,6 +197,28 @@ configure_single_package() {
     done
 }
 
+os_copy_to_clipboard() {
+    info "Attempting to copy to system clipboard..."
+    if [ -x "$(command -v pbcopy)" ]; then
+        printf "%s" "$1" | pbcopy
+    elif [ -x "$(command -v xsel)" ]; then
+        printf "%s" "$1" | xsel -ib
+    else
+        warn "Could not copy to system clipboard"
+    fi
+}
+
+os_open() {
+    info "Attempting to open: $1"
+    if [ -x "$(command -v xdg-open)" ]; then
+        xdg-open "$1"
+    elif [ -x "$(command -v open)" ]; then
+        open "$1"
+    else
+        warn "Could not find suitable program to open: $1"
+    fi  
+}
+
 git_pull_or_clone() {
     git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${DOTFILES_REPO}"
     if [ "${?}" -eq 0 ]; then
@@ -227,7 +249,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     cd "${DOTFILES_DIR}" || die "Could not find dotfiles directory"
 
-    chmod u+x *.sh
+    chmod u+x ./*.sh
 
     ./google-cloud-sdk.sh
     ./ssh.sh

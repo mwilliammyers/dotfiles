@@ -10,14 +10,14 @@ fish_path=$(command -v fish)
 
 login_shell="unknown"
 if [ "$(uname -s)" = "Darwin" ]; then
-    login_shell="$(finger $USER | perl -n -e'/.*Shell\:\s+(.*)/ && print $1')"
+    login_shell=$(finger "$USER" | perl -n -e'/.*Shell\:\s+(.*)/ && print $1')
 elif [ "$(uname -s)" = "Linux" ]; then
-    login_shell="$(getent passwd $LOGNAME | cut -d: -f7)"
+    login_shell=$(getent passwd "$LOGNAME" | cut -d: -f7)
 fi
 
 if ! [ "$login_shell" = "$fish_path" ]; then
     info "Changing the login shell to fish..."
-    sudo chsh -s "${fish_path}"  $USER
+    sudo chsh -s "${fish_path}" "$USER"
 else
     info "The login shell is already fish"
 fi

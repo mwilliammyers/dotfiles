@@ -29,18 +29,8 @@ user="${GPG_USER:-William Myers <mwilliammyers@gmail.com>}"
 
 # `--quick-generate-key` will exit 2 if user_id already has a key
 if gpg --quick-generate-key "$user" future-default default 0; then
-    if [ -x "$(command -v pbcopy)" ]; then
-        gpg --armor --export "$user" | pbcopy
-    elif [ -x "$(command -v xsel)" ]; then
-        gpg --armor --export "$user" | xsel -ib
-    fi
-
-    info "Attempting to open browser; check clipboard for GPG public key..."
-    if [ -x "$(command -v open)" ]; then
-        open "https://github.com/settings/gpg/new"
-    elif [ -x "$(command -v xdg-open)" ]; then
-        xdg-open "https://github.com/settings/gpg/new"
-    fi
+    os_copy_to_clipboard $(gpg --armor --export "$user")
+    os_open "https://github.com/settings/gpg/new"
 fi
 
 if command_is_executable git; then

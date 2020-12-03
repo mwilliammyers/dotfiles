@@ -47,6 +47,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
 
     info "Restarting affected apps..."
     for app in "Dock" "SystemUIServer"; do
-        killall "${app}" &> /dev/null
+        killall "${app}" > /dev/null 2>&1
     done
 fi

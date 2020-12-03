@@ -38,6 +38,6 @@ EOM
     sudo yum install "$package"
     else
         curl -fsSL https://sdk.cloud.google.com \
-            | bash -- -s --disable-prompts --install-dir=$HOME/.local/
+            | bash -- -s --disable-prompts --install-dir="$HOME/.local/"
     fi
 fi

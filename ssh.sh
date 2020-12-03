@@ -8,7 +8,6 @@ mkdir ~/.ssh/ 2> /dev/null
 if [ ! -e ~/.ssh/config ]; then
     info "Configuring ssh..."
     ./decrypt.sh ./secrets/ssh/config  ~/.ssh/config
-
 fi
 
 if [ ! -e ~/.ssh/id_rsa ]; then
@@ -40,18 +39,7 @@ if [ ! -e ~/.ssh/id_rsa ]; then
         https://api.github.com/user/keys
 
     if [ -x "$(command -v gcloud)" ]; then
-        if [ -x "$(command -v pbcopy)" ]; then
-            echo "$key" | pbcopy
-        elif [ -x "$(command -v xsel)" ]; then
-            echo "$key" | xsel -ib
-        fi
-
-        info "Attempting to open browser; check clipboard for public keys..."
-
-        # TODO: does this work on Linux?
-        open 'https://console.cloud.google.com/compute/metadata/sshKeys?pli=1'
-
-        # TODO: is an API available for this? does this work on Linux?
-        open 'https://source.cloud.google.com/user/ssh_keys?register=true'
+        os_copy_to_clipboard "$pub_key"
+        os_open 'https://console.cloud.google.com/compute/metadata/sshKeys?pli=1'
     fi
 fi

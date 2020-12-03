@@ -4,7 +4,7 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 package=neovim
 
-DOTFILES_HOMEBREW_OPTS="--HEAD"
+export DOTFILES_HOMEBREW_OPTS="--HEAD"
 if ! command_is_executable nvim; then
     package_exists $package || try_add_apt_repository "ppa:$package-ppa/stable"
     install_packages $package || die "Installing $package failed"
