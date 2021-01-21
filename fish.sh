@@ -9,6 +9,7 @@ install_packages_if_necessary curl $package || die "Installing curl or ${package
 fish_path=$(command -v fish)
 
 login_shell="unknown"
+
 if [ "$(uname -s)" = "Darwin" ]; then
     login_shell=$(finger "$USER" | perl -n -e'/.*Shell\:\s+(.*)/ && print $1')
 elif [ "$(uname -s)" = "Linux" ]; then
@@ -31,16 +32,18 @@ cat "$tmpfile" >> ~/.local/share/fish/fish_history
 rm -f "$tmpfile"
 
 info "Installing fisher..."
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish \
+command "${fish_path}" \
+    -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher' \
     || die "Installing fisher failed"
 
 # TODO: use fishfile?
-command "${fish_path}" -c 'fisher add \
-    mwilliammyers/pack \
-    mwilliammyers/handy \
-    mwilliammyers/google-cloud-sdk \
-    mwilliammyers/j \
-    jethrokuan/fzf \
-    patrickf3139/Colored-Man-Pages'
+command "${fish_path}" \
+    -c 'fisher install \
+            mwilliammyers/pack \
+            mwilliammyers/handy \
+            mwilliammyers/google-cloud-sdk \
+            mwilliammyers/j \
+            jethrokuan/fzf \
+            patrickf3139/Colored-Man-Pages'
 
 ./starship.sh

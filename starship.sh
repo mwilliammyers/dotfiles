@@ -20,5 +20,5 @@ if command_is_executable "${package}"; then
     # TODO: support XDG...
     configure_single_package "$DOTFILES_DIR/config/$package" "$HOME/.config"
 
-    command fish -c 'fisher add mwilliammyers/starship' || true
+    command fish -c 'fisher install mwilliammyers/starship' || true
 fi
