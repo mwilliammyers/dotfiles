@@ -24,4 +24,4 @@ fi
 
 update_package_index
 
-DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary "$package"
+install_packages_if_necessary "$package"

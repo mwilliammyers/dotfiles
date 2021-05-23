@@ -74,17 +74,8 @@ _install_packages() {
     if [ -x "$(command -v apt-get)" ]; then
         sudo apt-get install -y "${@}"
     elif [ -x "$(command -v brew)" ]; then
-        # TODO: DOTFILES_HOMEBREW_OPTS
-        # TODO: better way to pass options?
-        if is_truthy "${DOTFILES_HOMEBREW_CASK}"; then
-            env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
-                brew cask install "${@}"
-        else
-            env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
-                brew install "${@}"
-        fi
-        # unset DOTFILES_HOMEBREW_OPTS
-        unset DOTFILES_HOMEBREW_CASK
+        env HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_GITHUB_API=1 \
+            brew install "${@}"
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu "${@}"
     elif [ -x "$(command -v dnf)" ]; then
@@ -239,10 +230,10 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     if [ "$(uname -s)" = "Darwin" ]; then
         # TODO: add support for other platforms for docker
-        DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary \
-            google-chrome \
-            slack \
-            appcleaner
+        install_packages_if_necessary \
+            "google-chrome" \
+            "slack" \
+            "appcleaner"
 
         install_packages_if_necessary "trash"
 

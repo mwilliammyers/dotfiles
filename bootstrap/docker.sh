@@ -38,7 +38,7 @@ if [ -x "$(command -v apt-get)" ]; then
         install_packages "docker-ce"
     fi
 else
-    DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary "docker"
+    install_packages_if_necessary "docker"
 fi
 
 if [ -x "$(command -v fish)" ]; then
