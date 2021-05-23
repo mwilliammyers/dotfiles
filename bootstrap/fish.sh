@@ -33,6 +33,7 @@ command "${fish_path}" \
     -c 'fisher install \
             mwilliammyers/pack \
             mwilliammyers/handy \
+            mwilliammyers/starship \
             mwilliammyers/google-cloud-sdk \
             mwilliammyers/j \
             jethrokuan/fzf \

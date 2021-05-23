@@ -1,9 +1,8 @@
 [directory]
 truncation_length = 8
-truncation_symbol = "…/"
+truncation_symbol = '…/'
 truncate_to_repo = false
 
-# https://github.com/starship/starship/pull/921
 [git_status]
 disabled = false
 

@@ -3,8 +3,8 @@
 # TODO: make everything support $DOTFILES_VERBOSE
 
 DOTFILES_VERBOSE="${DOTFILES_VERBOSE:-true}"
-DOTFILES_REPO="${DOTFILES_REPO:-mwilliammyers/dotfiles}"
-DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.config/dotfiles}"
+DOTFILES_REPO="${DOTFILES_REPO:-https://github.com/mwilliammyers/dotfiles.git}"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 debug() {
     if [ "x$DOTFILES_DEBUG" = 'xtrue' ]; then
@@ -177,26 +177,6 @@ safe_npm_global() {
     npm install -g "${@}" || sudo -H npm install -g "${@}"
 }
 
-configure_single_package() {
-    source_config_dir="$1"
-    dest_config_dir="$2"
-    package=$(basename $1)
-
-    info "Configuring $package"
-
-    mkdir -p "$dest_config_dir" 2> /dev/null
-    for source_file in "$source_config_dir"/*; do
-        dest_file="$dest_config_dir"/$(basename "$source_file")
-
-        if [ -e "$dest_file" ]; then
-            warn "Overwriting existing configuration file: $dest_file"
-            rm -ri "$dest_file"
-        fi
-
-        ln -sv  "$source_file" "$dest_file"
-    done
-}
-
 os_copy_to_clipboard() {
     info "Attempting to copy to system clipboard..."
     if [ -x "$(command -v pbcopy)" ]; then
@@ -219,17 +199,6 @@ os_open() {
     fi  
 }
 
-git_pull_or_clone() {
-    git -C "${2}" config --get remote.origin.url 2>/dev/null | grep -q "${DOTFILES_REPO}"
-    if [ "${?}" -eq 0 ]; then
-        git -C "${2}" pull --ff-only --depth=1
-    else
-        # Do not use recursive to avoid:
-        # `Fetched in submodule path <path> but it did not contain <hash>. Direct fetching of that commit failed.`
-        git clone "${1}" "${2}" --depth=1
-    fi
-}
-
 # install prerequisites
 
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -244,17 +213,21 @@ install_packages_if_necessary "git" "curl" >> /dev/null
 
 # bootstrap!
 if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
-    git_pull_or_clone "https://github.com/${DOTFILES_REPO}.git" "${DOTFILES_DIR}" \
-        || die "dotfiles must be up to date"
+    mkdir -p "${CONFIG_DIR}" 2> /dev/null
+    cd "${CONFIG_DIR}" || die "Could not find config directory"
+      
+    git init
+    git remote add origin "${DOTFILES_REPO}"
+    git fetch
+    git checkout origin/master -ft
 
-    cd "${DOTFILES_DIR}" || die "Could not find dotfiles directory"
+    cd "${CONFIG_DIR}/bootstrap" || die "Could not find dotfiles directory"
 
     chmod u+x ./*.sh
 
     ./google-cloud-sdk.sh
     ./ssh.sh
     ./fish.sh
-    ./git.sh
     ./fd.sh
     ./ripgrep.sh
     install_packages_if_necessary "rsync" "python3" "fzf" "bat" "exa"

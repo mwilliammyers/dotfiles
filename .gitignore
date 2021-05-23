@@ -1,1 +1,11 @@
-.DS_Store
+/*
+
+!.gitignore
+!README.md
+
+!bootstrap.sh
+!/bootstrap/
+
+!starship.toml
+!/iterm2/
+!/git/
