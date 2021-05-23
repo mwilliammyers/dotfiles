@@ -4,12 +4,6 @@ DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
 
 mkdir ~/.ssh/ 2> /dev/null
 
-# TODO: be smarter about this check...
-if [ ! -e ~/.ssh/config ]; then
-    info "Configuring ssh..."
-    ./decrypt.sh ./secrets/ssh/config  ~/.ssh/config
-fi
-
 if [ ! -e ~/.ssh/id_rsa ]; then
     # TODO: get these from git config
     username=mwilliammyers
