@@ -15,7 +15,7 @@
 
 [commit]
 	verbose = true
-	gpgsign = true
+	; gpgsign = true
 
 [push]
 	default = simple
@@ -185,6 +185,7 @@
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
+	hs = log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=short --date-order
 
 
 [includeIf "gitdir/i:~/Developer/telcoin/"]
