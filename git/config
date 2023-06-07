@@ -42,7 +42,7 @@
 	abbrevCommit = true
 
 [tag]
-	sort = creatordate
+	sort = version:refname
 
 [help]
 	autocorrect = 1
@@ -70,7 +70,7 @@
 	; FIXME: git-lfs complains about overridden URLs for these
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-	insteadOf = "https://github.com/"
+	; insteadOf = "https://github.com/"
 
 [url "git://github.com/"]
 	insteadOf = "github:"
