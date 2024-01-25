@@ -1,4 +1,5 @@
 tmp/
+.venv/
 
 # Local security keys
 *.p8
