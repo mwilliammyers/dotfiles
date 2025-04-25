@@ -277,7 +277,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     # TODO: these take forever...
     is_truthy "${DOTFILES_SKIP_RUST}" || ./rust.sh
-    # ./musl-cross.sh
+    is_truthy "${DOTFILES_SKIP_RUST:-1}" || ./musl-cross.sh
 
     is_truthy "${DOTFILES_SKIP_SYSTEM_CONFIG}" || ./system.sh
 fi
