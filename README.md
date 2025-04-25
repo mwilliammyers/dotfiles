@@ -57,7 +57,7 @@ You might want to make your own dotfiles repo. This repo might be a good place t
 
 
 [@mwilliammyers]: https://github.com/mwilliammyers
-[Fork]: #fork-destination-box
+[Fork]: https://github.com/mwilliammyers/dotfiles/fork
 [`bootstrap.sh`]: ./bootstrap.sh
 [rust]: https://www.rust-lang.org
 [cargo]: https://doc.rust-lang.org/cargo/
