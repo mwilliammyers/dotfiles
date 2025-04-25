@@ -5,8 +5,6 @@
 
 ## usage
 
-1. Read [hacking](#hacking).
-
 #### bootstrap
 
 ```bash
@@ -24,13 +22,6 @@ Configure/install individual apps:
 ```bash
 ./bootstrap/rust.sh
 ```
-
-#### hacking
-
-You might want to make your own dotfiles repo. This repo might be a good place to start:
-
-1. [Fork] this repository.
-1. TODO
 
 
 [@mwilliammyers]: https://github.com/mwilliammyers
