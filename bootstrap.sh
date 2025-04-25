@@ -265,8 +265,8 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     is_truthy "${DOTFILES_SKIP_PYTHON3}" || install_packages_if_necessary "python3"
     is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages "git-delta"
     is_truthy "${DOTFILES_SKIP_NEOVIM}" || ./neovim.sh
-    is_truthy "${DOTFILES_SKIP_DOCKER}" || ./docker.sh
     is_truthy "${DOTFILES_SKIP_VSCODE}" || ./vscode.sh
+    is_truthy "${DOTFILES_SKIP_DOCKER}" || ./docker.sh
 
     if [ "$(uname -s)" = "Darwin" ]; then
         # TODO: add support for other platforms for docker
