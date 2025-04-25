@@ -13,7 +13,7 @@
 curl -fsSL git.io/mwilliammyers-dotfiles | sh
 ```
 
-Or omit some things (see [`bootsrap.sh`](./bootsrap.sh) :
+Or omit some things (see [`bootstrap.sh`](./bootstrap.sh) :
 ```bash
 curl -fsSL git.io/mwilliammyers-dotfiles | DOTFILES_SKIP_NODEJS=1 sh
 ```
