@@ -23,18 +23,6 @@ else
     info "The login shell is already fish"
 fi
 
-if is_truthy "${DOTFILES_SKIP_FISH_HISTORY}"; then
-    info "Skipping appending fish history file"
-else
-    info "Appending saved fish_history to current fish_history"
-    mkdir -p ~/.local/share/fish 2>/dev/null
-    tmpfile="$(mktemp)"
-    trap 'rm -f -- "$tmpfile"' INT TERM HUP EXIT
-    ./decrypt.sh ./secrets/fish_history "$tmpfile"
-    cat "$tmpfile" >> ~/.local/share/fish/fish_history
-    rm -f "$tmpfile"
-fi
-
 info "Installing fisher..."
 command "${fish_path}" \
     -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher' \
