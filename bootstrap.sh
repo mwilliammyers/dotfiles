@@ -254,8 +254,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     # TODO: support skipping inside of `install_packages`?
     is_truthy "${DOTFILES_SKIP_GCLOUD}" || ./google-cloud-sdk.sh
     is_truthy "${DOTFILES_SKIP_SSH}" || ./ssh.sh
-    is_truthy "${DOTFILES_SKIP_FISH}" || ./fish.sh
-    is_truthy "${DOTFILES_SKIP_STARSHIP}" || ./starship.sh
+    is_truthy "${DOTFILES_SKIP_FISH}" || ./fish.sh # also does starship.sh
     is_truthy "${DOTFILES_SKIP_GIT}" || ./git.sh
     is_truthy "${DOTFILES_SKIP_FD}" || ./fd.sh
     is_truthy "${DOTFILES_SKIP_RIPGREP}" || ./ripgrep.sh
