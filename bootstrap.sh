@@ -260,7 +260,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     is_truthy "${DOTFILES_SKIP_FD}" || ./fd.sh
     is_truthy "${DOTFILES_SKIP_RIPGREP}" || ./ripgrep.sh
     # TODO: separate these out to allow skipping?
-    install_packages_if_necessary "ghostty" "rsync" "python3" "fzf" "bat" "exa" "chatgpt"
+    install_packages_if_necessary "ghostty" "rsync" "python3" "fzf" "bat" "eza" "chatgpt"
     is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages "git-delta"
     is_truthy "${DOTFILES_SKIP_NODEJS}" || ./nodejs.sh
     is_truthy "${DOTFILES_SKIP_NEOVIM}" || ./neovim.sh
