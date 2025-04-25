@@ -272,7 +272,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
         is_truthy "${DOTFILES_SKIP_TRASH}" || install_packages "trash"
 
-        # is_truthy "${DOTFILES_SKIP_ITERM2}" || ./iterm2.sh
+        is_truthy "${DOTFILES_SKIP_ITERM2:-1}" || ./iterm2.sh
     fi
 
     # TODO: these take forever...
