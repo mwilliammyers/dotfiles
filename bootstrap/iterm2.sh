@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false . ./bootstrap.sh
+DOTFILES_BOOTSTRAP=false . "$(dirname "$0")/../bootstrap.sh"
 
 package=iTerm2
 

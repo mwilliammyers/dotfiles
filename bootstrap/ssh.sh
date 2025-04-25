@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_BOOTSTRAP=false . ./bootstrap.sh 
+DOTFILES_BOOTSTRAP=false . "$(dirname "$0")/../bootstrap.sh" 
 
 mkdir ~/.ssh/ 2> /dev/null
 
