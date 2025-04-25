@@ -1,5 +1,9 @@
 tmp/
+tmp.*/
 .venv/
+.pg_env
+.infracost/
+.env
 
 # Local security keys
 *.p8
