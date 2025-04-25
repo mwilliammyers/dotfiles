@@ -33,10 +33,10 @@ command "${fish_path}" \
     -c 'fisher install \
             mwilliammyers/pack \
             mwilliammyers/handy \
-            mwilliammyers/starship \
-            mwilliammyers/google-cloud-sdk \
             mwilliammyers/j \
             jethrokuan/fzf \
             patrickf3139/Colored-Man-Pages'
 
-./starship.sh
+command_is_executable "gcloud" && command "${fish_path} -c 'fisher install mwilliammyers/google-cloud-sdk'
+
+is_truthy "${DOTFILES_SKIP_STARSHIP}" || ./starship.sh

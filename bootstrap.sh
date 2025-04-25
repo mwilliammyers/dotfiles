@@ -196,7 +196,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
     xcode-select --install 2> /dev/null
 
     if ! [ -x "$(command -v brew)" ]; then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 fi
 
@@ -216,33 +216,33 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
 
     chmod u+x ./*.sh
 
-    ./google-cloud-sdk.sh
-    ./ssh.sh
-    ./fish.sh
-    ./fd.sh
-    ./ripgrep.sh
-    install_packages_if_necessary "rsync" "python3" "fzf" "bat" "exa"
-    install_packages "git-delta"
-    ./nodejs.sh
-    ./neovim.sh
-    # ./sublime-text.sh
-    ./docker.sh
+    # TODO: support skipping inside of `install_packages`?
+    is_truthy "${DOTFILES_SKIP_GCLOUD}" || ./google-cloud-sdk.sh
+    is_truthy "${DOTFILES_SKIP_SSH}" || ./ssh.sh
+    is_truthy "${DOTFILES_SKIP_FISH}" || ./fish.sh # also does starship.sh
+    is_truthy "${DOTFILES_SKIP_GIT}" || ./git.sh
+    is_truthy "${DOTFILES_SKIP_FD}" || ./fd.sh
+    is_truthy "${DOTFILES_SKIP_RIPGREP}" || ./ripgrep.sh
+    # TODO: separate these out to allow skipping?
+    install_packages_if_necessary "ghostty" "rsync" "fzf" "bat" "eza" "jq" "chatgpt"
+    is_truthy "${DOTFILES_SKIP_NODEJS}" || ./nodejs.sh
+    is_truthy "${DOTFILES_SKIP_PYTHON3}" || install_packages "python3"
+    is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages "git-delta"
+    is_truthy "${DOTFILES_SKIP_NEOVIM}" || ./neovim.sh
+    is_truthy "${DOTFILES_SKIP_VSCODE}" || ./vscode.sh
+    is_truthy "${DOTFILES_SKIP_DOCKER}" || ./docker.sh
 
     if [ "$(uname -s)" = "Darwin" ]; then
-        # TODO: add support for other platforms for docker
-        install_packages_if_necessary \
-            "google-chrome" \
-            "slack" \
-            "appcleaner"
+        is_truthy "${DOTFILES_SKIP_APPCLEANER}" || DOTFILES_HOMEBREW_CASK=true install_packages "appcleaner"
 
-        install_packages_if_necessary "trash"
+        is_truthy "${DOTFILES_SKIP_TRASH}" || install_packages "trash"
 
-        ./iterm2.sh
+        is_truthy "${DOTFILES_SKIP_ITERM2:-1}" || ./iterm2.sh
     fi
 
     # TODO: these take forever...
-    ./rust.sh
-    # ./musl-cross.sh
+    is_truthy "${DOTFILES_SKIP_RUST}" || ./rust.sh
+    is_truthy "${DOTFILES_SKIP_RUST:-1}" || ./musl-cross.sh
 
-    ./system.sh
+    is_truthy "${DOTFILES_SKIP_SYSTEM_CONFIG}" || ./system.sh
 fi
