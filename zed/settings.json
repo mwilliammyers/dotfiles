@@ -1,0 +1,42 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "One Dark Pro",
+  "vim_mode": true,
+  "ui_font_size": 13.5,
+  "buffer_font_size": 13.5,
+  "show_whitespaces": "selection",
+  "remove_trailing_whitespace_on_save": false,
+  "ensure_final_newline_on_save": false,
+  "wrap_guides": [80, 100],
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "format_on_save": "off",
+  "languages": {
+    "Rust": {
+      "format_on_save": "on"
+    }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro-preview-03-25"
+    },
+    "version": "2"
+  },
+  // "edit_predictions": {
+  //   "mode": "subtle"
+  // },
+  "terminal": {
+    "dock": "right"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}

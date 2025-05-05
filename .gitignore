@@ -1,4 +1,4 @@
-/*
+*
 
 !.gitignore
 !README.md
@@ -9,3 +9,7 @@
 !starship.toml
 !/iterm2/
 !/git/
+
+!/zed/
+!/zed/settings.json
+!/zed/keymap.json
