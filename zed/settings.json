@@ -22,7 +22,14 @@
       "format_on_save": "on"
     }
   },
-  "assistant": {
+  // "lsp": {
+  //   "rust-analyzer": {
+  //     "initialization_options": {
+  //       "checkOnSave": false,
+  //     }
+  //   }
+  // },
+  "agent": {
     "default_model": {
       "provider": "google",
       "model": "gemini-2.5-pro-preview-03-25"
