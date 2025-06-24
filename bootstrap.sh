@@ -224,21 +224,25 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     is_truthy "${DOTFILES_SKIP_FD}" || ./fd.sh
     is_truthy "${DOTFILES_SKIP_RIPGREP}" || ./ripgrep.sh
     # TODO: separate these out to allow skipping?
-    install_packages_if_necessary "ghostty" "rsync" "fzf" "bat" "eza" "jq" "chatgpt"
+    install_packages "ghostty" "rsync" "fzf" "bat" "eza" "jq" "chatgpt"
     is_truthy "${DOTFILES_SKIP_NODEJS}" || ./nodejs.sh
     is_truthy "${DOTFILES_SKIP_PYTHON3}" || install_packages_if_necessary "python3"
-    is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages_if_necessary "git-delta"
+    is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages "git-delta"
     is_truthy "${DOTFILES_SKIP_NEOVIM}" || ./neovim.sh
     is_truthy "${DOTFILES_SKIP_VSCODE}" || ./vscode.sh
     is_truthy "${DOTFILES_SKIP_DOCKER}" || ./docker.sh
 
     if [ "$(uname -s)" = "Darwin" ]; then
-        is_truthy "${DOTFILES_SKIP_APPCLEANER}" || DOTFILES_HOMEBREW_CASK=true install_packages_if_necessary "appcleaner"
+        is_truthy "${DOTFILES_SKIP_APPCLEANER}" \
+            || DOTFILES_HOMEBREW_CASK=true install_packages "appcleaner"
 
         is_truthy "${DOTFILES_SKIP_TRASH}" || install_packages_if_necessary "trash"
 
         is_truthy "${DOTFILES_SKIP_ITERM2:-1}" || ./iterm2.sh
     fi
+
+    is_truthy "${DOTFILES_SKIP_WORK_APPS}" \
+        || DOTFILES_HOMEBREW_CASK=true install_packages "1password" "notion" "linear" "slack"
 
     # TODO: these take forever...
     is_truthy "${DOTFILES_SKIP_RUST}" || ./rust.sh
