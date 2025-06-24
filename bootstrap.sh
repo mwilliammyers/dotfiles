@@ -71,6 +71,7 @@ update_package_index() {
 
 # TODO: update first, only if we haven't already
 _install_packages() {
+    # TODO: fix this so it handles multiple args; it appears to be broken
     if [ -x "$(command -v apt-get)" ]; then
         sudo apt-get install -y "${@}"
     elif [ -x "$(command -v brew)" ]; then
@@ -102,12 +103,13 @@ _install_packages() {
 }
 
 install_packages() {
+    # TODO: fix this so it handles multiple args; it appears to be broken
     if [ $# -ne 0 ] && [ "x$@" != 'x' ]; then
         info "Installing ${@}..."
         if _install_packages $@; then
-            info "Installed ${@}"
+            info "Installed ${@}\n"
         else
-            warn "Could not install ${@}"
+            warn "Could not install ${@}\n"
         fi
     fi
 }
@@ -206,11 +208,13 @@ install_packages_if_necessary "git" "curl" >> /dev/null
 if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     mkdir -p "${CONFIG_DIR}" 2> /dev/null
     cd "${CONFIG_DIR}" || die "Could not find config directory"
-      
+    
     git init
-    git remote add origin "${DOTFILES_REPO}"
+    if [ "$(git remote get-url origin 2>/dev/null)" != "${DOTFILES_REPO}" ]; then
+        git remote add origin "${DOTFILES_REPO}"
+    fi
     git fetch
-    git checkout origin/master -ft
+    git checkout master 2>/dev/null || git checkout origin/master -ft
 
     cd "${CONFIG_DIR}/bootstrap" || die "Could not find dotfiles directory"
 
@@ -219,30 +223,36 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     # TODO: support skipping inside of `install_packages`?
     is_truthy "${DOTFILES_SKIP_GCLOUD}" || ./google-cloud-sdk.sh
     is_truthy "${DOTFILES_SKIP_SSH}" || ./ssh.sh
-    is_truthy "${DOTFILES_SKIP_FISH}" || ./fish.sh # also does starship.sh
-    is_truthy "${DOTFILES_SKIP_GIT}" || ./git.sh
+    is_truthy "${DOTFILES_SKIP_FISH}" || ./fish.sh
     is_truthy "${DOTFILES_SKIP_FD}" || ./fd.sh
     is_truthy "${DOTFILES_SKIP_RIPGREP}" || ./ripgrep.sh
-    # TODO: separate these out to allow skipping?
-    install_packages "ghostty" "rsync" "fzf" "bat" "eza" "jq" "chatgpt"
+    is_truthy "${DOTFILES_SKIP_GHOSTTY}" || install_packages "ghostty"
+    is_truthy "${DOTFILES_SKIP_RSYNC}" || install_packages "rsync"
+    is_truthy "${DOTFILES_SKIP_FZF}" || install_packages "fzf"
+    is_truthy "${DOTFILES_SKIP_BAT}" || install_packages "bat"
+    is_truthy "${DOTFILES_SKIP_EZA}" || install_packages "eza"
+    is_truthy "${DOTFILES_SKIP_JQ}" || install_packages "jq"
+    is_truthy "${DOTFILES_SKIP_CHATGPT}" || install_packages "chatgpt"
     is_truthy "${DOTFILES_SKIP_NODEJS}" || ./nodejs.sh
-    is_truthy "${DOTFILES_SKIP_PYTHON3}" || install_packages_if_necessary "python3"
+    is_truthy "${DOTFILES_SKIP_UV}" || install_packages "uv" # can be used to install python3
+    is_truthy "${DOTFILES_SKIP_PYTHON3}" || install_packages "python3"
     is_truthy "${DOTFILES_SKIP_GIT_DELTA}" || install_packages "git-delta"
     is_truthy "${DOTFILES_SKIP_NEOVIM}" || ./neovim.sh
     is_truthy "${DOTFILES_SKIP_VSCODE}" || ./vscode.sh
     is_truthy "${DOTFILES_SKIP_DOCKER}" || ./docker.sh
 
     if [ "$(uname -s)" = "Darwin" ]; then
-        is_truthy "${DOTFILES_SKIP_APPCLEANER}" \
-            || DOTFILES_HOMEBREW_CASK=true install_packages "appcleaner"
+        is_truthy "${DOTFILES_SKIP_APPCLEANER}" || install_packages "appcleaner"
 
         is_truthy "${DOTFILES_SKIP_TRASH}" || install_packages_if_necessary "trash"
 
         is_truthy "${DOTFILES_SKIP_ITERM2:-1}" || ./iterm2.sh
     fi
 
-    is_truthy "${DOTFILES_SKIP_WORK_APPS}" \
-        || DOTFILES_HOMEBREW_CASK=true install_packages "1password" "notion" "linear-linear" "slack"
+    is_truthy "${DOTFILES_SKIP_1PASSWORD}" || install_packages "1password"
+    is_truthy "${DOTFILES_SKIP_NOTION}" || install_packages "notion"
+    is_truthy "${DOTFILES_SKIP_LINEAR}" || install_packages "linear-linear"
+    is_truthy "${DOTFILES_SKIP_SLACK}" || install_packages "slack"
 
     # TODO: these take forever...
     is_truthy "${DOTFILES_SKIP_RUST}" || ./rust.sh
