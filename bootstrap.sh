@@ -242,7 +242,7 @@ if is_truthy "${DOTFILES_BOOTSTRAP:-1}"; then
     fi
 
     is_truthy "${DOTFILES_SKIP_WORK_APPS}" \
-        || DOTFILES_HOMEBREW_CASK=true install_packages "1password" "notion" "linear" "slack"
+        || DOTFILES_HOMEBREW_CASK=true install_packages "1password" "notion" "linear-linear" "slack"
 
     # TODO: these take forever...
     is_truthy "${DOTFILES_SKIP_RUST}" || ./rust.sh
