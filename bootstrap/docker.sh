@@ -37,6 +37,8 @@ if [ -x "$(command -v apt-get)" ]; then
 
         install_packages "docker-ce"
     fi
+elif [ -x "$(command -v brew)" ]; then
+    install_packages "docker-desktop"
 else
     install_packages_if_necessary "docker"
 fi
