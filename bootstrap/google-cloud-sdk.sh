@@ -22,7 +22,7 @@ if ! command_is_executable gcloud; then
        
         sudo apt-get install "$package" || die "Installing $package failed"
     elif [ -x "$(command -v brew)" ]; then
-        brew cask install "$package" || die "Installing $package failed"
+        brew install --cask "$package" || die "Installing $package failed"
     elif [ -x "$(command -v yum)" ]; then
         sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-sdk]
