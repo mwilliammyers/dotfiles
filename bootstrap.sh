@@ -195,10 +195,13 @@ os_open() {
 # install prerequisites
 
 if [ "$(uname -s)" = "Darwin" ]; then
-    xcode-select --install 2> /dev/null
-
     if ! [ -x "$(command -v brew)" ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
+    # homebrew will install command line tools but let's check just in case
+    if ! xcode-select -p >/dev/null 2>&1; then
+        xcode-select --install 2> /dev/null
     fi
 fi
 
