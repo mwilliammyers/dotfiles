@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark Pro",
+  "theme": "One Dark",
   "vim_mode": true,
   "ui_font_size": 13.5,
   "buffer_font_size": 13.5,
@@ -31,10 +31,9 @@
   // },
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-pro-preview-03-25"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
-    "version": "2"
   },
   // "edit_predictions": {
   //   "mode": "subtle"

@@ -236,8 +236,8 @@
 	undo = reset HEAD^ --soft
 
 
-[includeIf "gitdir/i:~/Developer/telcoin/"]
-	path = ~/Developer/telcoin/.gitconfig
+[includeIf "gitdir/i:~/Developer/"]
+	path = ~/Developer/.gitconfig
 
-[includeIf "gitdir/i:~/Developer/voxjar/"]
-	path = ~/Developer/voxjar/.gitconfig
+[includeIf "gitdir/i:~/.config/"]
+	path = ~/.config/.gitconfig
