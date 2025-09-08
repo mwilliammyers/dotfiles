@@ -119,6 +119,9 @@
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	
+	# diff since latest tag
+	dit = !git log "$(git describe --tags --abbrev=0)"..HEAD --pretty=format:\"%h %ad %s\" --date=short
 
 	# Pull in remote changes for the current repository and all its submodules
 	p = git pull --recurse-submodules

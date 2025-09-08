@@ -89,3 +89,5 @@ tags
 .vim
 
 # End of https://www.gitignore.io/api/vim,macos,linux
+
+**/.claude/settings.local.json
