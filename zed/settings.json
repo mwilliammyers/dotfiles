@@ -7,10 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark",
+  "theme": "One Dark Pro",
   "vim_mode": true,
-  "ui_font_size": 13.5,
-  "buffer_font_size": 13.5,
+  "ui_font_size": 12.5,
+  "buffer_font_size": 13.0,
   "show_whitespaces": "selection",
   "remove_trailing_whitespace_on_save": false,
   "ensure_final_newline_on_save": false,
@@ -20,20 +20,55 @@
   "languages": {
     "Rust": {
       "format_on_save": "on"
+    },
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+      // "formatter": {
+      //   "external": {
+      //     "command": "/opt/homebrew/bin/uv run ruff",
+      //     "arguments": [
+      //       "check",
+      //       "--exit-zero",
+      //       "--fix",
+      //       "--stdin-filename",
+      //       "{buffer_path}",
+      //       "-"
+      //     ]
+      //   }
+      // }
     }
   },
-  // "lsp": {
-  //   "rust-analyzer": {
-  //     "initialization_options": {
-  //       "checkOnSave": false,
-  //     }
-  //   }
-  // },
+  "lsp": {
+    // "pyright": {
+    //   "settings": {
+    //     "python.analysis": {
+    //       "diagnosticMode": "workspace"
+    //       // "typeCheckingMode": "strict"
+    //     },
+    //     "python": {
+    //       "pythonPath": ".venv/bin/python"
+    //     }
+    //   }
+    // }
+    // "rust-analyzer": {
+    //   "initialization_options": {
+    //     "checkOnSave": false,
+    //   }
+    // }
+  },
   "agent": {
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-latest"
-    },
+    }
   },
   // "edit_predictions": {
   //   "mode": "subtle"
