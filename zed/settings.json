@@ -1,22 +1,17 @@
 // Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// https://zed.dev/docs/configuring-zed
 {
   "theme": "One Dark Pro",
   "vim_mode": true,
-  "ui_font_size": 12.5,
+  "ui_font_size": 13.5,
   "buffer_font_size": 13.0,
   "show_whitespaces": "selection",
   "remove_trailing_whitespace_on_save": false,
   "ensure_final_newline_on_save": false,
-  "wrap_guides": [80, 100],
+  "wrap_guides": [80, 100, 120],
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "format_on_save": "off",
+  "terminal": { "dock": "right" },
   "languages": {
     "Rust": {
       "format_on_save": "on"
@@ -31,53 +26,47 @@
           }
         }
       ]
-      // "formatter": {
-      //   "external": {
-      //     "command": "/opt/homebrew/bin/uv run ruff",
-      //     "arguments": [
-      //       "check",
-      //       "--exit-zero",
-      //       "--fix",
-      //       "--stdin-filename",
-      //       "{buffer_path}",
-      //       "-"
-      //     ]
-      //   }
-      // }
     }
   },
-  "lsp": {
-    // "pyright": {
-    //   "settings": {
-    //     "python.analysis": {
-    //       "diagnosticMode": "workspace"
-    //       // "typeCheckingMode": "strict"
-    //     },
-    //     "python": {
-    //       "pythonPath": ".venv/bin/python"
-    //     }
-    //   }
-    // }
-    // "rust-analyzer": {
-    //   "initialization_options": {
-    //     "checkOnSave": false,
-    //   }
-    // }
+  "language_models": {
+    "openai_compatible": {
+      "Martian": {
+        "api_url": "https://api.withmartian.com/v1",
+        "available_models": [
+          {
+            "name": "anthropic/claude-sonnet-4-5",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000
+          },
+          {
+            "name": "google/gemini-2.5-pro",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000
+          },
+          {
+            "name": "google/gemini-2.5-flash",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000
+          }
+        ]
+      }
+    }
   },
   "agent": {
+    "default_profile": "write",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+      "provider": "openai",
+      "model": "gpt-5-codex"
     }
   },
   // "edit_predictions": {
   //   "mode": "subtle"
   // },
-  "terminal": {
-    "dock": "right"
-  },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  }
+  "telemetry": { "diagnostics": false, "metrics": false }
 }
