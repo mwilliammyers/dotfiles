@@ -123,6 +123,9 @@
 	# diff since latest tag
 	dit = !git log "$(git describe --tags --abbrev=0)"..HEAD --pretty=format:\"%h %ad %s\" --date=short
 
+	# diff since latest tag with directory info
+	ditd = !git log "$(git describe --tags --abbrev=0)"..HEAD --pretty=format:\"%h %ad %s\" --date=short --dirstat
+
 	# Pull in remote changes for the current repository and all its submodules
 	p = git pull --recurse-submodules
 

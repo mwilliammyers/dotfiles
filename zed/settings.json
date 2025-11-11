@@ -1,6 +1,11 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits"
+    }
+  },
   "theme": "One Dark Pro",
   "vim_mode": true,
   "ui_font_size": 13.5,
@@ -35,21 +40,22 @@
         "available_models": [
           {
             "name": "anthropic/claude-sonnet-4-5",
-            "display_name": null,
             "max_tokens": 200000,
-            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000
+          },
+          {
+            "name": "openai/gpt-5",
+            "max_tokens": 200000,
             "max_completion_tokens": 200000
           },
           {
             "name": "google/gemini-2.5-pro",
-            "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,
             "max_completion_tokens": 200000
           },
           {
             "name": "google/gemini-2.5-flash",
-            "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,
             "max_completion_tokens": 200000
@@ -59,10 +65,11 @@
     }
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-5-codex"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-thinking-latest"
     }
   },
   // "edit_predictions": {
