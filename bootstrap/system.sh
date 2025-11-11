@@ -23,6 +23,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
     defaults write com.apple.dock autohide-time-modifier -float 0.15
     # defaults write com.apple.dock showhidden -bool true
     defaults write com.apple.dock tilesize -int 46
+    
+    # disable popup window to enable key repeats
+    defaults write -g ApplePressAndHoldEnabled -bool false
 
     # defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
     # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
