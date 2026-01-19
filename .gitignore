@@ -8,7 +8,11 @@
 
 !starship.toml
 !/iterm2/
+!/iterm2/**
 !/git/
+!/git/**
+!/ghostty/
+!/ghostty/**
 
 !/zed/
 !/zed/settings.json
