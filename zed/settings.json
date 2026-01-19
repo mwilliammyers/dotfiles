@@ -75,5 +75,9 @@
   // "edit_predictions": {
   //   "mode": "subtle"
   // },
+  "file_scan_inclusions": [
+    ".env*",
+    "*/tmp/"
+  ],
   "telemetry": { "diagnostics": false, "metrics": false }
 }

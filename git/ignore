@@ -1,3 +1,5 @@
+.worktreeinclude
+
 tmp/
 tmp.*/
 .venv/
