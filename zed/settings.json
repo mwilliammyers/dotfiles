@@ -1,11 +1,6 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
-  "agent_servers": {
-    "claude": {
-      "default_mode": "acceptEdits"
-    }
-  },
   "theme": "One Dark Pro",
   "vim_mode": true,
   "ui_font_size": 13.5,
@@ -22,17 +17,24 @@
       "format_on_save": "on"
     },
     "Python": {
-      "language_servers": ["pyright", "ruff"],
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
+      "language_servers": ["ty", "basedpyright", "ruff"],
+      "format_on_save": "on"
     }
   },
+  // "lsp": {
+  //   "ty": {
+  //     "binary": {
+  //       "path": "uv",
+  //       "arguments": ["run", "--active", "ty", "server"]
+  //     }
+  //   },
+  //   "ruff": {
+  //     "binary": {
+  //       "path": "uv",
+  //       "arguments": ["run", "--active", "ruff", "server"]
+  //     }
+  //   }
+  // },
   "language_models": {
     "openai_compatible": {
       "Martian": {
@@ -64,8 +66,25 @@
       }
     }
   },
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits"
+    },
+    "OpenCode": {
+      "favorite_models": [
+        "martian-anthropic/anthropic/claude-sonnet-4-6",
+        "martian-anthropic/anthropic/claude-opus-4-6",
+        "martian-openai/x-ai/grok-code-fast-1:optimized"
+      ],
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_profile": "write",
     "default_model": {
       "provider": "anthropic",

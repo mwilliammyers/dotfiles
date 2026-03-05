@@ -25,5 +25,11 @@
          // "cmd-shift-ctrl-[": "pane::GoBack",
          // "cmd-shift-ctrl-]": "pane::GoForward"
       }
+    },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format"
     }
+  }
 ]

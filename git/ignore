@@ -1,5 +1,8 @@
 .worktreeinclude
 
+.zed/
+tz.yaml
+
 tmp/
 tmp.*/
 .venv/
