@@ -11,7 +11,13 @@
 	helper = store
 
 [core]
-	pager = delta --dark || less
+	pager = delta || less
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
 
 [commit]
 	verbose = true
@@ -27,6 +33,7 @@
 
 [merge]
 	log = true
+	conflictStyle = zdiff3
 
 [rebase]
 	instructionFormat = %s [%an]
@@ -119,7 +126,7 @@
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	
+
 	# diff since latest tag
 	dit = !git log "$(git describe --tags --abbrev=0)"..HEAD --pretty=format:\"%h %ad %s\" --date=short
 
@@ -192,9 +199,9 @@
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
-	
+
 	hs = log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=short --date-order
-	
+
 	resolve-bulk = "!f() { \
 		mode=$1; \
 		if [ \"$mode\" = \"theirs\" ]; then \
@@ -247,3 +254,5 @@
 
 [includeIf "gitdir/i:~/.config/"]
 	path = ~/.config/.gitconfig
+[coderabbit]
+	machineId = cli/33f523fd80bd4b3899b494e6d7a75b57
