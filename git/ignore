@@ -1,5 +1,7 @@
 .worktreeinclude
 
+.opencode/
+
 .zed/
 tz.yaml
 

@@ -18,6 +18,7 @@
 
 [delta]
 	navigate = true
+	side-by-side = true
 
 [commit]
 	verbose = true
