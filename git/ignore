@@ -12,6 +12,8 @@ tmp.*/
 .infracost/
 .env
 
+.turbo/
+
 # Local security keys
 *.p8
 *private*.pem

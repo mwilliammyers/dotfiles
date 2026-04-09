@@ -67,7 +67,11 @@
     }
   },
   "agent_servers": {
-    "claude": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry",
       "default_mode": "acceptEdits"
     },
     "OpenCode": {
