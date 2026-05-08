@@ -17,7 +17,13 @@
 
 # keybind = shift+enter=text:\n
 
+theme = Atom One Dark
+
+# font-size = 15
+
 scrollback-limit = 500000000
 
 keybind = shift+alt+[=goto_split:left
 keybind = shift+alt+]=goto_split:right
+
+# copy-on-select = false

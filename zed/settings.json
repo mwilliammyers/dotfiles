@@ -1,8 +1,21 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "theme": "One Dark Pro",
-  "vim_mode": true,
+  // "vim_mode": true,
   "ui_font_size": 13.5,
   "buffer_font_size": 13.0,
   "show_whitespaces": "selection",
@@ -86,6 +99,8 @@
     }
   },
   "agent": {
+    "sidebar_side": "right",
+    "dock": "left",
     "tool_permissions": {
       "default": "allow"
     },
